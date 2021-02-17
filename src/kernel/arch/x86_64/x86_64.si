@@ -1,0 +1,25 @@
+; x86_64
+
+#ASSERT CONFIG_ARCH == ARCH_X86_64
+
+arch = module {
+    name = ARCH_X86_64
+
+    [[ extern ]] [[ no_mangle ]]
+    asm_enable_interrupts = proc () ; found in asm/enable_interrupts.S
+
+    enable_interrupts = asm_enable_interrupts
+
+    ; Some architectures will have clean wfi instructions that the compiler will
+    ; provide an intrinsic for.
+    ; If we have one built-in, let's use that.
+#IF_BUILTIN __INTRINSIC_wait_for_interrupt
+    wait_for_interrupt = __INTRINSIC_wait_for_interrupt
+#ELSE
+
+    [[ extern ]] [[ no_mangle ]]
+    asm_wait_for_interrupt = proc () ; found in asm/wait_for_interrupt.S
+
+    wait_for_interrupt = asm_wait_for_interrupt
+#ENDIF
+}

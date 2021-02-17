@@ -1,0 +1,1 @@
+set builder-build-command 'scripts/build.sh'

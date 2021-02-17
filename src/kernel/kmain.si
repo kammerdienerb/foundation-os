@@ -1,0 +1,11 @@
+; kmain.si
+
+[[ no_mangle ]]
+kmain = proc () {
+    uart.print_string("in kmain()\n")
+
+    arch.enable_interrupts()
+    arch.switch_to_umode()
+
+    loop :: { arch.wait_for_interrupt() }
+}
