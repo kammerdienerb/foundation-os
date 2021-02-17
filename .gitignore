@@ -52,7 +52,6 @@ Mkfile.old
 dkms.conf
 
 build/
-run/
 
 deps/mkgpt/.deps/crc32.Po
 deps/mkgpt/.deps/fstypes.Po
