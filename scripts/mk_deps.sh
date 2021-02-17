@@ -8,7 +8,7 @@ mkdir -p deps
 cd deps
 
 git clone https://github.com/jncronin/mkgpt
-cd deps/mkgpt
+cd mkgpt
 automake --add-missing
 autoreconf
 ./configure
