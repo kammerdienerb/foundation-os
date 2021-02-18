@@ -23,7 +23,7 @@ else
         DDSTATUS="noxfer"
     fi
 
-    dd if=/dev/zero of=${fat_img} bs=1k count=1440 status=$(DDSTATUS) || exit $?
+    dd if=/dev/zero of=${fat_img} bs=1k count=1440 status=${DDSTATUS} || exit $?
 fi
 
 mformat -i ${fat_img} -f 1440 ::                      || exit $?
