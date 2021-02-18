@@ -18,10 +18,17 @@ fi
 
 ### Setup vars ###
 # JOBS="yes"
+
+# CLANG="clang"
+# LLD_LINK="lld-link"
+CLANG="/usr/local/Cellar/llvm/11.1.0/bin/clang"
+LLD_LINK="/usr/local/Cellar/llvm/11.1.0/bin/lld-link"
+
 SIMON=~/projects/simon/build/bin/simon
 # SI_FLAGS="-v --threads=1"
 # SI_FLAGS="--dump-symbols"
 SI_FLAGS=""
+
 CONFIG=config
 
 source src/arch_list.si    || exit $?
@@ -61,9 +68,9 @@ function build_loader {
             -Wl,-subsystem:efi_application   \
             -fuse-ld=lld-link"
 
-    clang $CFLAGS  -c -o build/obj/uefi_loader.o src/loader/uefi_loader.c                                      || exit $?
-    clang $CFLAGS  -c -o build/obj/uefi_loader_data.o src/loader/data.c                                        || exit $?
-    clang $LDFLAGS    -o build/bin/BOOTX64.EFI build/obj/uefi_loader.o build/obj/uefi_loader_data.o || exit $?
+    ${CLANG} $CFLAGS  -c -o build/obj/uefi_loader.o src/loader/uefi_loader.c                           || exit $?
+    ${CLANG} $CFLAGS  -c -o build/obj/uefi_loader_data.o src/loader/data.c                             || exit $?
+    ${CLANG} $LDFLAGS    -o build/bin/BOOTX64.EFI build/obj/uefi_loader.o build/obj/uefi_loader_data.o || exit $?
 }
 
 function build_kernel {

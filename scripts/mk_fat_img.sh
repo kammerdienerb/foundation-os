@@ -10,8 +10,23 @@ fi
 
 fat_img=build/bin/UEFI_${ARCH}_FAT.img
 
-dd if=/dev/zero of=${fat_img} bs=1k count=1440 status=none || exit $?
-mformat -i ${fat_img} -f 1440 ::                           || exit $?
-mmd -i ${fat_img} ::/EFI                                   || exit $?
-mmd -i ${fat_img} ::/EFI/BOOT                              || exit $?
-mcopy -i ${fat_img} build/bin/BOOTX64.EFI ::/EFI/BOOT      || exit $?
+if [ $(uname) = "Darwin" ]; then
+    dd if=/dev/zero of=${fat_img} bs=1k count=1440 >/dev/null 2>&1
+    ret=$?
+    if ! test $ret ; then
+        echo "dd failed"
+        exit $?
+    fi
+else
+    DDSTATUS="none"
+    if dd --help | grep -q 'status=noxfer' >/dev/null 2>&1; then
+        DDSTATUS="noxfer"
+    fi
+
+    dd if=/dev/zero of=${fat_img} bs=1k count=1440 status=$(DDSTATUS) || exit $?
+fi
+
+mformat -i ${fat_img} -f 1440 ::                      || exit $?
+mmd -i ${fat_img} ::/EFI                              || exit $?
+mmd -i ${fat_img} ::/EFI/BOOT                         || exit $?
+mcopy -i ${fat_img} build/bin/BOOTX64.EFI ::/EFI/BOOT || exit $?
