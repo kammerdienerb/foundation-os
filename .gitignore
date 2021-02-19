@@ -53,3 +53,4 @@ dkms.conf
 
 build/
 deps/
+run/x86_64/OVMF.fd

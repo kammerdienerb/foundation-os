@@ -1,0 +1,1634 @@
+ACPI_20_TABLE_GUID	src/loader/efi/efiapi.h	/^#define ACPI_20_TABLE_GUID  \\$/
+ACPI_ADR_DEVICE_PATH	src/loader/efi/efidevp.h	/^} ACPI_ADR_DEVICE_PATH ;$/
+ACPI_ADR_DP	src/loader/efi/efidevp.h	/^#define ACPI_ADR_DP 3$/
+ACPI_DEVICE_PATH	src/loader/efi/efidevp.h	/^#define ACPI_DEVICE_PATH                 0x02$/
+ACPI_DP	src/loader/efi/efidevp.h	/^#define ACPI_DP                         0x01$/
+ACPI_HID_DEVICE_PATH	src/loader/efi/efidevp.h	/^} ACPI_HID_DEVICE_PATH;$/
+ACPI_TABLE_GUID	src/loader/efi/efiapi.h	/^#define ACPI_TABLE_GUID    \\$/
+ADAPTER_DEBUG_PROTOCOL	src/loader/efi/protocol/adapterdebug.h	/^#define ADAPTER_DEBUG_PROTOCOL \\$/
+ALIGN	src/loader/efi/aarch64/efisetjmp_arch.h	/^} ALIGN(JMPBUF_ALIGN) jmp_buf[1];$/
+ALIGN_VARIABLE	src/loader/efi/aarch64/efibind.h	/^#define ALIGN_VARIABLE(Value ,Adjustment) \\$/
+ASSERT	src/loader/efi/efidebug.h	/^    #define ASSERT(a)               if(!(a))      /
+ASSERT_LOCKED	src/loader/efi/efidebug.h	/^    #define ASSERT_LOCKED(l)        if(!(l)->Lock)/
+ASSERT_STRUCT	src/loader/efi/efidebug.h	/^    #define ASSERT_STRUCT(p,t)      DBGASSERT(t no/
+ATAPI_DEVICE_PATH	src/loader/efi/efidevp.h	/^} ATAPI_DEVICE_PATH;$/
+Address	src/loader/efi/efiapi.h	/^    );$/
+ArchData	src/loader/efi/romload.h	/^}ArchData;$/
+BAD_POINTER	src/loader/efi/aarch64/efibind.h	/^#define BAD_POINTER         0xFBFBFBFBFBFBFBFB$/
+BBS_BBS_DEVICE_PATH	src/loader/efi/efidevp.h	/^} BBS_BBS_DEVICE_PATH;$/
+BBS_BBS_DP	src/loader/efi/efidevp.h	/^#define BBS_BBS_DP                      0x01$/
+BBS_DEVICE_PATH	src/loader/efi/efidevp.h	/^#define BBS_DEVICE_PATH                 0x05$/
+BBS_TABLE_ENTRY	src/loader/efi/protocol/legacyboot.h	/^} BBS_TABLE_ENTRY;$/
+BBS_TYPE	src/loader/efi/protocol/legacyboot.h	/^} BBS_TYPE;$/
+BBS_TYPE_CDROM	src/loader/efi/efidevp.h	/^#define BBS_TYPE_CDROM                  0x03$/
+BBS_TYPE_DEV	src/loader/efi/efidevp.h	/^#define BBS_TYPE_DEV                    0x80$/
+BBS_TYPE_EMBEDDED_NETWORK	src/loader/efi/efidevp.h	/^#define BBS_TYPE_EMBEDDED_NETWORK       0x06$/
+BBS_TYPE_FLOPPY	src/loader/efi/efidevp.h	/^#define BBS_TYPE_FLOPPY                 0x01$/
+BBS_TYPE_HARDDRIVE	src/loader/efi/efidevp.h	/^#define BBS_TYPE_HARDDRIVE              0x02$/
+BBS_TYPE_PCMCIA	src/loader/efi/efidevp.h	/^#define BBS_TYPE_PCMCIA                 0x04$/
+BBS_TYPE_UNKNOWN	src/loader/efi/efidevp.h	/^#define BBS_TYPE_UNKNOWN                0xFF$/
+BBS_TYPE_USB	src/loader/efi/efidevp.h	/^#define BBS_TYPE_USB                    0x05$/
+BEGIN_RUNTIME_DATA	src/loader/efi/aarch64/efibind.h	/^#define BEGIN_RUNTIME_DATA()    data_seg("rtdata")/
+BIT63	src/loader/efi/ia64/efibind.h	/^#define BIT63   0x8000000000000000$/
+BLOCK_IO_PROTOCOL	src/loader/efi/efiprot.h	/^#define BLOCK_IO_PROTOCOL EFI_BLOCK_IO_PROTOCOL_GU/
+BOOLEAN	src/loader/efi/efidef.h	/^typedef UINT8           BOOLEAN;$/
+BOOTSERVICE	src/loader/efi/aarch64/efibind.h	/^#define BOOTSERVICE$/
+BREAKPOINT	src/loader/efi/aarch64/efibind.h	/^#define BREAKPOINT()        while (TRUE);    \/\/ /
+BlockIo2Protocol	src/loader/efi/efilib.h	/^#define BlockIo2Protocol gEfiBlockIo2ProtocolGuid$/
+BlockIoProtocol	src/loader/efi/efilib.h	/^#define BlockIoProtocol gEfiBlockIoProtocolGuid$/
+BusSpecificDriverOverrideProtocol	src/loader/efi/efilib.h	/^#define BusSpecificDriverOverrideProtocol gEfiBusS/
+CAPSULE_FLAGS_INITIATE_RESET	src/loader/efi/efiapi.h	/^#define CAPSULE_FLAGS_INITIATE_RESET          0x00/
+CAPSULE_FLAGS_PERSIST_ACROSS_RESET	src/loader/efi/efiapi.h	/^#define CAPSULE_FLAGS_PERSIST_ACROSS_RESET    0x00/
+CAPSULE_FLAGS_POPULATE_SYSTEM_TABLE	src/loader/efi/efiapi.h	/^#define CAPSULE_FLAGS_POPULATE_SYSTEM_TABLE   0x00/
+CDROM_DEVICE_PATH	src/loader/efi/efidevp.h	/^} CDROM_DEVICE_PATH;$/
+CHAR16	src/loader/efi/efidef.h	/^typedef UINT16          CHAR16;$/
+CHAR8	src/loader/efi/efidef.h	/^typedef UINT8           CHAR8;$/
+CLS	src/loader/uefi_loader.c	/^#define CLS()            (ST->ConOut->ClearScreen(/
+COMPONENT_NAME2_PROTOCOL	src/loader/efi/efiprot.h	/^#define COMPONENT_NAME2_PROTOCOL EFI_COMPONENT_NAM/
+COMPONENT_NAME_PROTOCOL	src/loader/efi/efiprot.h	/^#define COMPONENT_NAME_PROTOCOL EFI_COMPONENT_NAME/
+CONST	src/loader/efi/efidef.h	/^   #define CONST const$/
+CONTROLLER_DEVICE_PATH	src/loader/efi/efidevp.h	/^} CONTROLLER_DEVICE_PATH;$/
+ComponentName2Protocol	src/loader/efi/efilib.h	/^#define ComponentName2Protocol gEfiComponentName2P/
+ComponentNameProtocol	src/loader/efi/efilib.h	/^#define ComponentNameProtocol gEfiComponentNamePro/
+ConOutDev	src/loader/efi/protocol/vgaclass.h	/^    );$/
+Context	src/loader/efi/protocol/vgaclass.h	/^    );$/
+Copyright	src/loader/efi/ia64/salproc.h	/^\/\/Copyright (c) 1999  Intel Corporation$/
+DBGASSERT	src/loader/efi/efidebug.h	/^    #define DBGASSERT(a)        DbgAssert(__FILE__/
+DBGSETMEM	src/loader/efi/efidebug.h	/^    #define DBGSETMEM(a,l)      SetMem(a,l,(CHAR8)/
+DEBUG	src/loader/efi/efidebug.h	/^    #define DEBUG(a)            DbgPrint a$/
+DEBUGPORT_16550_CONFIG_DATA	src/loader/efi/protocol/efidbg.h	/^} DEBUGPORT_16550_CONFIG_DATA;$/
+DEBUGPORT_16550_DEVICE_PATH	src/loader/efi/protocol/efidbg.h	/^} DEBUGPORT_16550_DEVICE_PATH;$/
+DEBUGPORT_DEV_PATH	src/loader/efi/protocol/efidbg.h	/^} DEBUGPORT_DEV_PATH;$/
+DEBUGPORT_IO_PROTOCOL	src/loader/efi/protocol/efidbg.h	/^#define DEBUGPORT_IO_PROTOCOL \\$/
+DEBUGPORT_UART16550_CONTROL_PROTOCOL	src/loader/efi/protocol/efidbg.h	/^#define DEBUGPORT_UART16550_CONTROL_PROTOCOL \\$/
+DEBUG_SUPPORT_PROTOCOL	src/loader/efi/protocol/efidbg.h	/^#define DEBUG_SUPPORT_PROTOCOL \\$/
+DEFAULT_TTL	src/loader/efi/efipxebc.h	/^#define DEFAULT_TTL 4$/
+DEFAULT_ToS	src/loader/efi/efipxebc.h	/^#define DEFAULT_ToS 0$/
+DEFIO_PCI_ADDR	src/loader/efi/pci22.h	/^} DEFIO_PCI_ADDR;$/
+DEVICE_IO_PROTOCOL	src/loader/efi/efiprot.h	/^#define DEVICE_IO_PROTOCOL EFI_DEVICE_IO_PROTOCOL_/
+DEVICE_LOGICAL_UNIT_DEVICE_PATH	src/loader/efi/efidevp.h	/^} DEVICE_LOGICAL_UNIT_DEVICE_PATH ;$/
+DEVICE_PATH_DEBUGPORT	src/loader/efi/protocol/efidbg.h	/^#define DEVICE_PATH_DEBUGPORT DEBUGPORT_IO_PROTOCO/
+DEVICE_PATH_MESSAGING_PC_ANSI	src/loader/efi/efidevp.h	/^#define DEVICE_PATH_MESSAGING_PC_ANSI EFI_PC_ANSI_/
+DEVICE_PATH_MESSAGING_VT_100	src/loader/efi/efidevp.h	/^#define DEVICE_PATH_MESSAGING_VT_100 EFI_VT_100_GU/
+DEVICE_PATH_MESSAGING_VT_100_PLUS	src/loader/efi/efidevp.h	/^#define DEVICE_PATH_MESSAGING_VT_100_PLUS EFI_VT_1/
+DEVICE_PATH_MESSAGING_VT_UTF8	src/loader/efi/efidevp.h	/^#define DEVICE_PATH_MESSAGING_VT_UTF8 EFI_VT_UTF8_/
+DEVICE_PATH_PROTOCOL	src/loader/efi/efiprot.h	/^#define DEVICE_PATH_PROTOCOL EFI_DEVICE_PATH_PROTO/
+DISK_IO_PROTOCOL	src/loader/efi/efiprot.h	/^#define DISK_IO_PROTOCOL EFI_DISK_IO_PROTOCOL_GUID/
+DP_IS_END_SUBTYPE	src/loader/efi/efidevp.h	/^#define DP_IS_END_SUBTYPE(a)        ( ((a)->SubTyp/
+DP_IS_END_TYPE	src/loader/efi/efidevp.h	/^#define DP_IS_END_TYPE(a)$/
+DRIVER_BINDING_PROTOCOL	src/loader/efi/efiprot.h	/^#define DRIVER_BINDING_PROTOCOL EFI_DRIVER_BINDING/
+D_BLKIO	src/loader/efi/efidebug.h	/^#define D_BLKIO       0x00001000          \/\/ Blk/
+D_BLKIO_ULTRA	src/loader/efi/efidebug.h	/^#define D_BLKIO_ULTRA 0x00002000          \/\/ Blk/
+D_BM	src/loader/efi/efidebug.h	/^#define D_BM          0x00000400          \/\/ Boo/
+D_ERROR	src/loader/efi/efidebug.h	/^#define D_ERROR       0x80000000          \/\/ Err/
+D_ERROR_ATA	src/loader/efi/efidebug.h	/^#define D_ERROR_ATA	  0x00040000		  		\/\/ ATA err/
+D_FS	src/loader/efi/efidebug.h	/^#define D_FS          0x00000008          \/\/ EFI/
+D_INFO	src/loader/efi/efidebug.h	/^#define D_INFO        0x00000040          \/\/ Ver/
+D_INIT	src/loader/efi/efidebug.h	/^#define D_INIT        0x00000001          \/\/ Ini/
+D_LOAD	src/loader/efi/efidebug.h	/^#define D_LOAD        0x00000004          \/\/ Loa/
+D_NET	src/loader/efi/efidebug.h	/^#define D_NET         0x00004000          \/\/ SNI/
+D_NET_ULTRA	src/loader/efi/efidebug.h	/^#define D_NET_ULTRA   0x00008000          \/\/ SNI/
+D_PARSE	src/loader/efi/efidebug.h	/^#define D_PARSE       0x00000200          \/\/ Com/
+D_POOL	src/loader/efi/efidebug.h	/^#define D_POOL        0x00000010          \/\/ All/
+D_RESERVED	src/loader/efi/efidebug.h	/^#define D_RESERVED    0x7fffC880          \/\/ Bit/
+D_TXTIN	src/loader/efi/efidebug.h	/^#define D_TXTIN       0x00010000          \/\/ Sim/
+D_TXTOUT	src/loader/efi/efidebug.h	/^#define D_TXTOUT      0x00020000          \/\/ Sim/
+D_VAR	src/loader/efi/efidebug.h	/^#define D_VAR         0x00000100          \/\/ Var/
+D_WARN	src/loader/efi/efidebug.h	/^#define D_WARN        0x00000002          \/\/ War/
+DeviceIoProtocol	src/loader/efi/efilib.h	/^#define DeviceIoProtocol gEfiDeviceIoProtocolGuid$/
+DevicePathFromTextProtocol	src/loader/efi/efilib.h	/^#define DevicePathFromTextProtocol gEfiDevicePathF/
+DevicePathNodeLength	src/loader/efi/efidevp.h	/^#define DevicePathNodeLength(a)     ( ((a)->Length/
+DevicePathProtocol	src/loader/efi/efilib.h	/^#define DevicePathProtocol gEfiDevicePathProtocolG/
+DevicePathSubType	src/loader/efi/efidevp.h	/^#define DevicePathSubType(a)        ( (a)->SubType/
+DevicePathToTextProtocol	src/loader/efi/efilib.h	/^#define DevicePathToTextProtocol gEfiDevicePathToT/
+DevicePathType	src/loader/efi/efidevp.h	/^#define DevicePathType(a)           ( ((a)->Type) /
+Discover	src/loader/efi/efipxebc.h	/^\/\/ Discover() definitions$/
+DiskIo2Protocol	src/loader/efi/efilib.h	/^#define DiskIo2Protocol gEfiDiskIo2ProtocolGuid$/
+DiskIoProtocol	src/loader/efi/efilib.h	/^#define DiskIoProtocol gEfiDiskIoProtocolGuid$/
+DriverBindingProtocol	src/loader/efi/efilib.h	/^#define DriverBindingProtocol gEfiDriverBindingPro/
+DriverFamilyOverrideProtocol	src/loader/efi/efilib.h	/^#define DriverFamilyOverrideProtocol gEfiDriverFam/
+EFIAPI	src/loader/efi/aarch64/efibind.h	/^#define EFIAPI          \/\/ Substitute expresion /
+EFIERR	src/loader/efi/aarch64/efibind.h	/^#define EFIERR(a)           (0x8000000000000000 | /
+EFIERR_OEM	src/loader/efi/aarch64/efibind.h	/^#define EFIERR_OEM(a)       (0xc000000000000000 | /
+EFIWARN	src/loader/efi/efierr.h	/^#define EFIWARN(a)                            (a)$/
+EFI_ABORTED	src/loader/efi/efierr.h	/^#define EFI_ABORTED                     EFIERR(21)/
+EFI_ABSOLUTE_POINTER_MODE	src/loader/efi/efipoint.h	/^} EFI_ABSOLUTE_POINTER_MODE;$/
+EFI_ABSOLUTE_POINTER_PROTOCOL	src/loader/efi/efipoint.h	/^} EFI_ABSOLUTE_POINTER_PROTOCOL;$/
+EFI_ABSOLUTE_POINTER_PROTOCOL_GUID	src/loader/efi/efipoint.h	/^#define EFI_ABSOLUTE_POINTER_PROTOCOL_GUID \\$/
+EFI_ABSOLUTE_POINTER_STATE	src/loader/efi/efipoint.h	/^} EFI_ABSOLUTE_POINTER_STATE;$/
+EFI_ABSP_SupportsAltActive	src/loader/efi/efipoint.h	/^#define EFI_ABSP_SupportsAltActive 0x00000001$/
+EFI_ABSP_SupportsPressureAsZ	src/loader/efi/efipoint.h	/^#define EFI_ABSP_SupportsPressureAsZ 0x00000002$/
+EFI_ABSP_TouchActive	src/loader/efi/efipoint.h	/^#define EFI_ABSP_TouchActive 0x00000001$/
+EFI_ABS_AltActive	src/loader/efi/efipoint.h	/^#define EFI_ABS_AltActive 0x00000002$/
+EFI_ACCESS_DENIED	src/loader/efi/efierr.h	/^#define EFI_ACCESS_DENIED               EFIERR(15)/
+EFI_ADDRESS	src/loader/efi/efilib.h	/^} EFI_ADDRESS;$/
+EFI_ALLOCATE_TYPE	src/loader/efi/efidef.h	/^} EFI_ALLOCATE_TYPE;$/
+EFI_ALREADY_STARTED	src/loader/efi/efierr.h	/^#define EFI_ALREADY_STARTED             EFIERR(20)/
+EFI_BACKGROUND_BLACK	src/loader/efi/eficon.h	/^#define EFI_BACKGROUND_BLACK        0x00$/
+EFI_BACKGROUND_BLUE	src/loader/efi/eficon.h	/^#define EFI_BACKGROUND_BLUE         0x10$/
+EFI_BACKGROUND_BROWN	src/loader/efi/eficon.h	/^#define EFI_BACKGROUND_BROWN        (EFI_BACKGROUN/
+EFI_BACKGROUND_CYAN	src/loader/efi/eficon.h	/^#define EFI_BACKGROUND_CYAN         (EFI_BACKGROUN/
+EFI_BACKGROUND_GREEN	src/loader/efi/eficon.h	/^#define EFI_BACKGROUND_GREEN        0x20$/
+EFI_BACKGROUND_LIGHTGRAY	src/loader/efi/eficon.h	/^#define EFI_BACKGROUND_LIGHTGRAY    (EFI_BACKGROUN/
+EFI_BACKGROUND_MAGENTA	src/loader/efi/eficon.h	/^#define EFI_BACKGROUND_MAGENTA      (EFI_BACKGROUN/
+EFI_BACKGROUND_RED	src/loader/efi/eficon.h	/^#define EFI_BACKGROUND_RED          0x40$/
+EFI_BAD_BUFFER_SIZE	src/loader/efi/efierr.h	/^#define EFI_BAD_BUFFER_SIZE             EFIERR(4)$/
+EFI_BLACK	src/loader/efi/eficon.h	/^#define EFI_BLACK   0x00$/
+EFI_BLOCK_IO	src/loader/efi/efiprot.h	/^typedef EFI_BLOCK_IO_PROTOCOL EFI_BLOCK_IO;$/
+EFI_BLOCK_IO2_PROTOCOL	src/loader/efi/efiprot.h	/^} EFI_BLOCK_IO2_PROTOCOL;$/
+EFI_BLOCK_IO2_PROTOCOL_GUID	src/loader/efi/efiprot.h	/^#define EFI_BLOCK_IO2_PROTOCOL_GUID \\$/
+EFI_BLOCK_IO2_TOKEN	src/loader/efi/efiprot.h	/^} EFI_BLOCK_IO2_TOKEN;$/
+EFI_BLOCK_IO_INTERFACE_REVISION	src/loader/efi/efiprot.h	/^#define EFI_BLOCK_IO_INTERFACE_REVISION   EFI_BLOC/
+EFI_BLOCK_IO_INTERFACE_REVISION2	src/loader/efi/efiprot.h	/^#define EFI_BLOCK_IO_INTERFACE_REVISION2  EFI_BLOC/
+EFI_BLOCK_IO_INTERFACE_REVISION3	src/loader/efi/efiprot.h	/^#define EFI_BLOCK_IO_INTERFACE_REVISION3  EFI_BLOC/
+EFI_BLOCK_IO_MEDIA	src/loader/efi/efiprot.h	/^} EFI_BLOCK_IO_MEDIA;$/
+EFI_BLOCK_IO_PROTOCOL	src/loader/efi/efiprot.h	/^} EFI_BLOCK_IO_PROTOCOL;$/
+EFI_BLOCK_IO_PROTOCOL_GUID	src/loader/efi/efiprot.h	/^#define EFI_BLOCK_IO_PROTOCOL_GUID \\$/
+EFI_BLOCK_IO_PROTOCOL_REVISION	src/loader/efi/efiprot.h	/^#define EFI_BLOCK_IO_PROTOCOL_REVISION    0x000100/
+EFI_BLOCK_IO_PROTOCOL_REVISION2	src/loader/efi/efiprot.h	/^#define EFI_BLOCK_IO_PROTOCOL_REVISION2   0x000200/
+EFI_BLOCK_IO_PROTOCOL_REVISION3	src/loader/efi/efiprot.h	/^#define EFI_BLOCK_IO_PROTOCOL_REVISION3   ((2<<16)/
+EFI_BLUE	src/loader/efi/eficon.h	/^#define EFI_BLUE    0x01$/
+EFI_BOOT_SERVICES	src/loader/efi/efiapi.h	/^} EFI_BOOT_SERVICES;$/
+EFI_BOOT_SERVICES_REVISION	src/loader/efi/efiapi.h	/^#define EFI_BOOT_SERVICES_REVISION      (EFI_SPECI/
+EFI_BOOT_SERVICES_SIGNATURE	src/loader/efi/efiapi.h	/^#define EFI_BOOT_SERVICES_SIGNATURE     0x56524553/
+EFI_BRIGHT	src/loader/efi/eficon.h	/^#define EFI_BRIGHT  0x08$/
+EFI_BROWN	src/loader/efi/eficon.h	/^#define EFI_BROWN           (EFI_GREEN | EFI_RED)$/
+EFI_BUFFER_TOO_SMALL	src/loader/efi/efierr.h	/^#define EFI_BUFFER_TOO_SMALL            EFIERR(5)$/
+EFI_BUS_SPECIFIC_DRIVER_OVERRIDE_PROTOCOL	src/loader/efi/efiprot.h	/^} EFI_BUS_SPECIFIC_DRIVER_OVERRIDE_PROTOCOL;$/
+EFI_BUS_SPECIFIC_DRIVER_OVERRIDE_PROTOCOL_GUID	src/loader/efi/efiprot.h	/^#define EFI_BUS_SPECIFIC_DRIVER_OVERRIDE_PROTOCOL_/
+EFI_CAPSULE_BLOCK_DESCRIPTOR	src/loader/efi/efiapi.h	/^} EFI_CAPSULE_BLOCK_DESCRIPTOR;$/
+EFI_CAPSULE_HEADER	src/loader/efi/efiapi.h	/^} EFI_CAPSULE_HEADER;$/
+EFI_COMPONENT_NAME	src/loader/efi/efiprot.h	/^typedef EFI_COMPONENT_NAME_PROTOCOL EFI_COMPONENT_/
+EFI_COMPONENT_NAME2	src/loader/efi/efiprot.h	/^typedef EFI_COMPONENT_NAME2_PROTOCOL EFI_COMPONENT/
+EFI_COMPONENT_NAME2_PROTOCOL	src/loader/efi/efiprot.h	/^} EFI_COMPONENT_NAME2_PROTOCOL;$/
+EFI_COMPONENT_NAME2_PROTOCOL_GUID	src/loader/efi/efiprot.h	/^#define EFI_COMPONENT_NAME2_PROTOCOL_GUID \\$/
+EFI_COMPONENT_NAME_PROTOCOL	src/loader/efi/efiprot.h	/^} EFI_COMPONENT_NAME_PROTOCOL;$/
+EFI_COMPONENT_NAME_PROTOCOL_GUID	src/loader/efi/efiprot.h	/^#define EFI_COMPONENT_NAME_PROTOCOL_GUID \\$/
+EFI_COMPROMISED_DATA	src/loader/efi/efierr.h	/^#define EFI_COMPROMISED_DATA            EFIERR(33)/
+EFI_CONFIGURATION_TABLE	src/loader/efi/efiapi.h	/^} EFI_CONFIGURATION_TABLE;$/
+EFI_CONNECTION_FIN	src/loader/efi/efitcp.h	/^#define EFI_CONNECTION_FIN     EFIERR(104)$/
+EFI_CONNECTION_REFUSED	src/loader/efi/efitcp.h	/^#define EFI_CONNECTION_REFUSED EFIERR(106)$/
+EFI_CONNECTION_RESET	src/loader/efi/efitcp.h	/^#define EFI_CONNECTION_RESET   EFIERR(105)$/
+EFI_CRC_ERROR	src/loader/efi/efierr.h	/^#define EFI_CRC_ERROR                   EFIERR(27)/
+EFI_CYAN	src/loader/efi/eficon.h	/^#define EFI_CYAN            (EFI_BLUE | EFI_GREEN)/
+EFI_DARKGRAY	src/loader/efi/eficon.h	/^#define EFI_DARKGRAY        (EFI_BRIGHT)$/
+EFI_DBUG_MASK	src/loader/efi/efidebug.h	/^\/\/#define EFI_DBUG_MASK   (D_ERROR | D_WARN | D_/
+EFI_DEBUGPORT_IO_INTERFACE	src/loader/efi/protocol/efidbg.h	/^} EFI_DEBUGPORT_IO_INTERFACE;$/
+EFI_DEBUGPORT_IO_INTERFACE_REVISION	src/loader/efi/protocol/efidbg.h	/^#define EFI_DEBUGPORT_IO_INTERFACE_REVISION   0x00/
+EFI_DEBUGPORT_UART16550_CONTROL_INTERFACE	src/loader/efi/protocol/efidbg.h	/^} EFI_DEBUGPORT_UART16550_CONTROL_INTERFACE;$/
+EFI_DEBUGPORT_UART16550_CONTROL_INTERFACE_REVISION	src/loader/efi/protocol/efidbg.h	/^#define EFI_DEBUGPORT_UART16550_CONTROL_INTERFACE_/
+EFI_DEBUG_IMAGE_INFO	src/loader/efi/efidebug.h	/^} EFI_DEBUG_IMAGE_INFO;$/
+EFI_DEBUG_IMAGE_INFO_INITIAL_SIZE	src/loader/efi/efidebug.h	/^#define EFI_DEBUG_IMAGE_INFO_INITIAL_SIZE       (E/
+EFI_DEBUG_IMAGE_INFO_NORMAL	src/loader/efi/efidebug.h	/^} EFI_DEBUG_IMAGE_INFO_NORMAL;$/
+EFI_DEBUG_IMAGE_INFO_TABLE_GUID	src/loader/efi/efidebug.h	/^#define EFI_DEBUG_IMAGE_INFO_TABLE_GUID \\$/
+EFI_DEBUG_IMAGE_INFO_TABLE_HEADER	src/loader/efi/efidebug.h	/^} EFI_DEBUG_IMAGE_INFO_TABLE_HEADER;$/
+EFI_DEBUG_IMAGE_INFO_TABLE_MODIFIED	src/loader/efi/efidebug.h	/^#define EFI_DEBUG_IMAGE_INFO_TABLE_MODIFIED     0x/
+EFI_DEBUG_IMAGE_INFO_TYPE_NORMAL	src/loader/efi/efidebug.h	/^#define EFI_DEBUG_IMAGE_INFO_TYPE_NORMAL        0x/
+EFI_DEBUG_IMAGE_INFO_UPDATE_IN_PROGRESS	src/loader/efi/efidebug.h	/^#define EFI_DEBUG_IMAGE_INFO_UPDATE_IN_PROGRESS 0x/
+EFI_DEBUG_SUPPORT_INTERFACE	src/loader/efi/protocol/efidbg.h	/^} EFI_DEBUG_SUPPORT_INTERFACE;$/
+EFI_DEBUG_SUPPORT_INTERFACE_REVISION	src/loader/efi/protocol/efidbg.h	/^#define EFI_DEBUG_SUPPORT_INTERFACE_REVISION     0/
+EFI_DEBUG_SUPPORT_PROTOCOL	src/loader/efi/efidebug.h	/^} EFI_DEBUG_SUPPORT_PROTOCOL;$/
+EFI_DEBUG_SUPPORT_PROTOCOL_GUID	src/loader/efi/efidebug.h	/^#define EFI_DEBUG_SUPPORT_PROTOCOL_GUID \\$/
+EFI_DEVICE_ERROR	src/loader/efi/efierr.h	/^#define EFI_DEVICE_ERROR                EFIERR(7)$/
+EFI_DEVICE_IO_INTERFACE	src/loader/efi/efiprot.h	/^typedef EFI_DEVICE_IO_PROTOCOL EFI_DEVICE_IO_INTER/
+EFI_DEVICE_IO_PROTOCOL	src/loader/efi/efiprot.h	/^} EFI_DEVICE_IO_PROTOCOL;$/
+EFI_DEVICE_IO_PROTOCOL_GUID	src/loader/efi/efiprot.h	/^#define EFI_DEVICE_IO_PROTOCOL_GUID \\$/
+EFI_DEVICE_PATH	src/loader/efi/efidevp.h	/^typedef EFI_DEVICE_PATH_PROTOCOL EFI_DEVICE_PATH;$/
+EFI_DEVICE_PATH_FROM_TEXT_PROTOCOL	src/loader/efi/efidevp.h	/^} EFI_DEVICE_PATH_FROM_TEXT_PROTOCOL;$/
+EFI_DEVICE_PATH_FROM_TEXT_PROTOCOL_GUID	src/loader/efi/efidevp.h	/^#define EFI_DEVICE_PATH_FROM_TEXT_PROTOCOL_GUID \\/
+EFI_DEVICE_PATH_PROTOCOL	src/loader/efi/efidevp.h	/^} EFI_DEVICE_PATH_PROTOCOL;$/
+EFI_DEVICE_PATH_PROTOCOL_GUID	src/loader/efi/efiprot.h	/^#define EFI_DEVICE_PATH_PROTOCOL_GUID \\$/
+EFI_DEVICE_PATH_TO_TEXT_PROTOCOL	src/loader/efi/efidevp.h	/^} EFI_DEVICE_PATH_TO_TEXT_PROTOCOL;$/
+EFI_DEVICE_PATH_TO_TEXT_PROTOCOL_GUID	src/loader/efi/efidevp.h	/^#define EFI_DEVICE_PATH_TO_TEXT_PROTOCOL_GUID \\$/
+EFI_DEV_PATH	src/loader/efi/efidevp.h	/^} EFI_DEV_PATH;$/
+EFI_DEV_PATH_PTR	src/loader/efi/efidevp.h	/^} EFI_DEV_PATH_PTR;$/
+EFI_DISK_IO	src/loader/efi/efiprot.h	/^typedef EFI_DISK_IO_PROTOCOL EFI_DISK_IO;$/
+EFI_DISK_IO2_PROTOCOL	src/loader/efi/efiprot.h	/^} EFI_DISK_IO2_PROTOCOL;$/
+EFI_DISK_IO2_PROTOCOL_GUID	src/loader/efi/efiprot.h	/^#define EFI_DISK_IO2_PROTOCOL_GUID \\$/
+EFI_DISK_IO2_PROTOCOL_REVISION	src/loader/efi/efiprot.h	/^#define EFI_DISK_IO2_PROTOCOL_REVISION  0x00020000/
+EFI_DISK_IO2_TOKEN	src/loader/efi/efiprot.h	/^} EFI_DISK_IO2_TOKEN;$/
+EFI_DISK_IO_INTERFACE_REVISION	src/loader/efi/efiprot.h	/^#define EFI_DISK_IO_INTERFACE_REVISION EFI_DISK_IO/
+EFI_DISK_IO_PROTOCOL	src/loader/efi/efiprot.h	/^} EFI_DISK_IO_PROTOCOL;$/
+EFI_DISK_IO_PROTOCOL_GUID	src/loader/efi/efiprot.h	/^#define EFI_DISK_IO_PROTOCOL_GUID \\$/
+EFI_DISK_IO_PROTOCOL_REVISION	src/loader/efi/efiprot.h	/^#define EFI_DISK_IO_PROTOCOL_REVISION  0x00010000$/
+EFI_DP_TYPE_MASK	src/loader/efi/efidevp.h	/^#define EFI_DP_TYPE_MASK                    0x7F$/
+EFI_DP_TYPE_UNPACKED	src/loader/efi/efidevp.h	/^#define EFI_DP_TYPE_UNPACKED                0x80$/
+EFI_DRIVER_BINDING	src/loader/efi/efiprot.h	/^typedef EFI_DRIVER_BINDING_PROTOCOL EFI_DRIVER_BIN/
+EFI_DRIVER_BINDING_PROTOCOL	src/loader/efi/efiprot.h	/^} EFI_DRIVER_BINDING_PROTOCOL;$/
+EFI_DRIVER_BINDING_PROTOCOL_GUID	src/loader/efi/efiprot.h	/^#define EFI_DRIVER_BINDING_PROTOCOL_GUID \\$/
+EFI_DRIVER_ENTRY_POINT	src/loader/efi/aarch64/efibind.h	/^#define EFI_DRIVER_ENTRY_POINT(InitFunction) \\$/
+EFI_DRIVER_FAMILY_OVERRIDE_PROTOCOL	src/loader/efi/efiprot.h	/^} EFI_DRIVER_FAMILY_OVERRIDE_PROTOCOL;$/
+EFI_DRIVER_FAMILY_OVERRIDE_PROTOCOL_GUID	src/loader/efi/efiprot.h	/^#define EFI_DRIVER_FAMILY_OVERRIDE_PROTOCOL_GUID  /
+EFI_DRIVER_START	src/loader/efi/efiprot.h	/^#define EFI_DRIVER_START             EFI_DRIVER_BI/
+EFI_DRIVER_STOP	src/loader/efi/efiprot.h	/^#define EFI_DRIVER_STOP              EFI_DRIVER_BI/
+EFI_DRIVER_SUPPORTED	src/loader/efi/efiprot.h	/^#define EFI_DRIVER_SUPPORTED         EFI_DRIVER_BI/
+EFI_EBC_INTERPRETER_PROTOCOL_GUID	src/loader/efi/efiprot.h	/^#define EFI_EBC_INTERPRETER_PROTOCOL_GUID         /
+EFI_EBC_PROTOCOL	src/loader/efi/efiprot.h	/^} EFI_EBC_PROTOCOL;$/
+EFI_EBC_PROTOCOL_GUID	src/loader/efi/efiprot.h	/^#define EFI_EBC_PROTOCOL_GUID EFI_EBC_INTERPRETER_/
+EFI_EDID_ACTIVE_PROTOCOL	src/loader/efi/efiprot.h	/^} EFI_EDID_ACTIVE_PROTOCOL;$/
+EFI_EDID_ACTIVE_PROTOCOL_GUID	src/loader/efi/efiprot.h	/^#define EFI_EDID_ACTIVE_PROTOCOL_GUID \\$/
+EFI_EDID_DISCOVERED_PROTOCOL	src/loader/efi/efiprot.h	/^} EFI_EDID_DISCOVERED_PROTOCOL;$/
+EFI_EDID_DISCOVERED_PROTOCOL_GUID	src/loader/efi/efiprot.h	/^#define EFI_EDID_DISCOVERED_PROTOCOL_GUID \\$/
+EFI_EDID_OVERRIDE_PROTOCOL	src/loader/efi/efiprot.h	/^} EFI_EDID_OVERRIDE_PROTOCOL;$/
+EFI_EDID_OVERRIDE_PROTOCOL_GUID	src/loader/efi/efiprot.h	/^#define EFI_EDID_OVERRIDE_PROTOCOL_GUID \\$/
+EFI_END_OF_FILE	src/loader/efi/efierr.h	/^#define EFI_END_OF_FILE                 EFIERR(31)/
+EFI_END_OF_MEDIA	src/loader/efi/efierr.h	/^#define EFI_END_OF_MEDIA                EFIERR(28)/
+EFI_ERROR	src/loader/efi/efierr.h	/^#define EFI_ERROR(a)              (((INTN) a) < 0)/
+EFI_ERROR_MASK	src/loader/efi/aarch64/efibind.h	/^#define EFI_ERROR_MASK      0x8000000000000000$/
+EFI_EVENT	src/loader/efi/efidef.h	/^typedef VOID            *EFI_EVENT;$/
+EFI_EVENT_EFI_SIGNAL_MASK	src/loader/efi/efiapi.h	/^#define EFI_EVENT_EFI_SIGNAL_MASK               EV/
+EFI_EVENT_EFI_SIGNAL_MAX	src/loader/efi/efiapi.h	/^#define EFI_EVENT_EFI_SIGNAL_MAX                EV/
+EFI_EVENT_NOTIFY_SIGNAL	src/loader/efi/efiapi.h	/^#define EFI_EVENT_NOTIFY_SIGNAL                 EV/
+EFI_EVENT_NOTIFY_WAIT	src/loader/efi/efiapi.h	/^#define EFI_EVENT_NOTIFY_WAIT                   EV/
+EFI_EVENT_RUNTIME	src/loader/efi/efiapi.h	/^#define EFI_EVENT_RUNTIME                       EV/
+EFI_EVENT_RUNTIME_CONTEXT	src/loader/efi/efiapi.h	/^#define EFI_EVENT_RUNTIME_CONTEXT               EV/
+EFI_EVENT_SIGNAL_EXIT_BOOT_SERVICES	src/loader/efi/efiapi.h	/^#define EFI_EVENT_SIGNAL_EXIT_BOOT_SERVICES     EV/
+EFI_EVENT_SIGNAL_VIRTUAL_ADDRESS_CHANGE	src/loader/efi/efiapi.h	/^#define EFI_EVENT_SIGNAL_VIRTUAL_ADDRESS_CHANGE EV/
+EFI_EVENT_TIMER	src/loader/efi/efiapi.h	/^#define EFI_EVENT_TIMER                         EV/
+EFI_EXCEPTION_TYPE	src/loader/efi/efidebug.h	/^typedef INTN EFI_EXCEPTION_TYPE;$/
+EFI_FIELD_OFFSET	src/loader/efi/efilink.h	/^#define EFI_FIELD_OFFSET(TYPE,Field) ((UINTN)(intp/
+EFI_FILE	src/loader/efi/efiprot.h	/^typedef EFI_FILE_PROTOCOL EFI_FILE;$/
+EFI_FILE_ARCHIVE	src/loader/efi/efiprot.h	/^#define EFI_FILE_ARCHIVE        0x0000000000000020/
+EFI_FILE_DIRECTORY	src/loader/efi/efiprot.h	/^#define EFI_FILE_DIRECTORY      0x0000000000000010/
+EFI_FILE_HANDLE	src/loader/efi/efiprot.h	/^} EFI_FILE_PROTOCOL, *EFI_FILE_HANDLE;$/
+EFI_FILE_HANDLE_REVISION	src/loader/efi/efiprot.h	/^#define EFI_FILE_HANDLE_REVISION           EFI_FIL/
+EFI_FILE_HEADER	src/loader/efi/efifs.h	/^} EFI_FILE_HEADER;$/
+EFI_FILE_HEADER_REVISION	src/loader/efi/efifs.h	/^#define EFI_FILE_HEADER_REVISION    0x00010000$/
+EFI_FILE_HEADER_SIGNATURE	src/loader/efi/efifs.h	/^#define EFI_FILE_HEADER_SIGNATURE   0x454c49462049/
+EFI_FILE_HIDDEN	src/loader/efi/efiprot.h	/^#define EFI_FILE_HIDDEN         0x0000000000000002/
+EFI_FILE_INFO	src/loader/efi/efiprot.h	/^} EFI_FILE_INFO;$/
+EFI_FILE_INFO_ID	src/loader/efi/efiprot.h	/^#define EFI_FILE_INFO_ID   \\$/
+EFI_FILE_IO_INTERFACE	src/loader/efi/efiprot.h	/^typedef EFI_SIMPLE_FILE_SYSTEM_PROTOCOL EFI_FILE_I/
+EFI_FILE_IO_INTERFACE_REVISION	src/loader/efi/efiprot.h	/^#define EFI_FILE_IO_INTERFACE_REVISION EFI_SIMPLE_/
+EFI_FILE_IO_TOKEN	src/loader/efi/efiprot.h	/^} EFI_FILE_IO_TOKEN;$/
+EFI_FILE_MODE_CREATE	src/loader/efi/efiprot.h	/^#define EFI_FILE_MODE_CREATE    0x8000000000000000/
+EFI_FILE_MODE_READ	src/loader/efi/efiprot.h	/^#define EFI_FILE_MODE_READ      0x0000000000000001/
+EFI_FILE_MODE_WRITE	src/loader/efi/efiprot.h	/^#define EFI_FILE_MODE_WRITE     0x0000000000000002/
+EFI_FILE_PROTOCOL_LATEST_REVISION	src/loader/efi/efiprot.h	/^#define EFI_FILE_PROTOCOL_LATEST_REVISION  EFI_FIL/
+EFI_FILE_PROTOCOL_REVISION	src/loader/efi/efiprot.h	/^#define EFI_FILE_PROTOCOL_REVISION         0x00010/
+EFI_FILE_PROTOCOL_REVISION2	src/loader/efi/efiprot.h	/^#define EFI_FILE_PROTOCOL_REVISION2        0x00020/
+EFI_FILE_READ_ONLY	src/loader/efi/efiprot.h	/^#define EFI_FILE_READ_ONLY      0x0000000000000001/
+EFI_FILE_RESERVIED	src/loader/efi/efiprot.h	/^#define EFI_FILE_RESERVIED      0x0000000000000008/
+EFI_FILE_STRING_SIZE	src/loader/efi/efifs.h	/^#define EFI_FILE_STRING_SIZE        260$/
+EFI_FILE_SYSTEM	src/loader/efi/efiprot.h	/^#define EFI_FILE_SYSTEM         0x0000000000000004/
+EFI_FILE_SYSTEM_INFO	src/loader/efi/efiprot.h	/^} EFI_FILE_SYSTEM_INFO;$/
+EFI_FILE_SYSTEM_INFO_ID	src/loader/efi/efiprot.h	/^#define EFI_FILE_SYSTEM_INFO_ID    \\$/
+EFI_FILE_SYSTEM_VOLUME_LABEL_INFO	src/loader/efi/efiprot.h	/^} EFI_FILE_SYSTEM_VOLUME_LABEL_INFO;$/
+EFI_FILE_SYSTEM_VOLUME_LABEL_INFO_ID	src/loader/efi/efiprot.h	/^#define EFI_FILE_SYSTEM_VOLUME_LABEL_INFO_ID    \\/
+EFI_FILE_VALID_ATTR	src/loader/efi/efiprot.h	/^#define EFI_FILE_VALID_ATTR     0x0000000000000037/
+EFI_FIRMWARE_MAJOR_REVISION	src/loader/efi/efi.h	/^#define EFI_FIRMWARE_MAJOR_REVISION 12$/
+EFI_FIRMWARE_MINOR_REVISION	src/loader/efi/efi.h	/^#define EFI_FIRMWARE_MINOR_REVISION 33$/
+EFI_FIRMWARE_REVISION	src/loader/efi/efi.h	/^#define EFI_FIRMWARE_REVISION ((EFI_FIRMWARE_MAJOR/
+EFI_FIRMWARE_VENDOR	src/loader/efi/efi.h	/^#define EFI_FIRMWARE_VENDOR         L"INTEL"$/
+EFI_FPSWA_PROTOCOL_GUID	src/loader/efi/efiprot.h	/^#define EFI_FPSWA_PROTOCOL_GUID \\$/
+EFI_FUNCTION	src/loader/efi/ia64/efibind.h	/^#define EFI_FUNCTION$/
+EFI_FX_SAVE_STATE_IA32	src/loader/efi/efidebug.h	/^} EFI_FX_SAVE_STATE_IA32;$/
+EFI_FX_SAVE_STATE_X64	src/loader/efi/efidebug.h	/^} EFI_FX_SAVE_STATE_X64;$/
+EFI_GLOBAL_VARIABLE	src/loader/efi/efiapi.h	/^#define EFI_GLOBAL_VARIABLE     \\$/
+EFI_GRAPHICS_OUTPUT_BLT_OPERATION	src/loader/efi/efiprot.h	/^} EFI_GRAPHICS_OUTPUT_BLT_OPERATION;$/
+EFI_GRAPHICS_OUTPUT_BLT_PIXEL	src/loader/efi/efiprot.h	/^} EFI_GRAPHICS_OUTPUT_BLT_PIXEL;$/
+EFI_GRAPHICS_OUTPUT_BLT_PIXEL_UNION	src/loader/efi/efiprot.h	/^} EFI_GRAPHICS_OUTPUT_BLT_PIXEL_UNION;$/
+EFI_GRAPHICS_OUTPUT_MODE_INFORMATION	src/loader/efi/efiprot.h	/^} EFI_GRAPHICS_OUTPUT_MODE_INFORMATION;$/
+EFI_GRAPHICS_OUTPUT_PROTOCOL	src/loader/efi/efiprot.h	/^typedef struct _EFI_GRAPHICS_OUTPUT_PROTOCOL EFI_G/
+EFI_GRAPHICS_OUTPUT_PROTOCOL_GUID	src/loader/efi/efiprot.h	/^#define EFI_GRAPHICS_OUTPUT_PROTOCOL_GUID \\$/
+EFI_GRAPHICS_OUTPUT_PROTOCOL_MODE	src/loader/efi/efiprot.h	/^} EFI_GRAPHICS_OUTPUT_PROTOCOL_MODE;$/
+EFI_GRAPHICS_PIXEL_FORMAT	src/loader/efi/efiprot.h	/^} EFI_GRAPHICS_PIXEL_FORMAT;$/
+EFI_GREEN	src/loader/efi/eficon.h	/^#define EFI_GREEN   0x02$/
+EFI_HANDLE	src/loader/efi/efidef.h	/^typedef VOID            *EFI_HANDLE;$/
+EFI_HASH	src/loader/efi/efiprot.h	/^typedef EFI_HASH_PROTOCOL EFI_HASH;$/
+EFI_HASH_ALGORITHM_MD5	src/loader/efi/efiprot.h	/^#define EFI_HASH_ALGORITHM_MD5 EFI_HASH_ALGORITHM_/
+EFI_HASH_ALGORITHM_MD5_GUID	src/loader/efi/efiprot.h	/^#define EFI_HASH_ALGORITHM_MD5_GUID \\$/
+EFI_HASH_ALGORITHM_SHA1	src/loader/efi/efiprot.h	/^#define EFI_HASH_ALGORITHM_SHA1 EFI_HASH_ALGORITHM/
+EFI_HASH_ALGORITHM_SHA1_GUID	src/loader/efi/efiprot.h	/^#define EFI_HASH_ALGORITHM_SHA1_GUID \\$/
+EFI_HASH_ALGORITHM_SHA1_NOPAD	src/loader/efi/efiprot.h	/^#define EFI_HASH_ALGORITHM_SHA1_NOPAD EFI_HASH_ALG/
+EFI_HASH_ALGORITHM_SHA1_NOPAD_GUID	src/loader/efi/efiprot.h	/^#define EFI_HASH_ALGORITHM_SHA1_NOPAD_GUID \\$/
+EFI_HASH_ALGORITHM_SHA224	src/loader/efi/efiprot.h	/^#define EFI_HASH_ALGORITHM_SHA224 EFI_HASH_ALGORIT/
+EFI_HASH_ALGORITHM_SHA224_GUID	src/loader/efi/efiprot.h	/^#define EFI_HASH_ALGORITHM_SHA224_GUID \\$/
+EFI_HASH_ALGORITHM_SHA256	src/loader/efi/efiprot.h	/^#define EFI_HASH_ALGORITHM_SHA256 EFI_HASH_ALGORIT/
+EFI_HASH_ALGORITHM_SHA256_GUID	src/loader/efi/efiprot.h	/^#define EFI_HASH_ALGORITHM_SHA256_GUID \\$/
+EFI_HASH_ALGORITHM_SHA256_NOPAD	src/loader/efi/efiprot.h	/^#define EFI_HASH_ALGORITHM_SHA256_NOPAD EFI_HASH_A/
+EFI_HASH_ALGORITHM_SHA256_NOPAD_GUID	src/loader/efi/efiprot.h	/^#define EFI_HASH_ALGORITHM_SHA256_NOPAD_GUID \\$/
+EFI_HASH_ALGORITHM_SHA384	src/loader/efi/efiprot.h	/^#define EFI_HASH_ALGORITHM_SHA384 EFI_HASH_ALGORIT/
+EFI_HASH_ALGORITHM_SHA384_GUID	src/loader/efi/efiprot.h	/^#define EFI_HASH_ALGORITHM_SHA384_GUID \\$/
+EFI_HASH_ALGORITHM_SHA512	src/loader/efi/efiprot.h	/^#define EFI_HASH_ALGORITHM_SHA512 EFI_HASH_ALGORIT/
+EFI_HASH_ALGORITHM_SHA512_GUID	src/loader/efi/efiprot.h	/^#define EFI_HASH_ALGORITHM_SHA512_GUID \\$/
+EFI_HASH_OUTPUT	src/loader/efi/efiprot.h	/^} EFI_HASH_OUTPUT;$/
+EFI_HASH_PROTOCOL	src/loader/efi/efiprot.h	/^} EFI_HASH_PROTOCOL;$/
+EFI_HASH_PROTOCOL_GUID	src/loader/efi/efiprot.h	/^#define EFI_HASH_PROTOCOL_GUID \\$/
+EFI_HOST_UNREACHABLE	src/loader/efi/efiudp.h	/^#define EFI_HOST_UNREACHABLE     EFIERR(101)$/
+EFI_ICMP_ERROR	src/loader/efi/efierr.h	/^#define EFI_ICMP_ERROR                  EFIERR(22)/
+EFI_IMAGE_INFORMATION_REVISION	src/loader/efi/efiprot.h	/^#define EFI_IMAGE_INFORMATION_REVISION  EFI_LOADED/
+EFI_IMAGE_MACHINE_AARCH64	src/loader/efi/efiapi.h	/^#define EFI_IMAGE_MACHINE_AARCH64   0xAA64$/
+EFI_IMAGE_MACHINE_ARMTHUMB_MIXED	src/loader/efi/efiapi.h	/^#define EFI_IMAGE_MACHINE_ARMTHUMB_MIXED 0x01C2$/
+EFI_IMAGE_MACHINE_EBC	src/loader/efi/efiapi.h	/^#define EFI_IMAGE_MACHINE_EBC      0x0EBC$/
+EFI_IMAGE_MACHINE_IA32	src/loader/efi/efiapi.h	/^#define EFI_IMAGE_MACHINE_IA32      0x014c$/
+EFI_IMAGE_MACHINE_IA64	src/loader/efi/efiapi.h	/^#define EFI_IMAGE_MACHINE_IA64      0x0200$/
+EFI_IMAGE_MACHINE_X64	src/loader/efi/efiapi.h	/^#define EFI_IMAGE_MACHINE_X64       0x8664$/
+EFI_INCOMPATIBLE_VERSION	src/loader/efi/efierr.h	/^#define EFI_INCOMPATIBLE_VERSION        EFIERR(25)/
+EFI_INSTRUCTION_SET_ARCHITECTURE	src/loader/efi/efidebug.h	/^} EFI_INSTRUCTION_SET_ARCHITECTURE;$/
+EFI_INTERFACE_TYPE	src/loader/efi/efiapi.h	/^} EFI_INTERFACE_TYPE;$/
+EFI_INTERNAL_FNC	src/loader/efi/efiapi.h	/^#define EFI_INTERNAL_FNC            0x00000002    /
+EFI_INTERNAL_PTR	src/loader/efi/efiapi.h	/^#define EFI_INTERNAL_PTR            0x00000004    /
+EFI_INVALID_LANGUAGE	src/loader/efi/efierr.h	/^#define EFI_INVALID_LANGUAGE            EFIERR(32)/
+EFI_INVALID_PARAMETER	src/loader/efi/efierr.h	/^#define EFI_INVALID_PARAMETER           EFIERR(2)$/
+EFI_IO_ACCESS	src/loader/efi/efiprot.h	/^} EFI_IO_ACCESS;$/
+EFI_IO_OPERATION_TYPE	src/loader/efi/efiprot.h	/^} EFI_IO_OPERATION_TYPE;$/
+EFI_IO_WIDTH	src/loader/efi/efiprot.h	/^} EFI_IO_WIDTH;$/
+EFI_IP4	src/loader/efi/efiip.h	/^} EFI_IP4;$/
+EFI_IP4_ADDRESS_PAIR	src/loader/efi/efiip.h	/^} EFI_IP4_ADDRESS_PAIR;$/
+EFI_IP4_COMPLETION_TOKEN	src/loader/efi/efiip.h	/^} EFI_IP4_COMPLETION_TOKEN;$/
+EFI_IP4_CONFIG_DATA	src/loader/efi/efiip.h	/^} EFI_IP4_CONFIG_DATA;$/
+EFI_IP4_FRAGMENT_DATA	src/loader/efi/efiip.h	/^} EFI_IP4_FRAGMENT_DATA;$/
+EFI_IP4_HEADER	src/loader/efi/efiip.h	/^} EFI_IP4_HEADER;$/
+EFI_IP4_ICMP_TYPE	src/loader/efi/efiip.h	/^} EFI_IP4_ICMP_TYPE;$/
+EFI_IP4_MODE_DATA	src/loader/efi/efiip.h	/^} EFI_IP4_MODE_DATA;$/
+EFI_IP4_OVERRIDE_DATA	src/loader/efi/efiip.h	/^} EFI_IP4_OVERRIDE_DATA;$/
+EFI_IP4_PROTOCOL	src/loader/efi/efiip.h	/^#define EFI_IP4_PROTOCOL \\$/
+EFI_IP4_RECEIVE_DATA	src/loader/efi/efiip.h	/^} EFI_IP4_RECEIVE_DATA;$/
+EFI_IP4_ROUTE_TABLE	src/loader/efi/efiip.h	/^} EFI_IP4_ROUTE_TABLE;$/
+EFI_IP4_SERVICE_BINDING_PROTOCOL	src/loader/efi/efiip.h	/^#define EFI_IP4_SERVICE_BINDING_PROTOCOL \\$/
+EFI_IP4_TRANSMIT_DATA	src/loader/efi/efiip.h	/^} EFI_IP4_TRANSMIT_DATA;$/
+EFI_IP4_VARIABLE_DATA	src/loader/efi/efiip.h	/^} EFI_IP4_VARIABLE_DATA;$/
+EFI_IP6_ADDRESS_INFO	src/loader/efi/efiip.h	/^} EFI_IP6_ADDRESS_INFO;$/
+EFI_IP6_CONFIG_DATA	src/loader/efi/efiip.h	/^} EFI_IP6_CONFIG_DATA;$/
+EFI_IP6_ICMP_TYPE	src/loader/efi/efiip.h	/^} EFI_IP6_ICMP_TYPE;$/
+EFI_IP6_NEIGHBOR_CACHE	src/loader/efi/efiip.h	/^} EFI_IP6_NEIGHBOR_CACHE;$/
+EFI_IP6_NEIGHBOR_STATE	src/loader/efi/efiip.h	/^} EFI_IP6_NEIGHBOR_STATE;$/
+EFI_IP6_PROTOCOL	src/loader/efi/efiip.h	/^#define EFI_IP6_PROTOCOL \\$/
+EFI_IP6_ROUTE_TABLE	src/loader/efi/efiip.h	/^} EFI_IP6_ROUTE_TABLE;$/
+EFI_IP6_SERVICE_BINDING_PROTOCOL	src/loader/efi/efiip.h	/^#define EFI_IP6_SERVICE_BINDING_PROTOCOL \\$/
+EFI_IP_ADDRESS	src/loader/efi/efipxebc.h	/^} EFI_IP_ADDRESS;$/
+EFI_IPv4_ADDRESS	src/loader/efi/efidef.h	/^} EFI_IPv4_ADDRESS;$/
+EFI_IPv6_ADDRESS	src/loader/efi/efidef.h	/^} EFI_IPv6_ADDRESS;$/
+EFI_LBA	src/loader/efi/efidef.h	/^typedef UINT64          EFI_LBA;$/
+EFI_LIGHTBLUE	src/loader/efi/eficon.h	/^#define EFI_LIGHTBLUE       (EFI_BLUE | EFI_BRIGHT/
+EFI_LIGHTCYAN	src/loader/efi/eficon.h	/^#define EFI_LIGHTCYAN       (EFI_CYAN | EFI_BRIGHT/
+EFI_LIGHTGRAY	src/loader/efi/eficon.h	/^#define EFI_LIGHTGRAY       (EFI_BLUE | EFI_GREEN /
+EFI_LIGHTGREEN	src/loader/efi/eficon.h	/^#define EFI_LIGHTGREEN      (EFI_GREEN | EFI_BRIGH/
+EFI_LIGHTMAGENTA	src/loader/efi/eficon.h	/^#define EFI_LIGHTMAGENTA    (EFI_MAGENTA | EFI_BRI/
+EFI_LIGHTRED	src/loader/efi/eficon.h	/^#define EFI_LIGHTRED        (EFI_RED | EFI_BRIGHT)/
+EFI_LOADED_IMAGE	src/loader/efi/efiprot.h	/^typedef EFI_LOADED_IMAGE_PROTOCOL EFI_LOADED_IMAGE/
+EFI_LOADED_IMAGE_PROTOCOL	src/loader/efi/efiprot.h	/^} EFI_LOADED_IMAGE_PROTOCOL;$/
+EFI_LOADED_IMAGE_PROTOCOL_GUID	src/loader/efi/efiprot.h	/^#define EFI_LOADED_IMAGE_PROTOCOL_GUID \\$/
+EFI_LOADED_IMAGE_PROTOCOL_REVISION	src/loader/efi/efiprot.h	/^#define EFI_LOADED_IMAGE_PROTOCOL_REVISION  0x1000/
+EFI_LOAD_ERROR	src/loader/efi/efierr.h	/^#define EFI_LOAD_ERROR                  EFIERR(1)$/
+EFI_LOAD_FILE_INTERFACE	src/loader/efi/efiprot.h	/^typedef EFI_LOAD_FILE_PROTOCOL EFI_LOAD_FILE_INTER/
+EFI_LOAD_FILE_PROTOCOL	src/loader/efi/efiprot.h	/^} EFI_LOAD_FILE_PROTOCOL;$/
+EFI_LOAD_FILE_PROTOCOL_GUID	src/loader/efi/efiprot.h	/^#define EFI_LOAD_FILE_PROTOCOL_GUID \\$/
+EFI_LOCATE_SEARCH_TYPE	src/loader/efi/efiapi.h	/^} EFI_LOCATE_SEARCH_TYPE;$/
+EFI_MAC_ADDRESS	src/loader/efi/efidef.h	/^} EFI_MAC_ADDRESS;$/
+EFI_MAGENTA	src/loader/efi/eficon.h	/^#define EFI_MAGENTA         (EFI_BLUE | EFI_RED)$/
+EFI_MANAGED_NETWORK_CONFIG_DATA	src/loader/efi/efidef.h	/^} EFI_MANAGED_NETWORK_CONFIG_DATA;$/
+EFI_MAXIMUM_VARIABLE_SIZE	src/loader/efi/efiapi.h	/^#define EFI_MAXIMUM_VARIABLE_SIZE           1024$/
+EFI_MD5_HASH	src/loader/efi/efiprot.h	/^typedef UINT8 EFI_MD5_HASH[16];$/
+EFI_MEDIA_CHANGED	src/loader/efi/efierr.h	/^#define EFI_MEDIA_CHANGED               EFIERR(13)/
+EFI_MEMORY_DESCRIPTOR	src/loader/efi/efidef.h	/^} EFI_MEMORY_DESCRIPTOR;$/
+EFI_MEMORY_DESCRIPTOR_VERSION	src/loader/efi/efidef.h	/^#define EFI_MEMORY_DESCRIPTOR_VERSION  1$/
+EFI_MEMORY_RP	src/loader/efi/efidef.h	/^#define EFI_MEMORY_RP           0x0000000000002000/
+EFI_MEMORY_RUNTIME	src/loader/efi/efidef.h	/^#define EFI_MEMORY_RUNTIME      0x8000000000000000/
+EFI_MEMORY_TYPE	src/loader/efi/efidef.h	/^} EFI_MEMORY_TYPE;$/
+EFI_MEMORY_UC	src/loader/efi/efidef.h	/^#define EFI_MEMORY_UC           0x0000000000000001/
+EFI_MEMORY_UCE	src/loader/efi/efidef.h	/^#define EFI_MEMORY_UCE          0x0000000000000010/
+EFI_MEMORY_WB	src/loader/efi/efidef.h	/^#define EFI_MEMORY_WB           0x0000000000000008/
+EFI_MEMORY_WC	src/loader/efi/efidef.h	/^#define EFI_MEMORY_WC           0x0000000000000002/
+EFI_MEMORY_WP	src/loader/efi/efidef.h	/^#define EFI_MEMORY_WP           0x0000000000001000/
+EFI_MEMORY_WT	src/loader/efi/efidef.h	/^#define EFI_MEMORY_WT           0x0000000000000004/
+EFI_MEMORY_XP	src/loader/efi/efidef.h	/^#define EFI_MEMORY_XP           0x0000000000004000/
+EFI_NETWORK_INTERFACE_IDENTIFIER_INTERFACE	src/loader/efi/efi_nii.h	/^} EFI_NETWORK_INTERFACE_IDENTIFIER_PROTOCOL, EFI_N/
+EFI_NETWORK_INTERFACE_IDENTIFIER_INTERFACE_REVISION	src/loader/efi/efi_nii.h	/^#define EFI_NETWORK_INTERFACE_IDENTIFIER_INTERFACE/
+EFI_NETWORK_INTERFACE_IDENTIFIER_PROTOCOL_GUID	src/loader/efi/efi_nii.h	/^#define EFI_NETWORK_INTERFACE_IDENTIFIER_PROTOCOL_/
+EFI_NETWORK_INTERFACE_IDENTIFIER_PROTOCOL_REVISION	src/loader/efi/efi_nii.h	/^#define EFI_NETWORK_INTERFACE_IDENTIFIER_PROTOCOL_/
+EFI_NETWORK_INTERFACE_TYPE	src/loader/efi/efi_nii.h	/^} EFI_NETWORK_INTERFACE_TYPE;$/
+EFI_NETWORK_STATISTICS	src/loader/efi/efinet.h	/^} EFI_NETWORK_STATISTICS;$/
+EFI_NETWORK_UNREACHABLE	src/loader/efi/efiudp.h	/^#define EFI_NETWORK_UNREACHABLE  EFIERR(100)$/
+EFI_NOT_FOUND	src/loader/efi/efierr.h	/^#define EFI_NOT_FOUND                   EFIERR(14)/
+EFI_NOT_READY	src/loader/efi/efierr.h	/^#define EFI_NOT_READY                   EFIERR(6)$/
+EFI_NOT_STARTED	src/loader/efi/efierr.h	/^#define EFI_NOT_STARTED                 EFIERR(19)/
+EFI_NO_MAPPING	src/loader/efi/efierr.h	/^#define EFI_NO_MAPPING                  EFIERR(17)/
+EFI_NO_MEDIA	src/loader/efi/efierr.h	/^#define EFI_NO_MEDIA                    EFIERR(12)/
+EFI_NO_RESPONSE	src/loader/efi/efierr.h	/^#define EFI_NO_RESPONSE                 EFIERR(16)/
+EFI_OPEN_PROTOCOL_BY_CHILD_CONTROLLER	src/loader/efi/efiapi.h	/^#define EFI_OPEN_PROTOCOL_BY_CHILD_CONTROLLER 0x00/
+EFI_OPEN_PROTOCOL_BY_DRIVER	src/loader/efi/efiapi.h	/^#define EFI_OPEN_PROTOCOL_BY_DRIVER           0x00/
+EFI_OPEN_PROTOCOL_BY_HANDLE_PROTOCOL	src/loader/efi/efiapi.h	/^#define EFI_OPEN_PROTOCOL_BY_HANDLE_PROTOCOL  0x00/
+EFI_OPEN_PROTOCOL_EXCLUSIVE	src/loader/efi/efiapi.h	/^#define EFI_OPEN_PROTOCOL_EXCLUSIVE           0x00/
+EFI_OPEN_PROTOCOL_GET_PROTOCOL	src/loader/efi/efiapi.h	/^#define EFI_OPEN_PROTOCOL_GET_PROTOCOL        0x00/
+EFI_OPEN_PROTOCOL_INFORMATION_ENTRY	src/loader/efi/efiapi.h	/^} EFI_OPEN_PROTOCOL_INFORMATION_ENTRY;$/
+EFI_OPEN_PROTOCOL_TEST_PROTOCOL	src/loader/efi/efiapi.h	/^#define EFI_OPEN_PROTOCOL_TEST_PROTOCOL       0x00/
+EFI_OPTIONAL_PTR	src/loader/efi/efiapi.h	/^#define EFI_OPTIONAL_PTR            0x00000001$/
+EFI_OS_INDICATIONS_BOOT_TO_FW_UI	src/loader/efi/efidef.h	/^#define EFI_OS_INDICATIONS_BOOT_TO_FW_UI        0x/
+EFI_OS_INDICATIONS_CAPSULE_RESULT_VAR_SUPPORTED	src/loader/efi/efidef.h	/^#define EFI_OS_INDICATIONS_CAPSULE_RESULT_VAR_SUPP/
+EFI_OS_INDICATIONS_FILE_CAPSULE_DELIVERY_SUPPORTED	src/loader/efi/efidef.h	/^#define EFI_OS_INDICATIONS_FILE_CAPSULE_DELIVERY_S/
+EFI_OS_INDICATIONS_FMP_CAPSULE_SUPPORTED	src/loader/efi/efidef.h	/^#define EFI_OS_INDICATIONS_FMP_CAPSULE_SUPPORTED /
+EFI_OS_INDICATIONS_TIMESTAMP_REVOCATION	src/loader/efi/efidef.h	/^#define EFI_OS_INDICATIONS_TIMESTAMP_REVOCATION 0x/
+EFI_OUT_OF_RESOURCES	src/loader/efi/efierr.h	/^#define EFI_OUT_OF_RESOURCES            EFIERR(9)$/
+EFI_PAGE_MASK	src/loader/efi/efidef.h	/^#define EFI_PAGE_MASK   0xFFF$/
+EFI_PAGE_SHIFT	src/loader/efi/efidef.h	/^#define EFI_PAGE_SHIFT  12$/
+EFI_PAGE_SIZE	src/loader/efi/efidef.h	/^#define EFI_PAGE_SIZE   4096$/
+EFI_PARITY_TYPE	src/loader/efi/efiser.h	/^} EFI_PARITY_TYPE;$/
+EFI_PARTITION	src/loader/efi/efipart.h	/^#define EFI_PARTITION   0xef$/
+EFI_PARTITION_ENTRY	src/loader/efi/efigpt.h	/^} EFI_PARTITION_ENTRY;$/
+EFI_PARTITION_HEADER	src/loader/efi/efifs.h	/^} EFI_PARTITION_HEADER;$/
+EFI_PARTITION_LBA	src/loader/efi/efifs.h	/^#define EFI_PARTITION_LBA               1$/
+EFI_PARTITION_REVISION	src/loader/efi/efifs.h	/^#define EFI_PARTITION_REVISION          0x00010001/
+EFI_PARTITION_SIGNATURE	src/loader/efi/efifs.h	/^#define EFI_PARTITION_SIGNATURE         0x50535953/
+EFI_PARTITION_TABLE_HEADER	src/loader/efi/efigpt.h	/^} EFI_PARTITION_TABLE_HEADER;$/
+EFI_PART_BACKUP_REQUIRED	src/loader/efi/efigpt.h	/^#define EFI_PART_BACKUP_REQUIRED        0x00000000/
+EFI_PART_CRITICAL_USER_DATA	src/loader/efi/efigpt.h	/^#define EFI_PART_CRITICAL_USER_DATA     0x00000000/
+EFI_PART_REDUNDANT_PARTITION	src/loader/efi/efigpt.h	/^#define EFI_PART_REDUNDANT_PARTITION    0x00000000/
+EFI_PART_REQUIRED_BY_OS	src/loader/efi/efigpt.h	/^#define EFI_PART_REQUIRED_BY_OS         0x00000000/
+EFI_PART_REQUIRED_TO_FUNCTION	src/loader/efi/efigpt.h	/^#define EFI_PART_REQUIRED_TO_FUNCTION   0x00000000/
+EFI_PART_TYPE_EFI_SYSTEM_PART_GUID	src/loader/efi/efigpt.h	/^#define EFI_PART_TYPE_EFI_SYSTEM_PART_GUID  \\$/
+EFI_PART_TYPE_LEGACY_MBR_GUID	src/loader/efi/efigpt.h	/^#define EFI_PART_TYPE_LEGACY_MBR_GUID   \\$/
+EFI_PART_TYPE_UNUSED_GUID	src/loader/efi/efigpt.h	/^#define EFI_PART_TYPE_UNUSED_GUID   \\$/
+EFI_PART_USED_BY_EFI	src/loader/efi/efigpt.h	/^#define EFI_PART_USED_BY_EFI            0x00000000/
+EFI_PART_USED_BY_OS	src/loader/efi/efigpt.h	/^#define EFI_PART_USED_BY_OS             0x00000000/
+EFI_PART_USER_DATA	src/loader/efi/efigpt.h	/^#define EFI_PART_USER_DATA              0x00000000/
+EFI_PCI_ADDRESS	src/loader/efi/efiprot.h	/^#define EFI_PCI_ADDRESS(_bus,_dev,_func) \\$/
+EFI_PCI_ADDRESS_UNION	src/loader/efi/efilib.h	/^} EFI_PCI_ADDRESS_UNION;$/
+EFI_PCI_ATTRIBUTE_BUS_MASTER	src/loader/efi/efipciio.h	/^#define EFI_PCI_ATTRIBUTE_BUS_MASTER              /
+EFI_PCI_ATTRIBUTE_DUAL_ADDRESS_CYCLE	src/loader/efi/efipciio.h	/^#define EFI_PCI_ATTRIBUTE_DUAL_ADDRESS_CYCLE      /
+EFI_PCI_ATTRIBUTE_EMBEDDED_DEVICE	src/loader/efi/efipciio.h	/^#define EFI_PCI_ATTRIBUTE_EMBEDDED_DEVICE         /
+EFI_PCI_ATTRIBUTE_EMBEDDED_ROM	src/loader/efi/efipciio.h	/^#define EFI_PCI_ATTRIBUTE_EMBEDDED_ROM            /
+EFI_PCI_ATTRIBUTE_IDE_PRIMARY_IO	src/loader/efi/efipciio.h	/^#define EFI_PCI_ATTRIBUTE_IDE_PRIMARY_IO          /
+EFI_PCI_ATTRIBUTE_IDE_SECONDARY_IO	src/loader/efi/efipciio.h	/^#define EFI_PCI_ATTRIBUTE_IDE_SECONDARY_IO        /
+EFI_PCI_ATTRIBUTE_INVALID_FOR_ALLOCATE_BUFFER	src/loader/efi/efipciio.h	/^#define EFI_PCI_ATTRIBUTE_INVALID_FOR_ALLOCATE_BUF/
+EFI_PCI_ATTRIBUTE_IO	src/loader/efi/efipciio.h	/^#define EFI_PCI_ATTRIBUTE_IO                      /
+EFI_PCI_ATTRIBUTE_ISA_IO	src/loader/efi/efipciio.h	/^#define EFI_PCI_ATTRIBUTE_ISA_IO                  /
+EFI_PCI_ATTRIBUTE_ISA_IO_16	src/loader/efi/efipciio.h	/^#define EFI_PCI_ATTRIBUTE_ISA_IO_16               /
+EFI_PCI_ATTRIBUTE_ISA_MOTHERBOARD_IO	src/loader/efi/efipciio.h	/^#define EFI_PCI_ATTRIBUTE_ISA_MOTHERBOARD_IO      /
+EFI_PCI_ATTRIBUTE_MEMORY	src/loader/efi/efipciio.h	/^#define EFI_PCI_ATTRIBUTE_MEMORY                  /
+EFI_PCI_ATTRIBUTE_MEMORY_CACHED	src/loader/efi/efipciio.h	/^#define EFI_PCI_ATTRIBUTE_MEMORY_CACHED           /
+EFI_PCI_ATTRIBUTE_MEMORY_DISABLE	src/loader/efi/efipciio.h	/^#define EFI_PCI_ATTRIBUTE_MEMORY_DISABLE          /
+EFI_PCI_ATTRIBUTE_MEMORY_WRITE_COMBINE	src/loader/efi/efipciio.h	/^#define EFI_PCI_ATTRIBUTE_MEMORY_WRITE_COMBINE    /
+EFI_PCI_ATTRIBUTE_VALID_FOR_ALLOCATE_BUFFER	src/loader/efi/efipciio.h	/^#define EFI_PCI_ATTRIBUTE_VALID_FOR_ALLOCATE_BUFFE/
+EFI_PCI_ATTRIBUTE_VGA_IO	src/loader/efi/efipciio.h	/^#define EFI_PCI_ATTRIBUTE_VGA_IO                  /
+EFI_PCI_ATTRIBUTE_VGA_IO_16	src/loader/efi/efipciio.h	/^#define EFI_PCI_ATTRIBUTE_VGA_IO_16               /
+EFI_PCI_ATTRIBUTE_VGA_MEMORY	src/loader/efi/efipciio.h	/^#define EFI_PCI_ATTRIBUTE_VGA_MEMORY              /
+EFI_PCI_ATTRIBUTE_VGA_PALETTE_IO	src/loader/efi/efipciio.h	/^#define EFI_PCI_ATTRIBUTE_VGA_PALETTE_IO          /
+EFI_PCI_ATTRIBUTE_VGA_PALETTE_IO_16	src/loader/efi/efipciio.h	/^#define EFI_PCI_ATTRIBUTE_VGA_PALETTE_IO_16       /
+EFI_PCI_EXPANSION_ROM_HEADER	src/loader/efi/pci22.h	/^} EFI_PCI_EXPANSION_ROM_HEADER;$/
+EFI_PCI_EXPANSION_ROM_HEADER_EFISIGNATURE	src/loader/efi/pci22.h	/^#define EFI_PCI_EXPANSION_ROM_HEADER_EFISIGNATURE /
+EFI_PCI_IO	src/loader/efi/efipciio.h	/^typedef EFI_PCI_IO_PROTOCOL EFI_PCI_IO;$/
+EFI_PCI_IO_ATTRIBUTE_BUS_MASTER	src/loader/efi/efipciio.h	/^#define EFI_PCI_IO_ATTRIBUTE_BUS_MASTER           /
+EFI_PCI_IO_ATTRIBUTE_DUAL_ADDRESS_CYCLE	src/loader/efi/efipciio.h	/^#define EFI_PCI_IO_ATTRIBUTE_DUAL_ADDRESS_CYCLE   /
+EFI_PCI_IO_ATTRIBUTE_EMBEDDED_DEVICE	src/loader/efi/efipciio.h	/^#define EFI_PCI_IO_ATTRIBUTE_EMBEDDED_DEVICE      /
+EFI_PCI_IO_ATTRIBUTE_EMBEDDED_ROM	src/loader/efi/efipciio.h	/^#define EFI_PCI_IO_ATTRIBUTE_EMBEDDED_ROM         /
+EFI_PCI_IO_ATTRIBUTE_IDE_PRIMARY_IO	src/loader/efi/efipciio.h	/^#define EFI_PCI_IO_ATTRIBUTE_IDE_PRIMARY_IO       /
+EFI_PCI_IO_ATTRIBUTE_IDE_SECONDARY_IO	src/loader/efi/efipciio.h	/^#define EFI_PCI_IO_ATTRIBUTE_IDE_SECONDARY_IO     /
+EFI_PCI_IO_ATTRIBUTE_IO	src/loader/efi/efipciio.h	/^#define EFI_PCI_IO_ATTRIBUTE_IO                   /
+EFI_PCI_IO_ATTRIBUTE_ISA_IO	src/loader/efi/efipciio.h	/^#define EFI_PCI_IO_ATTRIBUTE_ISA_IO               /
+EFI_PCI_IO_ATTRIBUTE_ISA_IO_16	src/loader/efi/efipciio.h	/^#define EFI_PCI_IO_ATTRIBUTE_ISA_IO_16            /
+EFI_PCI_IO_ATTRIBUTE_ISA_MOTHERBOARD_IO	src/loader/efi/efipciio.h	/^#define EFI_PCI_IO_ATTRIBUTE_ISA_MOTHERBOARD_IO   /
+EFI_PCI_IO_ATTRIBUTE_MEMORY	src/loader/efi/efipciio.h	/^#define EFI_PCI_IO_ATTRIBUTE_MEMORY               /
+EFI_PCI_IO_ATTRIBUTE_MEMORY_CACHED	src/loader/efi/efipciio.h	/^#define EFI_PCI_IO_ATTRIBUTE_MEMORY_CACHED        /
+EFI_PCI_IO_ATTRIBUTE_MEMORY_DISABLE	src/loader/efi/efipciio.h	/^#define EFI_PCI_IO_ATTRIBUTE_MEMORY_DISABLE       /
+EFI_PCI_IO_ATTRIBUTE_MEMORY_WRITE_COMBINE	src/loader/efi/efipciio.h	/^#define EFI_PCI_IO_ATTRIBUTE_MEMORY_WRITE_COMBINE /
+EFI_PCI_IO_ATTRIBUTE_VGA_IO	src/loader/efi/efipciio.h	/^#define EFI_PCI_IO_ATTRIBUTE_VGA_IO               /
+EFI_PCI_IO_ATTRIBUTE_VGA_IO_16	src/loader/efi/efipciio.h	/^#define EFI_PCI_IO_ATTRIBUTE_VGA_IO_16            /
+EFI_PCI_IO_ATTRIBUTE_VGA_MEMORY	src/loader/efi/efipciio.h	/^#define EFI_PCI_IO_ATTRIBUTE_VGA_MEMORY           /
+EFI_PCI_IO_ATTRIBUTE_VGA_PALETTE_IO	src/loader/efi/efipciio.h	/^#define EFI_PCI_IO_ATTRIBUTE_VGA_PALETTE_IO       /
+EFI_PCI_IO_ATTRIBUTE_VGA_PALETTE_IO_16	src/loader/efi/efipciio.h	/^#define EFI_PCI_IO_ATTRIBUTE_VGA_PALETTE_IO_16    /
+EFI_PCI_IO_PASS_THROUGH_BAR	src/loader/efi/efipciio.h	/^#define EFI_PCI_IO_PASS_THROUGH_BAR 0xff$/
+EFI_PCI_IO_PROTOCOL	src/loader/efi/efipciio.h	/^} EFI_PCI_IO_PROTOCOL;$/
+EFI_PCI_IO_PROTOCOL_ACCESS	src/loader/efi/efipciio.h	/^} EFI_PCI_IO_PROTOCOL_ACCESS;$/
+EFI_PCI_IO_PROTOCOL_ATTRIBUTE_OPERATION	src/loader/efi/efipciio.h	/^} EFI_PCI_IO_PROTOCOL_ATTRIBUTE_OPERATION;$/
+EFI_PCI_IO_PROTOCOL_CONFIG_ACCESS	src/loader/efi/efipciio.h	/^} EFI_PCI_IO_PROTOCOL_CONFIG_ACCESS;$/
+EFI_PCI_IO_PROTOCOL_GUID	src/loader/efi/efipciio.h	/^#define EFI_PCI_IO_PROTOCOL_GUID \\$/
+EFI_PCI_IO_PROTOCOL_OPERATION	src/loader/efi/efipciio.h	/^} EFI_PCI_IO_PROTOCOL_OPERATION;$/
+EFI_PCI_ROOT_BRIDGE_IO_PROTOCOL	src/loader/efi/efipciio.h	/^} EFI_PCI_ROOT_BRIDGE_IO_PROTOCOL;$/
+EFI_PCI_ROOT_BRIDGE_IO_PROTOCOL_ACCESS	src/loader/efi/efipciio.h	/^} EFI_PCI_ROOT_BRIDGE_IO_PROTOCOL_ACCESS;$/
+EFI_PCI_ROOT_BRIDGE_IO_PROTOCOL_GUID	src/loader/efi/efipciio.h	/^#define EFI_PCI_ROOT_BRIDGE_IO_PROTOCOL_GUID \\$/
+EFI_PCI_ROOT_BRIDGE_IO_PROTOCOL_OPERATION	src/loader/efi/efipciio.h	/^} EFI_PCI_ROOT_BRIDGE_IO_PROTOCOL_OPERATION;$/
+EFI_PCI_ROOT_BRIDGE_IO_PROTOCOL_PCI_ADDRESS	src/loader/efi/efipciio.h	/^} EFI_PCI_ROOT_BRIDGE_IO_PROTOCOL_PCI_ADDRESS;$/
+EFI_PCI_ROOT_BRIDGE_IO_PROTOCOL_WIDTH	src/loader/efi/efipciio.h	/^} EFI_PCI_IO_PROTOCOL_WIDTH, EFI_PCI_ROOT_BRIDGE_I/
+EFI_PC_ANSI_GUID	src/loader/efi/efidevp.h	/^#define EFI_PC_ANSI_GUID \\$/
+EFI_PHYSICAL_ADDRESS	src/loader/efi/efidef.h	/^typedef UINT64          EFI_PHYSICAL_ADDRESS;$/
+EFI_PIXEL_BITMASK	src/loader/efi/efiprot.h	/^} EFI_PIXEL_BITMASK;$/
+EFI_PLATFORM_DRIVER_OVERRIDE_PROTOCOL	src/loader/efi/efiprot.h	/^} EFI_PLATFORM_DRIVER_OVERRIDE_PROTOCOL;$/
+EFI_PLATFORM_DRIVER_OVERRIDE_PROTOCOL_GUID	src/loader/efi/efiprot.h	/^#define EFI_PLATFORM_DRIVER_OVERRIDE_PROTOCOL_GUID/
+EFI_PORT_UNREACHABLE	src/loader/efi/efiudp.h	/^#define EFI_PORT_UNREACHABLE     EFIERR(103)$/
+EFI_PROTOCOL_ERROR	src/loader/efi/efierr.h	/^#define EFI_PROTOCOL_ERROR              EFIERR(24)/
+EFI_PROTOCOL_UNREACHABLE	src/loader/efi/efiudp.h	/^#define EFI_PROTOCOL_UNREACHABLE EFIERR(102)$/
+EFI_PTAB_HEADER_ID	src/loader/efi/efigpt.h	/^#define EFI_PTAB_HEADER_ID  "EFI PART"$/
+EFI_PXE_BASE_CODE	src/loader/efi/efipxebc.h	/^typedef struct _EFI_PXE_BASE_CODE_PROTOCOL EFI_PXE/
+EFI_PXE_BASE_CODE_ARP_ENTRY	src/loader/efi/efipxebc.h	/^} EFI_PXE_BASE_CODE_ARP_ENTRY;$/
+EFI_PXE_BASE_CODE_CALLBACK	src/loader/efi/efipxebc.h	/^typedef EFI_PXE_BASE_CODE_CALLBACK_PROTOCOL EFI_PX/
+EFI_PXE_BASE_CODE_CALLBACK_INTERFACE_REVISION	src/loader/efi/efipxebc.h	/^#define EFI_PXE_BASE_CODE_CALLBACK_INTERFACE_REVIS/
+EFI_PXE_BASE_CODE_CALLBACK_PROTOCOL	src/loader/efi/efipxebc.h	/^} EFI_PXE_BASE_CODE_CALLBACK_PROTOCOL;$/
+EFI_PXE_BASE_CODE_CALLBACK_PROTOCOL_GUID	src/loader/efi/efipxebc.h	/^#define EFI_PXE_BASE_CODE_CALLBACK_PROTOCOL_GUID /
+EFI_PXE_BASE_CODE_CALLBACK_PROTOCOL_REVISION	src/loader/efi/efipxebc.h	/^#define EFI_PXE_BASE_CODE_CALLBACK_PROTOCOL_REVISI/
+EFI_PXE_BASE_CODE_CALLBACK_STATUS	src/loader/efi/efipxebc.h	/^} EFI_PXE_BASE_CODE_CALLBACK_STATUS;$/
+EFI_PXE_BASE_CODE_DHCPV4_PACKET	src/loader/efi/efipxebc.h	/^} EFI_PXE_BASE_CODE_DHCPV4_PACKET;$/
+EFI_PXE_BASE_CODE_DHCPV6_PACKET	src/loader/efi/efipxebc.h	/^} EFI_PXE_BASE_CODE_DHCPV6_PACKET;$/
+EFI_PXE_BASE_CODE_DISCOVER_INFO	src/loader/efi/efipxebc.h	/^} EFI_PXE_BASE_CODE_DISCOVER_INFO;$/
+EFI_PXE_BASE_CODE_FUNCTION	src/loader/efi/efipxebc.h	/^} EFI_PXE_BASE_CODE_FUNCTION;$/
+EFI_PXE_BASE_CODE_ICMP_ERROR	src/loader/efi/efipxebc.h	/^} EFI_PXE_BASE_CODE_ICMP_ERROR;$/
+EFI_PXE_BASE_CODE_INTERFACE_REVISION	src/loader/efi/efipxebc.h	/^#define EFI_PXE_BASE_CODE_INTERFACE_REVISION EFI_P/
+EFI_PXE_BASE_CODE_IP_FILTER	src/loader/efi/efipxebc.h	/^} EFI_PXE_BASE_CODE_IP_FILTER;$/
+EFI_PXE_BASE_CODE_IP_FILTER_BROADCAST	src/loader/efi/efipxebc.h	/^#define EFI_PXE_BASE_CODE_IP_FILTER_BROADCAST     /
+EFI_PXE_BASE_CODE_IP_FILTER_PROMISCUOUS	src/loader/efi/efipxebc.h	/^#define EFI_PXE_BASE_CODE_IP_FILTER_PROMISCUOUS   /
+EFI_PXE_BASE_CODE_IP_FILTER_PROMISCUOUS_MULTICAST	src/loader/efi/efipxebc.h	/^#define EFI_PXE_BASE_CODE_IP_FILTER_PROMISCUOUS_MU/
+EFI_PXE_BASE_CODE_IP_FILTER_STATION_IP	src/loader/efi/efipxebc.h	/^#define EFI_PXE_BASE_CODE_IP_FILTER_STATION_IP    /
+EFI_PXE_BASE_CODE_MAX_ARP_ENTRIES	src/loader/efi/efipxebc.h	/^#define EFI_PXE_BASE_CODE_MAX_ARP_ENTRIES       8$/
+EFI_PXE_BASE_CODE_MAX_IPCNT	src/loader/efi/efipxebc.h	/^#define EFI_PXE_BASE_CODE_MAX_IPCNT             8$/
+EFI_PXE_BASE_CODE_MAX_ROUTE_ENTRIES	src/loader/efi/efipxebc.h	/^#define EFI_PXE_BASE_CODE_MAX_ROUTE_ENTRIES     8$/
+EFI_PXE_BASE_CODE_MODE	src/loader/efi/efipxebc.h	/^} EFI_PXE_BASE_CODE_MODE;$/
+EFI_PXE_BASE_CODE_MTFTP_INFO	src/loader/efi/efipxebc.h	/^} EFI_PXE_BASE_CODE_MTFTP_INFO;$/
+EFI_PXE_BASE_CODE_PACKET	src/loader/efi/efipxebc.h	/^} EFI_PXE_BASE_CODE_PACKET;$/
+EFI_PXE_BASE_CODE_PROTOCOL	src/loader/efi/efipxebc.h	/^} EFI_PXE_BASE_CODE_PROTOCOL;$/
+EFI_PXE_BASE_CODE_PROTOCOL_GUID	src/loader/efi/efipxebc.h	/^#define EFI_PXE_BASE_CODE_PROTOCOL_GUID \\$/
+EFI_PXE_BASE_CODE_PROTOCOL_REVISION	src/loader/efi/efipxebc.h	/^#define EFI_PXE_BASE_CODE_PROTOCOL_REVISION  0x000/
+EFI_PXE_BASE_CODE_ROUTE_ENTRY	src/loader/efi/efipxebc.h	/^} EFI_PXE_BASE_CODE_ROUTE_ENTRY;$/
+EFI_PXE_BASE_CODE_TFTP_ERROR	src/loader/efi/efipxebc.h	/^} EFI_PXE_BASE_CODE_TFTP_ERROR;$/
+EFI_PXE_BASE_CODE_UDP_OPFLAGS_ANY_DEST_IP	src/loader/efi/efipxebc.h	/^#define EFI_PXE_BASE_CODE_UDP_OPFLAGS_ANY_DEST_IP /
+EFI_PXE_BASE_CODE_UDP_OPFLAGS_ANY_DEST_PORT	src/loader/efi/efipxebc.h	/^#define EFI_PXE_BASE_CODE_UDP_OPFLAGS_ANY_DEST_POR/
+EFI_PXE_BASE_CODE_UDP_OPFLAGS_ANY_SRC_IP	src/loader/efi/efipxebc.h	/^#define EFI_PXE_BASE_CODE_UDP_OPFLAGS_ANY_SRC_IP  /
+EFI_PXE_BASE_CODE_UDP_OPFLAGS_ANY_SRC_PORT	src/loader/efi/efipxebc.h	/^#define EFI_PXE_BASE_CODE_UDP_OPFLAGS_ANY_SRC_PORT/
+EFI_PXE_BASE_CODE_UDP_OPFLAGS_MAY_FRAGMENT	src/loader/efi/efipxebc.h	/^#define EFI_PXE_BASE_CODE_UDP_OPFLAGS_MAY_FRAGMENT/
+EFI_PXE_BASE_CODE_UDP_OPFLAGS_USE_FILTER	src/loader/efi/efipxebc.h	/^#define EFI_PXE_BASE_CODE_UDP_OPFLAGS_USE_FILTER  /
+EFI_PXE_BASE_CODE_UDP_PORT	src/loader/efi/efipxebc.h	/^typedef UINT16 EFI_PXE_BASE_CODE_UDP_PORT;$/
+EFI_RED	src/loader/efi/eficon.h	/^#define EFI_RED     0x04$/
+EFI_RESET_TYPE	src/loader/efi/efiapi.h	/^} EFI_RESET_TYPE;$/
+EFI_RNG_ALGORITHM	src/loader/efi/efiprot.h	/^typedef EFI_GUID EFI_RNG_ALGORITHM;$/
+EFI_RNG_ALGORITHM_RAW	src/loader/efi/efiprot.h	/^#define EFI_RNG_ALGORITHM_RAW                     /
+EFI_RNG_ALGORITHM_SP800_90_CTR_256_GUID	src/loader/efi/efiprot.h	/^#define EFI_RNG_ALGORITHM_SP800_90_CTR_256_GUID   /
+EFI_RNG_ALGORITHM_SP800_90_HASH_256_GUID	src/loader/efi/efiprot.h	/^#define EFI_RNG_ALGORITHM_SP800_90_HASH_256_GUID  /
+EFI_RNG_ALGORITHM_SP800_90_HMAC_256_GUID	src/loader/efi/efiprot.h	/^#define EFI_RNG_ALGORITHM_SP800_90_HMAC_256_GUID  /
+EFI_RNG_ALGORITHM_X9_31_3DES_GUID	src/loader/efi/efiprot.h	/^#define EFI_RNG_ALGORITHM_X9_31_3DES_GUID         /
+EFI_RNG_ALGORITHM_X9_31_AES_GUID	src/loader/efi/efiprot.h	/^#define EFI_RNG_ALGORITHM_X9_31_AES_GUID          /
+EFI_RNG_PROTOCOL	src/loader/efi/efiprot.h	/^} EFI_RNG_PROTOCOL;$/
+EFI_RNG_PROTOCOL_GUID	src/loader/efi/efiprot.h	/^#define EFI_RNG_PROTOCOL_GUID                     /
+EFI_ROOT_BRIDGE_LIST	src/loader/efi/pci22.h	/^#define EFI_ROOT_BRIDGE_LIST    'eprb'$/
+EFI_RUNTIME_SERVICES	src/loader/efi/efiapi.h	/^} EFI_RUNTIME_SERVICES;$/
+EFI_RUNTIME_SERVICES_REVISION	src/loader/efi/efiapi.h	/^#define EFI_RUNTIME_SERVICES_REVISION   (EFI_SPECI/
+EFI_RUNTIME_SERVICES_SIGNATURE	src/loader/efi/efiapi.h	/^#define EFI_RUNTIME_SERVICES_SIGNATURE  0x56524553/
+EFI_SECURITY_VIOLATION	src/loader/efi/efierr.h	/^#define EFI_SECURITY_VIOLATION          EFIERR(26)/
+EFI_SERIAL_CARRIER_DETECT	src/loader/efi/efiser.h	/^#define EFI_SERIAL_CARRIER_DETECT                 /
+EFI_SERIAL_CLEAR_TO_SEND	src/loader/efi/efiser.h	/^#define EFI_SERIAL_CLEAR_TO_SEND                  /
+EFI_SERIAL_DATA_SET_READY	src/loader/efi/efiser.h	/^#define EFI_SERIAL_DATA_SET_READY                 /
+EFI_SERIAL_DATA_TERMINAL_READY	src/loader/efi/efiser.h	/^#define EFI_SERIAL_DATA_TERMINAL_READY            /
+EFI_SERIAL_HARDWARE_FLOW_CONTROL_ENABLE	src/loader/efi/efiser.h	/^#define EFI_SERIAL_HARDWARE_FLOW_CONTROL_ENABLE   /
+EFI_SERIAL_HARDWARE_LOOPBACK_ENABLE	src/loader/efi/efiser.h	/^#define EFI_SERIAL_HARDWARE_LOOPBACK_ENABLE       /
+EFI_SERIAL_INPUT_BUFFER_EMPTY	src/loader/efi/efiser.h	/^#define EFI_SERIAL_INPUT_BUFFER_EMPTY             /
+EFI_SERIAL_IO_PROTOCOL	src/loader/efi/efiser.h	/^} EFI_SERIAL_IO_PROTOCOL;$/
+EFI_SERIAL_IO_PROTOCOL_GUID	src/loader/efi/efiser.h	/^#define EFI_SERIAL_IO_PROTOCOL_GUID \\$/
+EFI_SERIAL_OUTPUT_BUFFER_EMPTY	src/loader/efi/efiser.h	/^#define EFI_SERIAL_OUTPUT_BUFFER_EMPTY            /
+EFI_SERIAL_REQUEST_TO_SEND	src/loader/efi/efiser.h	/^#define EFI_SERIAL_REQUEST_TO_SEND                /
+EFI_SERIAL_RING_INDICATE	src/loader/efi/efiser.h	/^#define EFI_SERIAL_RING_INDICATE                  /
+EFI_SERIAL_SOFTWARE_LOOPBACK_ENABLE	src/loader/efi/efiser.h	/^#define EFI_SERIAL_SOFTWARE_LOOPBACK_ENABLE       /
+EFI_SERVICE_BINDING	src/loader/efi/efiprot.h	/^} EFI_SERVICE_BINDING;$/
+EFI_SHA1_HASH	src/loader/efi/efiprot.h	/^typedef UINT8 EFI_SHA1_HASH[20];$/
+EFI_SHA224_HASH	src/loader/efi/efiprot.h	/^typedef UINT8 EFI_SHA224_HASH[28];$/
+EFI_SHA256_HASH	src/loader/efi/efiprot.h	/^typedef UINT8 EFI_SHA256_HASH[32];$/
+EFI_SHA384_HASH	src/loader/efi/efiprot.h	/^typedef UINT8 EFI_SHA384_HASH[48];$/
+EFI_SHA512_HASH	src/loader/efi/efiprot.h	/^typedef UINT8 EFI_SHA512_HASH[64];$/
+EFI_SHELL_ARG_INFO	src/loader/efi/efishellintf.h	/^} EFI_SHELL_ARG_INFO;$/
+EFI_SHELL_ARG_INFO_TYPES	src/loader/efi/efishellintf.h	/^} EFI_SHELL_ARG_INFO_TYPES;$/
+EFI_SHELL_INTERFACE	src/loader/efi/efishellintf.h	/^} EFI_SHELL_INTERFACE;$/
+EFI_SIGNATURE_16	src/loader/efi/aarch64/efibind.h	/^#define EFI_SIGNATURE_16(A,B)             ((A) | (/
+EFI_SIGNATURE_32	src/loader/efi/aarch64/efibind.h	/^#define EFI_SIGNATURE_32(A,B,C,D)         (EFI_SIG/
+EFI_SIGNATURE_64	src/loader/efi/aarch64/efibind.h	/^#define EFI_SIGNATURE_64(A,B,C,D,E,F,G,H) (EFI_SIG/
+EFI_SIMPLE_FILE_SYSTEM_PROTOCOL	src/loader/efi/efiprot.h	/^} EFI_SIMPLE_FILE_SYSTEM_PROTOCOL;$/
+EFI_SIMPLE_FILE_SYSTEM_PROTOCOL_GUID	src/loader/efi/efiprot.h	/^#define EFI_SIMPLE_FILE_SYSTEM_PROTOCOL_GUID \\$/
+EFI_SIMPLE_FILE_SYSTEM_PROTOCOL_REVISION	src/loader/efi/efiprot.h	/^#define EFI_SIMPLE_FILE_SYSTEM_PROTOCOL_REVISION  /
+EFI_SIMPLE_NETWORK	src/loader/efi/efinet.h	/^typedef EFI_SIMPLE_NETWORK_PROTOCOL EFI_SIMPLE_NET/
+EFI_SIMPLE_NETWORK_COMMAND_INTERRUPT	src/loader/efi/efinet.h	/^#define EFI_SIMPLE_NETWORK_COMMAND_INTERRUPT      /
+EFI_SIMPLE_NETWORK_INTERFACE_REVISION	src/loader/efi/efinet.h	/^#define EFI_SIMPLE_NETWORK_INTERFACE_REVISION EFI_/
+EFI_SIMPLE_NETWORK_MODE	src/loader/efi/efinet.h	/^} EFI_SIMPLE_NETWORK_MODE;$/
+EFI_SIMPLE_NETWORK_PROTOCOL	src/loader/efi/efinet.h	/^} EFI_SIMPLE_NETWORK_PROTOCOL;$/
+EFI_SIMPLE_NETWORK_PROTOCOL_GUID	src/loader/efi/efinet.h	/^#define EFI_SIMPLE_NETWORK_PROTOCOL_GUID \\$/
+EFI_SIMPLE_NETWORK_PROTOCOL_REVISION	src/loader/efi/efinet.h	/^#define EFI_SIMPLE_NETWORK_PROTOCOL_REVISION  0x00/
+EFI_SIMPLE_NETWORK_RECEIVE_BROADCAST	src/loader/efi/efinet.h	/^#define EFI_SIMPLE_NETWORK_RECEIVE_BROADCAST      /
+EFI_SIMPLE_NETWORK_RECEIVE_INTERRUPT	src/loader/efi/efinet.h	/^#define EFI_SIMPLE_NETWORK_RECEIVE_INTERRUPT      /
+EFI_SIMPLE_NETWORK_RECEIVE_MULTICAST	src/loader/efi/efinet.h	/^#define EFI_SIMPLE_NETWORK_RECEIVE_MULTICAST      /
+EFI_SIMPLE_NETWORK_RECEIVE_PROMISCUOUS	src/loader/efi/efinet.h	/^#define EFI_SIMPLE_NETWORK_RECEIVE_PROMISCUOUS    /
+EFI_SIMPLE_NETWORK_RECEIVE_PROMISCUOUS_MULTICAST	src/loader/efi/efinet.h	/^#define EFI_SIMPLE_NETWORK_RECEIVE_PROMISCUOUS_MUL/
+EFI_SIMPLE_NETWORK_RECEIVE_UNICAST	src/loader/efi/efinet.h	/^#define EFI_SIMPLE_NETWORK_RECEIVE_UNICAST        /
+EFI_SIMPLE_NETWORK_SOFTWARE_INTERRUPT	src/loader/efi/efinet.h	/^#define EFI_SIMPLE_NETWORK_SOFTWARE_INTERRUPT     /
+EFI_SIMPLE_NETWORK_STATE	src/loader/efi/efinet.h	/^} EFI_SIMPLE_NETWORK_STATE;$/
+EFI_SIMPLE_NETWORK_TRANSMIT_INTERRUPT	src/loader/efi/efinet.h	/^#define EFI_SIMPLE_NETWORK_TRANSMIT_INTERRUPT     /
+EFI_SIMPLE_POINTER_MODE	src/loader/efi/efipoint.h	/^} EFI_SIMPLE_POINTER_MODE;$/
+EFI_SIMPLE_POINTER_PROTOCOL	src/loader/efi/efipoint.h	/^} EFI_SIMPLE_POINTER_PROTOCOL;$/
+EFI_SIMPLE_POINTER_PROTOCOL_GUID	src/loader/efi/efipoint.h	/^#define EFI_SIMPLE_POINTER_PROTOCOL_GUID \\$/
+EFI_SIMPLE_POINTER_STATE	src/loader/efi/efipoint.h	/^} EFI_SIMPLE_POINTER_STATE;$/
+EFI_SIMPLE_TEXT_OUTPUT_PROTOCOL_GUID	src/loader/efi/eficon.h	/^#define EFI_SIMPLE_TEXT_OUTPUT_PROTOCOL_GUID \\$/
+EFI_SIMPLE_TEXT_OUT_PROTOCOL	src/loader/efi/eficon.h	/^} SIMPLE_TEXT_OUTPUT_INTERFACE, EFI_SIMPLE_TEXT_OU/
+EFI_SIZE_TO_PAGES	src/loader/efi/efidef.h	/^#define EFI_SIZE_TO_PAGES(a)  \\$/
+EFI_SPECIFICATION_MAJOR_REVISION	src/loader/efi/efiapi.h	/^#define EFI_SPECIFICATION_MAJOR_REVISION 1$/
+EFI_SPECIFICATION_MINOR_REVISION	src/loader/efi/efiapi.h	/^#define EFI_SPECIFICATION_MINOR_REVISION 02$/
+EFI_STATUS	src/loader/efi/efidef.h	/^typedef UINTN           EFI_STATUS;$/
+EFI_STOP_BITS_TYPE	src/loader/efi/efiser.h	/^} EFI_STOP_BITS_TYPE;$/
+EFI_SUCCESS	src/loader/efi/efierr.h	/^#define EFI_SUCCESS                             0$/
+EFI_SYSTEM_CONTEXT	src/loader/efi/efidebug.h	/^} EFI_SYSTEM_CONTEXT;$/
+EFI_SYSTEM_CONTEXT_ARM	src/loader/efi/efidebug.h	/^} EFI_SYSTEM_CONTEXT_ARM;$/
+EFI_SYSTEM_CONTEXT_EBC	src/loader/efi/efidebug.h	/^} EFI_SYSTEM_CONTEXT_EBC;$/
+EFI_SYSTEM_CONTEXT_IA32	src/loader/efi/efidebug.h	/^} EFI_SYSTEM_CONTEXT_IA32;$/
+EFI_SYSTEM_CONTEXT_IPF	src/loader/efi/efidebug.h	/^} EFI_SYSTEM_CONTEXT_IPF;$/
+EFI_SYSTEM_CONTEXT_X64	src/loader/efi/efidebug.h	/^} EFI_SYSTEM_CONTEXT_X64;$/
+EFI_SYSTEM_TABLE	src/loader/efi/efiapi.h	/^} EFI_SYSTEM_TABLE;$/
+EFI_SYSTEM_TABLE_POINTER	src/loader/efi/efidebug.h	/^} EFI_SYSTEM_TABLE_POINTER;$/
+EFI_SYSTEM_TABLE_REVISION	src/loader/efi/efiapi.h	/^#define EFI_SYSTEM_TABLE_REVISION      (EFI_SPECIF/
+EFI_SYSTEM_TABLE_SIGNATURE	src/loader/efi/efiapi.h	/^#define EFI_SYSTEM_TABLE_SIGNATURE      0x54535953/
+EFI_TABLE_HEADER	src/loader/efi/efiapi.h	/^} EFI_TABLE_HEADER;$/
+EFI_TCP4	src/loader/efi/efitcp.h	/^} EFI_TCP4;$/
+EFI_TCP4_ACCESS_POINT	src/loader/efi/efitcp.h	/^} EFI_TCP4_ACCESS_POINT;$/
+EFI_TCP4_CLOSE_TOKEN	src/loader/efi/efitcp.h	/^} EFI_TCP4_CLOSE_TOKEN;$/
+EFI_TCP4_COMPLETION_TOKEN	src/loader/efi/efitcp.h	/^} EFI_TCP4_COMPLETION_TOKEN;$/
+EFI_TCP4_CONFIG_DATA	src/loader/efi/efitcp.h	/^} EFI_TCP4_CONFIG_DATA;$/
+EFI_TCP4_CONNECTION_STATE	src/loader/efi/efitcp.h	/^} EFI_TCP4_CONNECTION_STATE;$/
+EFI_TCP4_CONNECTION_TOKEN	src/loader/efi/efitcp.h	/^} EFI_TCP4_CONNECTION_TOKEN;$/
+EFI_TCP4_FRAGMENT_DATA	src/loader/efi/efitcp.h	/^} EFI_TCP4_FRAGMENT_DATA;$/
+EFI_TCP4_IO_TOKEN	src/loader/efi/efitcp.h	/^} EFI_TCP4_IO_TOKEN;$/
+EFI_TCP4_LISTEN_TOKEN	src/loader/efi/efitcp.h	/^} EFI_TCP4_LISTEN_TOKEN;$/
+EFI_TCP4_OPTION	src/loader/efi/efitcp.h	/^} EFI_TCP4_OPTION;$/
+EFI_TCP4_PROTOCOL	src/loader/efi/efitcp.h	/^#define EFI_TCP4_PROTOCOL \\$/
+EFI_TCP4_RECEIVE_DATA	src/loader/efi/efitcp.h	/^} EFI_TCP4_RECEIVE_DATA;$/
+EFI_TCP4_SERVICE_BINDING_PROTOCOL	src/loader/efi/efitcp.h	/^#define EFI_TCP4_SERVICE_BINDING_PROTOCOL \\$/
+EFI_TCP4_TRANSMIT_DATA	src/loader/efi/efitcp.h	/^} EFI_TCP4_TRANSMIT_DATA;$/
+EFI_TCP6	src/loader/efi/efitcp.h	/^} EFI_TCP6;$/
+EFI_TCP6_ACCESS_POINT	src/loader/efi/efitcp.h	/^} EFI_TCP6_ACCESS_POINT;$/
+EFI_TCP6_CLOSE_TOKEN	src/loader/efi/efitcp.h	/^} EFI_TCP6_CLOSE_TOKEN;$/
+EFI_TCP6_COMPLETION_TOKEN	src/loader/efi/efitcp.h	/^} EFI_TCP6_COMPLETION_TOKEN;$/
+EFI_TCP6_CONFIG_DATA	src/loader/efi/efitcp.h	/^} EFI_TCP6_CONFIG_DATA;$/
+EFI_TCP6_CONNECTION_STATE	src/loader/efi/efitcp.h	/^} EFI_TCP6_CONNECTION_STATE;$/
+EFI_TCP6_CONNECTION_TOKEN	src/loader/efi/efitcp.h	/^} EFI_TCP6_CONNECTION_TOKEN;$/
+EFI_TCP6_FRAGMENT_DATA	src/loader/efi/efitcp.h	/^} EFI_TCP6_FRAGMENT_DATA;$/
+EFI_TCP6_IO_TOKEN	src/loader/efi/efitcp.h	/^} EFI_TCP6_IO_TOKEN;$/
+EFI_TCP6_LISTEN_TOKEN	src/loader/efi/efitcp.h	/^} EFI_TCP6_LISTEN_TOKEN;$/
+EFI_TCP6_OPTION	src/loader/efi/efitcp.h	/^} EFI_TCP6_OPTION;$/
+EFI_TCP6_PROTOCOL	src/loader/efi/efitcp.h	/^#define EFI_TCP6_PROTOCOL \\$/
+EFI_TCP6_RECEIVE_DATA	src/loader/efi/efitcp.h	/^} EFI_TCP6_RECEIVE_DATA;$/
+EFI_TCP6_SERVICE_BINDING_PROTOCOL	src/loader/efi/efitcp.h	/^#define EFI_TCP6_SERVICE_BINDING_PROTOCOL \\$/
+EFI_TCP6_TRANSMIT_DATA	src/loader/efi/efitcp.h	/^} EFI_TCP6_TRANSMIT_DATA;$/
+EFI_TEXT_ATTR	src/loader/efi/eficon.h	/^#define EFI_TEXT_ATTR(f,b)  ((f) | ((b) << 4))$/
+EFI_TFTP_ERROR	src/loader/efi/efierr.h	/^#define EFI_TFTP_ERROR                  EFIERR(23)/
+EFI_TIME	src/loader/efi/efidef.h	/^} EFI_TIME;$/
+EFI_TIMEOUT	src/loader/efi/efierr.h	/^#define EFI_TIMEOUT                     EFIERR(18)/
+EFI_TIMER_DELAY	src/loader/efi/efiapi.h	/^} EFI_TIMER_DELAY;$/
+EFI_TIME_ADJUST_DAYLIGHT	src/loader/efi/efidef.h	/^#define EFI_TIME_ADJUST_DAYLIGHT    0x01$/
+EFI_TIME_CAPABILITIES	src/loader/efi/efiapi.h	/^} EFI_TIME_CAPABILITIES;$/
+EFI_TIME_IN_DAYLIGHT	src/loader/efi/efidef.h	/^#define EFI_TIME_IN_DAYLIGHT        0x02$/
+EFI_TPL	src/loader/efi/efidef.h	/^typedef UINTN           EFI_TPL;$/
+EFI_TPL_APPLICATION	src/loader/efi/efiapi.h	/^#define EFI_TPL_APPLICATION  TPL_APPLICATION$/
+EFI_TPL_CALLBACK	src/loader/efi/efiapi.h	/^#define EFI_TPL_CALLBACK     TPL_CALLBACK$/
+EFI_TPL_HIGH_LEVEL	src/loader/efi/efiapi.h	/^#define EFI_TPL_HIGH_LEVEL   TPL_HIGH_LEVEL$/
+EFI_TPL_NOTIFY	src/loader/efi/efiapi.h	/^#define EFI_TPL_NOTIFY       TPL_NOTIFY$/
+EFI_UDP4	src/loader/efi/efiudp.h	/^} EFI_UDP4;$/
+EFI_UDP4_COMPLETION_TOKEN	src/loader/efi/efiudp.h	/^} EFI_UDP4_COMPLETION_TOKEN;$/
+EFI_UDP4_CONFIG_DATA	src/loader/efi/efiudp.h	/^} EFI_UDP4_CONFIG_DATA;$/
+EFI_UDP4_FRAGMENT_DATA	src/loader/efi/efiudp.h	/^} EFI_UDP4_FRAGMENT_DATA;$/
+EFI_UDP4_PROTOCOL	src/loader/efi/efiudp.h	/^#define EFI_UDP4_PROTOCOL \\$/
+EFI_UDP4_RECEIVE_DATA	src/loader/efi/efiudp.h	/^} EFI_UDP4_RECEIVE_DATA;$/
+EFI_UDP4_SERVICE_BINDING_PROTOCOL	src/loader/efi/efiudp.h	/^#define EFI_UDP4_SERVICE_BINDING_PROTOCOL \\$/
+EFI_UDP4_SESSION_DATA	src/loader/efi/efiudp.h	/^} EFI_UDP4_SESSION_DATA;$/
+EFI_UDP4_TRANSMIT_DATA	src/loader/efi/efiudp.h	/^} EFI_UDP4_TRANSMIT_DATA;$/
+EFI_UDP6	src/loader/efi/efiudp.h	/^} EFI_UDP6;$/
+EFI_UDP6_COMPLETION_TOKEN	src/loader/efi/efiudp.h	/^} EFI_UDP6_COMPLETION_TOKEN;$/
+EFI_UDP6_CONFIG_DATA	src/loader/efi/efiudp.h	/^} EFI_UDP6_CONFIG_DATA;$/
+EFI_UDP6_FRAGMENT_DATA	src/loader/efi/efiudp.h	/^} EFI_UDP6_FRAGMENT_DATA;$/
+EFI_UDP6_PROTOCOL	src/loader/efi/efiudp.h	/^#define EFI_UDP6_PROTOCOL \\$/
+EFI_UDP6_RECEIVE_DATA	src/loader/efi/efiudp.h	/^} EFI_UDP6_RECEIVE_DATA;$/
+EFI_UDP6_SERVICE_BINDING_PROTOCOL	src/loader/efi/efiudp.h	/^#define EFI_UDP6_SERVICE_BINDING_PROTOCOL \\$/
+EFI_UDP6_SESSION_DATA	src/loader/efi/efiudp.h	/^} EFI_UDP6_SESSION_DATA;$/
+EFI_UDP6_TRANSMIT_DATA	src/loader/efi/efiudp.h	/^} EFI_UDP6_TRANSMIT_DATA;$/
+EFI_UI_INTERFACE_PROTOCOL	src/loader/efi/efiui.h	/^} EFI_UI_INTERFACE_PROTOCOL;$/
+EFI_UI_INTERFACE_PROTOCOL_GUID	src/loader/efi/efiui.h	/^#define EFI_UI_INTERFACE_PROTOCOL_GUID \\$/
+EFI_UI_INTERFACE_PROTOCOL_VERSION	src/loader/efi/efiui.h	/^#define EFI_UI_INTERFACE_PROTOCOL_VERSION 0x000100/
+EFI_UI_PROTOCOL	src/loader/efi/efiui.h	/^#define EFI_UI_PROTOCOL EFI_UI_INTERFACE_PROTOCOL_/
+EFI_UI_VERSION	src/loader/efi/efiui.h	/^#define EFI_UI_VERSION                    EFI_UI_I/
+EFI_UNICODE_BYTE_ORDER_MARK	src/loader/efi/efiprot.h	/^#define EFI_UNICODE_BYTE_ORDER_MARK       (CHAR16)/
+EFI_UNICODE_COLLATION_INTERFACE	src/loader/efi/efiprot.h	/^typedef EFI_UNICODE_COLLATION_PROTOCOL EFI_UNICODE/
+EFI_UNICODE_COLLATION_PROTOCOL	src/loader/efi/efiprot.h	/^} EFI_UNICODE_COLLATION_PROTOCOL;$/
+EFI_UNICODE_COLLATION_PROTOCOL_GUID	src/loader/efi/efiprot.h	/^#define EFI_UNICODE_COLLATION_PROTOCOL_GUID \\$/
+EFI_UNSPECIFIED_TIMEZONE	src/loader/efi/efidef.h	/^#define EFI_UNSPECIFIED_TIMEZONE    0x07FF$/
+EFI_UNSUPPORTED	src/loader/efi/efierr.h	/^#define EFI_UNSUPPORTED                 EFIERR(3)$/
+EFI_UNUSED	src/loader/efi/eficompiler.h	/^#define EFI_UNUSED$/
+EFI_VARIABLE_APPEND_WRITE	src/loader/efi/efiapi.h	/^#define EFI_VARIABLE_APPEND_WRITE                 /
+EFI_VARIABLE_AUTHENTICATED_WRITE_ACCESS	src/loader/efi/efiapi.h	/^#define EFI_VARIABLE_AUTHENTICATED_WRITE_ACCESS   /
+EFI_VARIABLE_BOOTSERVICE_ACCESS	src/loader/efi/efiapi.h	/^#define EFI_VARIABLE_BOOTSERVICE_ACCESS           /
+EFI_VARIABLE_HARDWARE_ERROR_RECORD	src/loader/efi/efiapi.h	/^#define EFI_VARIABLE_HARDWARE_ERROR_RECORD        /
+EFI_VARIABLE_NON_VOLATILE	src/loader/efi/efiapi.h	/^#define EFI_VARIABLE_NON_VOLATILE                 /
+EFI_VARIABLE_RUNTIME_ACCESS	src/loader/efi/efiapi.h	/^#define EFI_VARIABLE_RUNTIME_ACCESS               /
+EFI_VARIABLE_STORE	src/loader/efi/protocol/efivar.h	/^} EFI_VARIABLE_STORE;$/
+EFI_VARIABLE_TIME_BASED_AUTHENTICATED_WRITE_ACCESS	src/loader/efi/efiapi.h	/^#define EFI_VARIABLE_TIME_BASED_AUTHENTICATED_WRIT/
+EFI_VIRTUAL_ADDRESS	src/loader/efi/efidef.h	/^typedef UINT64          EFI_VIRTUAL_ADDRESS;$/
+EFI_VOLUME_CORRUPTED	src/loader/efi/efierr.h	/^#define EFI_VOLUME_CORRUPTED            EFIERR(10)/
+EFI_VOLUME_FULL	src/loader/efi/efierr.h	/^#define EFI_VOLUME_FULL                 EFIERR(11)/
+EFI_VT_100_GUID	src/loader/efi/efidevp.h	/^#define EFI_VT_100_GUID \\$/
+EFI_VT_100_PLUS_GUID	src/loader/efi/efidevp.h	/^#define EFI_VT_100_PLUS_GUID \\$/
+EFI_VT_UTF8_GUID	src/loader/efi/efidevp.h	/^#define EFI_VT_UTF8_GUID \\$/
+EFI_WARN_BUFFER_TOO_SMALL	src/loader/efi/efierr.h	/^#define EFI_WARN_BUFFER_TOO_SMALL       EFIWARN(4)/
+EFI_WARN_DELETE_FAILURE	src/loader/efi/efierr.h	/^#define EFI_WARN_DELETE_FAILURE         EFIWARN(2)/
+EFI_WARN_UNKNOWN_GLYPH	src/loader/efi/efierr.h	/^#define EFI_WARN_UNKNOWN_GLYPH          EFIWARN(1)/
+EFI_WARN_WRITE_FAILURE	src/loader/efi/efierr.h	/^#define EFI_WARN_WRITE_FAILURE          EFIWARN(3)/
+EFI_WHITE	src/loader/efi/eficon.h	/^#define EFI_WHITE           (EFI_BLUE | EFI_GREEN /
+EFI_WRITE_PROTECTED	src/loader/efi/efierr.h	/^#define EFI_WRITE_PROTECTED             EFIERR(8)$/
+EFI_YELLOW	src/loader/efi/eficon.h	/^#define EFI_YELLOW          (EFI_BROWN | EFI_BRIGH/
+EISA_ID	src/loader/efi/efidevp.h	/^#define EISA_ID(_Name, _Num)    ((UINT32) ((_Name)/
+EISA_ID_TO_NUM	src/loader/efi/efidevp.h	/^#define EISA_ID_TO_NUM(_Id)     ((_Id) >> 16)$/
+EISA_PNP_ID	src/loader/efi/efidevp.h	/^#define EISA_PNP_ID(_PNPId)     (EISA_ID(PNP_EISA_/
+END_DEVICE_PATH_LENGTH	src/loader/efi/efidevp.h	/^#define END_DEVICE_PATH_LENGTH              (sizeo/
+END_DEVICE_PATH_TYPE	src/loader/efi/efidevp.h	/^\/\/#define END_DEVICE_PATH_TYPE                0x/
+END_DEVICE_PATH_TYPE_UNPACKED	src/loader/efi/efidevp.h	/^\/\/#define END_DEVICE_PATH_TYPE_UNPACKED       0x/
+END_ENTIRE_DEVICE_PATH_SUBTYPE	src/loader/efi/efidevp.h	/^#define END_ENTIRE_DEVICE_PATH_SUBTYPE      0xff$/
+END_INSTANCE_DEVICE_PATH_SUBTYPE	src/loader/efi/efidevp.h	/^#define END_INSTANCE_DEVICE_PATH_SUBTYPE    0x01$/
+END_RUNTIME_DATA	src/loader/efi/aarch64/efibind.h	/^#define END_RUNTIME_DATA()      data_seg("")$/
+ERROR_OUT_SPLITER_PROTOCOL	src/loader/efi/protocol/eficonsplit.h	/^#define ERROR_OUT_SPLITER_PROTOCOL    \\$/
+EVT_EFI_SIGNAL_MASK	src/loader/efi/efiapi.h	/^#define EVT_EFI_SIGNAL_MASK                 0x0000/
+EVT_EFI_SIGNAL_MAX	src/loader/efi/efiapi.h	/^#define EVT_EFI_SIGNAL_MAX                  4$/
+EVT_NOTIFY_SIGNAL	src/loader/efi/efiapi.h	/^#define EVT_NOTIFY_SIGNAL                   0x0000/
+EVT_NOTIFY_WAIT	src/loader/efi/efiapi.h	/^#define EVT_NOTIFY_WAIT                     0x0000/
+EVT_RUNTIME	src/loader/efi/efiapi.h	/^#define EVT_RUNTIME                         0x4000/
+EVT_RUNTIME_CONTEXT	src/loader/efi/efiapi.h	/^#define EVT_RUNTIME_CONTEXT                 0x2000/
+EVT_SIGNAL_EXIT_BOOT_SERVICES	src/loader/efi/efiapi.h	/^#define EVT_SIGNAL_EXIT_BOOT_SERVICES       0x0000/
+EVT_SIGNAL_VIRTUAL_ADDRESS_CHANGE	src/loader/efi/efiapi.h	/^#define EVT_SIGNAL_VIRTUAL_ADDRESS_CHANGE   0x6000/
+EVT_TIMER	src/loader/efi/efiapi.h	/^#define EVT_TIMER                           0x8000/
+EXCEPTION_TYPE	src/loader/efi/protocol/efidbg.h	/^typedef UINTN EXCEPTION_TYPE;$/
+EXCEPT_ARM_DATA_ABORT	src/loader/efi/efidebug.h	/^#define EXCEPT_ARM_DATA_ABORT               4$/
+EXCEPT_ARM_FIQ	src/loader/efi/efidebug.h	/^#define EXCEPT_ARM_FIQ                      7$/
+EXCEPT_ARM_IRQ	src/loader/efi/efidebug.h	/^#define EXCEPT_ARM_IRQ                      6$/
+EXCEPT_ARM_PREFETCH_ABORT	src/loader/efi/efidebug.h	/^#define EXCEPT_ARM_PREFETCH_ABORT           3$/
+EXCEPT_ARM_RESERVED	src/loader/efi/efidebug.h	/^#define EXCEPT_ARM_RESERVED                 5$/
+EXCEPT_ARM_RESET	src/loader/efi/efidebug.h	/^#define EXCEPT_ARM_RESET                    0$/
+EXCEPT_ARM_SOFTWARE_INTERRUPT	src/loader/efi/efidebug.h	/^#define EXCEPT_ARM_SOFTWARE_INTERRUPT       2$/
+EXCEPT_ARM_UNDEFINED_INSTRUCTION	src/loader/efi/efidebug.h	/^#define EXCEPT_ARM_UNDEFINED_INSTRUCTION    1$/
+EXCEPT_EBC_ALIGNMENT_CHECK	src/loader/efi/efidebug.h	/^#define EXCEPT_EBC_ALIGNMENT_CHECK      7$/
+EXCEPT_EBC_BAD_BREAK	src/loader/efi/efidebug.h	/^#define EXCEPT_EBC_BAD_BREAK            9$/
+EXCEPT_EBC_BREAKPOINT	src/loader/efi/efidebug.h	/^#define EXCEPT_EBC_BREAKPOINT           3$/
+EXCEPT_EBC_DEBUG	src/loader/efi/efidebug.h	/^#define EXCEPT_EBC_DEBUG                2$/
+EXCEPT_EBC_DIVIDE_ERROR	src/loader/efi/efidebug.h	/^#define EXCEPT_EBC_DIVIDE_ERROR         1$/
+EXCEPT_EBC_INSTRUCTION_ENCODING	src/loader/efi/efidebug.h	/^#define EXCEPT_EBC_INSTRUCTION_ENCODING 8$/
+EXCEPT_EBC_INVALID_OPCODE	src/loader/efi/efidebug.h	/^#define EXCEPT_EBC_INVALID_OPCODE       5$/
+EXCEPT_EBC_OVERFLOW	src/loader/efi/efidebug.h	/^#define EXCEPT_EBC_OVERFLOW             4$/
+EXCEPT_EBC_STACK_FAULT	src/loader/efi/efidebug.h	/^#define EXCEPT_EBC_STACK_FAULT          6$/
+EXCEPT_EBC_STEP	src/loader/efi/efidebug.h	/^#define EXCEPT_EBC_STEP                 10$/
+EXCEPT_EBC_UNDEFINED	src/loader/efi/efidebug.h	/^#define EXCEPT_EBC_UNDEFINED            0$/
+EXCEPT_IA32_ALIGNMENT_CHECK	src/loader/efi/efidebug.h	/^#define EXCEPT_IA32_ALIGNMENT_CHECK 17$/
+EXCEPT_IA32_BOUND	src/loader/efi/efidebug.h	/^#define EXCEPT_IA32_BOUND           5$/
+EXCEPT_IA32_BREAKPOINT	src/loader/efi/efidebug.h	/^#define EXCEPT_IA32_BREAKPOINT      3$/
+EXCEPT_IA32_DEBUG	src/loader/efi/efidebug.h	/^#define EXCEPT_IA32_DEBUG           1$/
+EXCEPT_IA32_DIVIDE_ERROR	src/loader/efi/efidebug.h	/^#define EXCEPT_IA32_DIVIDE_ERROR    0$/
+EXCEPT_IA32_DOUBLE_FAULT	src/loader/efi/efidebug.h	/^#define EXCEPT_IA32_DOUBLE_FAULT    8$/
+EXCEPT_IA32_FP_ERROR	src/loader/efi/efidebug.h	/^#define EXCEPT_IA32_FP_ERROR        16$/
+EXCEPT_IA32_GP_FAULT	src/loader/efi/efidebug.h	/^#define EXCEPT_IA32_GP_FAULT        13$/
+EXCEPT_IA32_INVALID_OPCODE	src/loader/efi/efidebug.h	/^#define EXCEPT_IA32_INVALID_OPCODE  6$/
+EXCEPT_IA32_INVALID_TSS	src/loader/efi/efidebug.h	/^#define EXCEPT_IA32_INVALID_TSS     10$/
+EXCEPT_IA32_MACHINE_CHECK	src/loader/efi/efidebug.h	/^#define EXCEPT_IA32_MACHINE_CHECK   18$/
+EXCEPT_IA32_NMI	src/loader/efi/efidebug.h	/^#define EXCEPT_IA32_NMI             2$/
+EXCEPT_IA32_OVERFLOW	src/loader/efi/efidebug.h	/^#define EXCEPT_IA32_OVERFLOW        4$/
+EXCEPT_IA32_PAGE_FAULT	src/loader/efi/efidebug.h	/^#define EXCEPT_IA32_PAGE_FAULT      14$/
+EXCEPT_IA32_SEG_NOT_PRESENT	src/loader/efi/efidebug.h	/^#define EXCEPT_IA32_SEG_NOT_PRESENT 11$/
+EXCEPT_IA32_SIMD	src/loader/efi/efidebug.h	/^#define EXCEPT_IA32_SIMD            19$/
+EXCEPT_IA32_STACK_FAULT	src/loader/efi/efidebug.h	/^#define EXCEPT_IA32_STACK_FAULT     12$/
+EXCEPT_IPF_ALT_DATA_TLB	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_ALT_DATA_TLB                   /
+EXCEPT_IPF_ALT_INSTRUCTION_TLB	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_ALT_INSTRUCTION_TLB            /
+EXCEPT_IPF_BREAKPOINT	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_BREAKPOINT                     /
+EXCEPT_IPF_DATA_ACCESS_BIT	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_DATA_ACCESS_BIT                /
+EXCEPT_IPF_DATA_ACCESS_RIGHTS	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_DATA_ACCESS_RIGHTS             /
+EXCEPT_IPF_DATA_KEY_MISSED	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_DATA_KEY_MISSED                /
+EXCEPT_IPF_DATA_NESTED_TLB	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_DATA_NESTED_TLB                /
+EXCEPT_IPF_DATA_TLB	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_DATA_TLB                       /
+EXCEPT_IPF_DEBUG	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_DEBUG                          /
+EXCEPT_IPF_DIRTY_BIT	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_DIRTY_BIT                      /
+EXCEPT_IPF_DISABLED_FP_REGISTER	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_DISABLED_FP_REGISTER           /
+EXCEPT_IPF_EXTERNAL_INTERRUPT	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_EXTERNAL_INTERRUPT             /
+EXCEPT_IPF_FP_FAULT	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_FP_FAULT                       /
+EXCEPT_IPF_FP_TRAP	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_FP_TRAP                        /
+EXCEPT_IPF_GENERAL_EXCEPTION	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_GENERAL_EXCEPTION              /
+EXCEPT_IPF_IA32_EXCEPTION	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_IA32_EXCEPTION                 /
+EXCEPT_IPF_IA32_INTERCEPT	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_IA32_INTERCEPT                 /
+EXCEPT_IPF_IA32_INTERRUPT	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_IA32_INTERRUPT                 /
+EXCEPT_IPF_INSTRUCTION_ACCESS_BIT	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_INSTRUCTION_ACCESS_BIT         /
+EXCEPT_IPF_INSTRUCTION_ACCESS_RIGHTS	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_INSTRUCTION_ACCESS_RIGHTS      /
+EXCEPT_IPF_INSTRUCTION_KEY_MISSED	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_INSTRUCTION_KEY_MISSED         /
+EXCEPT_IPF_INSTRUCTION_TLB	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_INSTRUCTION_TLB                /
+EXCEPT_IPF_KEY_PERMISSION	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_KEY_PERMISSION                 /
+EXCEPT_IPF_LOWER_PRIVILEGE_TRANSFER_TRAP	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_LOWER_PRIVILEGE_TRANSFER_TRAP  /
+EXCEPT_IPF_NAT_CONSUMPTION	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_NAT_CONSUMPTION                /
+EXCEPT_IPF_PAGE_NOT_PRESENT	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_PAGE_NOT_PRESENT               /
+EXCEPT_IPF_SINGLE_STEP	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_SINGLE_STEP                    /
+EXCEPT_IPF_SPECULATION	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_SPECULATION                    /
+EXCEPT_IPF_TAKEN_BRANCH	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_TAKEN_BRANCH                   /
+EXCEPT_IPF_UNALIGNED_REFERENCE	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_UNALIGNED_REFERENCE            /
+EXCEPT_IPF_UNSUPPORTED_DATA_REFERENCE	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_UNSUPPORTED_DATA_REFERENCE     /
+EXCEPT_IPF_VHTP_TRANSLATION	src/loader/efi/efidebug.h	/^#define EXCEPT_IPF_VHTP_TRANSLATION               /
+EXCEPT_X64_ALIGNMENT_CHECK	src/loader/efi/efidebug.h	/^#define EXCEPT_X64_ALIGNMENT_CHECK 17$/
+EXCEPT_X64_BOUND	src/loader/efi/efidebug.h	/^#define EXCEPT_X64_BOUND           5$/
+EXCEPT_X64_BREAKPOINT	src/loader/efi/efidebug.h	/^#define EXCEPT_X64_BREAKPOINT      3$/
+EXCEPT_X64_DEBUG	src/loader/efi/efidebug.h	/^#define EXCEPT_X64_DEBUG           1$/
+EXCEPT_X64_DIVIDE_ERROR	src/loader/efi/efidebug.h	/^#define EXCEPT_X64_DIVIDE_ERROR    0$/
+EXCEPT_X64_DOUBLE_FAULT	src/loader/efi/efidebug.h	/^#define EXCEPT_X64_DOUBLE_FAULT    8$/
+EXCEPT_X64_FP_ERROR	src/loader/efi/efidebug.h	/^#define EXCEPT_X64_FP_ERROR        16$/
+EXCEPT_X64_GP_FAULT	src/loader/efi/efidebug.h	/^#define EXCEPT_X64_GP_FAULT        13$/
+EXCEPT_X64_INVALID_OPCODE	src/loader/efi/efidebug.h	/^#define EXCEPT_X64_INVALID_OPCODE  6$/
+EXCEPT_X64_INVALID_TSS	src/loader/efi/efidebug.h	/^#define EXCEPT_X64_INVALID_TSS     10$/
+EXCEPT_X64_MACHINE_CHECK	src/loader/efi/efidebug.h	/^#define EXCEPT_X64_MACHINE_CHECK   18$/
+EXCEPT_X64_NMI	src/loader/efi/efidebug.h	/^#define EXCEPT_X64_NMI             2$/
+EXCEPT_X64_OVERFLOW	src/loader/efi/efidebug.h	/^#define EXCEPT_X64_OVERFLOW        4$/
+EXCEPT_X64_PAGE_FAULT	src/loader/efi/efidebug.h	/^#define EXCEPT_X64_PAGE_FAULT      14$/
+EXCEPT_X64_SEG_NOT_PRESENT	src/loader/efi/efidebug.h	/^#define EXCEPT_X64_SEG_NOT_PRESENT 11$/
+EXCEPT_X64_SIMD	src/loader/efi/efidebug.h	/^#define EXCEPT_X64_SIMD            19$/
+EXCEPT_X64_STACK_FAULT	src/loader/efi/efidebug.h	/^#define EXCEPT_X64_STACK_FAULT     12$/
+EXCPT_ALT_DTLB	src/loader/efi/protocol/ia64/eficontext.h	/^#define    EXCPT_ALT_DTLB            4$/
+EXCPT_BREAKPOINT	src/loader/efi/protocol/ia64/eficontext.h	/^#define    EXCPT_BREAKPOINT         11$/
+EXCPT_DEBUG_EXCEPT	src/loader/efi/protocol/ia64/eficontext.h	/^#define    EXCPT_DEBUG_EXCEPT       29$/
+EXCPT_DNESTED_TLB	src/loader/efi/protocol/ia64/eficontext.h	/^#define    EXCPT_DNESTED_TLB         5$/
+EXCPT_EXTERNAL_INTERRUPT	src/loader/efi/protocol/ia64/eficontext.h	/^#define    EXCPT_EXTERNAL_INTERRUPT	12$/
+EXCPT_FP_FAULT	src/loader/efi/protocol/ia64/eficontext.h	/^#define    EXCPT_FP_FAULT           32$/
+EXCPT_FP_TRAP	src/loader/efi/protocol/ia64/eficontext.h	/^#define    EXCPT_FP_TRAP            33$/
+EXCPT_GEN_EXCEPT	src/loader/efi/protocol/ia64/eficontext.h	/^#define    EXCPT_GEN_EXCEPT         24$/
+EXCPT_NAT_CONSUMPTION	src/loader/efi/protocol/ia64/eficontext.h	/^#define    EXCPT_NAT_CONSUMPTION    26$/
+EXCPT_SINGLE_STEP	src/loader/efi/protocol/ia64/eficontext.h	/^#define    EXCPT_SINGLE_STEP        36$/
+EXCPT_TAKEN_BRANCH	src/loader/efi/protocol/ia64/eficontext.h	/^#define    EXCPT_TAKEN_BRANCH       35$/
+EXCPT_UNALIGNED_ACCESS	src/loader/efi/protocol/ia64/eficontext.h	/^#define    EXCPT_UNALIGNED_ACCESS   30$/
+EXPANDED_ACPI_DP	src/loader/efi/efidevp.h	/^#define EXPANDED_ACPI_DP		0x02$/
+EXPANDED_ACPI_HID_DEVICE_PATH	src/loader/efi/efidevp.h	/^} EXPANDED_ACPI_HID_DEVICE_PATH;$/
+EXPORTAPI	src/loader/efi/ia32/efibind.h	/^    #define EXPORTAPI           __declspec( dllexp/
+EXTRACT_UINT32	src/loader/efi/efipart.h	/^#define EXTRACT_UINT32(D) (UINT32)(D[0] | (D[1] <</
+EdidActiveProtocol	src/loader/efi/efilib.h	/^#define EdidActiveProtocol gEfiEdidActiveProtocolG/
+EdidDiscoveredProtocol	src/loader/efi/efilib.h	/^#define EdidDiscoveredProtocol gEfiEdidDiscoveredP/
+EdidOverrideProtocol	src/loader/efi/efilib.h	/^#define EdidOverrideProtocol gEfiEdidOverrideProto/
+EfiGlobalVariable	src/loader/efi/efilib.h	/^#define EfiGlobalVariable gEfiGlobalVariableGuid$/
+ExtendedVerification	src/loader/efi/efipoint.h	/^);$/
+F1394_DEVICE_PATH	src/loader/efi/efidevp.h	/^} F1394_DEVICE_PATH;$/
+FALSE	src/loader/efi/efidef.h	/^    #define FALSE   ((BOOLEAN) 0)$/
+FIBRECHANNELEX_DEVICE_PATH	src/loader/efi/efidevp.h	/^} FIBRECHANNELEX_DEVICE_PATH ;$/
+FIBRECHANNEL_DEVICE_PATH	src/loader/efi/efidevp.h	/^} FIBRECHANNEL_DEVICE_PATH;$/
+FILEPATH_DEVICE_PATH	src/loader/efi/efidevp.h	/^} FILEPATH_DEVICE_PATH;$/
+FIT_ENTRY	src/loader/efi/ia64/salproc.h	/^} FIT_ENTRY;$/
+FIT_ENTRY_PTR	src/loader/efi/ia64/salproc.h	/^#define     FIT_ENTRY_PTR       (0x100000000 - 32)/
+FIT_PALA_ENTRY	src/loader/efi/ia64/salproc.h	/^#define     FIT_PALA_ENTRY      (0x100000000 - 48)/
+FIT_PALB_TYPE	src/loader/efi/ia64/salproc.h	/^#define     FIT_PALB_TYPE       01$/
+FPSWA_PROTOCOL	src/loader/efi/efiprot.h	/^#define FPSWA_PROTOCOL EFI_FPSWA_PROTOCOL_GUID$/
+FileSystemInfo	src/loader/efi/efilib.h	/^#define FileSystemInfo gEfiFileSystemInfoGuid$/
+FileSystemProtocol	src/loader/efi/efilib.h	/^#define FileSystemProtocol gEfiSimpleFileSystemPro/
+FileSystemVolumeLabelInfo	src/loader/efi/efilib.h	/^#define FileSystemVolumeLabelInfo gEfiFileSystemVo/
+GET_KEY	src/loader/uefi_loader.c	/^#define GET_KEY(key_ptr) (ST->ConIn->ReadKeyStroke/
+GNU_EFI_AARCH64_SETJMP_H	src/loader/efi/aarch64/efisetjmp_arch.h	/^#define GNU_EFI_AARCH64_SETJMP_H$/
+GNU_EFI_ARM_SETJMP_H	src/loader/efi/arm/efisetjmp_arch.h	/^#define GNU_EFI_ARM_SETJMP_H$/
+GNU_EFI_IA32_SETJMP_H	src/loader/efi/ia32/efisetjmp_arch.h	/^#define GNU_EFI_IA32_SETJMP_H$/
+GNU_EFI_IA64_SETJMP_H	src/loader/efi/ia64/efisetjmp_arch.h	/^#define GNU_EFI_IA64_SETJMP_H$/
+GNU_EFI_MIPS64EL_SETJMP_H	src/loader/efi/mips64el/efisetjmp_arch.h	/^#define GNU_EFI_MIPS64EL_SETJMP_H$/
+GNU_EFI_SETJMP_H	src/loader/efi/efisetjmp.h	/^#define GNU_EFI_SETJMP_H$/
+GNU_EFI_X86_64_SETJMP_H	src/loader/efi/x86_64/efisetjmp_arch.h	/^#define GNU_EFI_X86_64_SETJMP_H$/
+GenericFileInfo	src/loader/efi/efilib.h	/^#define GenericFileInfo gEfiFileInfoGuid$/
+GraphicsOutputProtocol	src/loader/efi/efilib.h	/^#define GraphicsOutputProtocol gEfiGraphicsOutputP/
+HARDDRIVE_DEVICE_PATH	src/loader/efi/efidevp.h	/^} HARDDRIVE_DEVICE_PATH;$/
+HARDWARE_DEVICE_PATH	src/loader/efi/efidevp.h	/^#define HARDWARE_DEVICE_PATH            0x01$/
+HASH_PROTOCOL	src/loader/efi/efiprot.h	/^#define HASH_PROTOCOL EFI_HASH_PROTOCOL_GUID$/
+HAVE_USE_MS_ABI	src/loader/efi/x86_64/efibind.h	/^        #define HAVE_USE_MS_ABI 1$/
+HEADER_LAYOUT_CODE	src/loader/efi/pci22.h	/^#define HEADER_LAYOUT_CODE              0x7f$/
+HEADER_TYPE_DEVICE	src/loader/efi/pci22.h	/^#define HEADER_TYPE_DEVICE              0x00$/
+HEADER_TYPE_MULTI_FUNCTION	src/loader/efi/pci22.h	/^#define HEADER_TYPE_MULTI_FUNCTION      0x80$/
+HEADER_TYPE_PCI_TO_PCI_BRIDGE	src/loader/efi/pci22.h	/^#define HEADER_TYPE_PCI_TO_PCI_BRIDGE   0x01$/
+HW_CONTROLLER_DP	src/loader/efi/efidevp.h	/^#define HW_CONTROLLER_DP            0x05$/
+HW_MEMMAP_DP	src/loader/efi/efidevp.h	/^#define HW_MEMMAP_DP                    0x03$/
+HW_PCCARD_DP	src/loader/efi/efidevp.h	/^#define HW_PCCARD_DP                    0x02$/
+HW_PCI_DP	src/loader/efi/efidevp.h	/^#define HW_PCI_DP                       0x01$/
+HW_VENDOR_DP	src/loader/efi/efidevp.h	/^#define HW_VENDOR_DP                    0x04$/
+HashProtocol	src/loader/efi/efilib.h	/^#define HashProtocol gEfiHashProtocolGuid$/
+I2O_DEVICE_PATH	src/loader/efi/efidevp.h	/^} I2O_DEVICE_PATH;$/
+IA32_BIOS_REGISTER_STATE	src/loader/efi/ia64/salproc.h	/^} IA32_BIOS_REGISTER_STATE;$/
+IFLASH64_PROTOCOL_INTERFACE	src/loader/efi/protocol/piflash64.h	/^} IFLASH64_PROTOCOL_INTERFACE;$/
+IFLASH64_PROTOCOL_PROTOCOL	src/loader/efi/protocol/piflash64.h	/^#define IFLASH64_PROTOCOL_PROTOCOL \\$/
+IFLASH_PI_MAJOR_VERSION	src/loader/efi/protocol/piflash64.h	/^#define IFLASH_PI_MAJOR_VERSION 0x01$/
+IFLASH_PI_MINOR_VERSION	src/loader/efi/protocol/piflash64.h	/^#define IFLASH_PI_MINOR_VERSION 0x01$/
+IMAGE_DOS_SIGNATURE	src/loader/efi/ia32/pe.h	/^#define IMAGE_DOS_SIGNATURE                 0x5A4D/
+IMAGE_EDOS_SIGNATURE	src/loader/efi/ia32/pe.h	/^#define IMAGE_EDOS_SIGNATURE                0x4445/
+IMAGE_FILE_32BIT_MACHINE	src/loader/efi/ia32/pe.h	/^#define IMAGE_FILE_32BIT_MACHINE             0x010/
+IMAGE_FILE_BYTES_REVERSED_HI	src/loader/efi/ia32/pe.h	/^#define IMAGE_FILE_BYTES_REVERSED_HI         0x800/
+IMAGE_FILE_BYTES_REVERSED_LO	src/loader/efi/ia32/pe.h	/^#define IMAGE_FILE_BYTES_REVERSED_LO         0x008/
+IMAGE_FILE_DEBUG_STRIPPED	src/loader/efi/ia32/pe.h	/^#define IMAGE_FILE_DEBUG_STRIPPED            0x020/
+IMAGE_FILE_DLL	src/loader/efi/ia32/pe.h	/^#define IMAGE_FILE_DLL                       0x200/
+IMAGE_FILE_EXECUTABLE_IMAGE	src/loader/efi/ia32/pe.h	/^#define IMAGE_FILE_EXECUTABLE_IMAGE          0x000/
+IMAGE_FILE_LINE_NUMS_STRIPPED	src/loader/efi/ia32/pe.h	/^#define IMAGE_FILE_LINE_NUMS_STRIPPED        0x000/
+IMAGE_FILE_LOCAL_SYMS_STRIPPED	src/loader/efi/ia32/pe.h	/^#define IMAGE_FILE_LOCAL_SYMS_STRIPPED       0x000/
+IMAGE_FILE_MACHINE_ALPHA	src/loader/efi/ia32/pe.h	/^#define IMAGE_FILE_MACHINE_ALPHA             0x184/
+IMAGE_FILE_MACHINE_ARMTHUMB_MIXED	src/loader/efi/ia32/pe.h	/^#define IMAGE_FILE_MACHINE_ARMTHUMB_MIXED    0x1c2/
+IMAGE_FILE_MACHINE_EBC	src/loader/efi/ia32/pe.h	/^#define IMAGE_FILE_MACHINE_EBC               0xebc/
+IMAGE_FILE_MACHINE_I386	src/loader/efi/ia32/pe.h	/^#define IMAGE_FILE_MACHINE_I386              0x14c/
+IMAGE_FILE_MACHINE_IA64	src/loader/efi/ia32/pe.h	/^#define IMAGE_FILE_MACHINE_IA64              0x200/
+IMAGE_FILE_MACHINE_POWERPC	src/loader/efi/ia32/pe.h	/^#define IMAGE_FILE_MACHINE_POWERPC           0x1F0/
+IMAGE_FILE_MACHINE_R3000	src/loader/efi/ia32/pe.h	/^#define IMAGE_FILE_MACHINE_R3000             0x162/
+IMAGE_FILE_MACHINE_R4000	src/loader/efi/ia32/pe.h	/^#define IMAGE_FILE_MACHINE_R4000             0x166/
+IMAGE_FILE_MACHINE_TAHOE	src/loader/efi/ia32/pe.h	/^#define IMAGE_FILE_MACHINE_TAHOE             0x7cc/
+IMAGE_FILE_MACHINE_UNKNOWN	src/loader/efi/ia32/pe.h	/^#define IMAGE_FILE_MACHINE_UNKNOWN           0$/
+IMAGE_FILE_MACHINE_X64	src/loader/efi/ia32/pe.h	/^#define IMAGE_FILE_MACHINE_X64               0x866/
+IMAGE_FILE_RELOCS_STRIPPED	src/loader/efi/ia32/pe.h	/^#define IMAGE_FILE_RELOCS_STRIPPED           0x000/
+IMAGE_FILE_SYSTEM	src/loader/efi/ia32/pe.h	/^#define IMAGE_FILE_SYSTEM                    0x100/
+IMAGE_FIRST_SECTION	src/loader/efi/ia32/pe.h	/^#define IMAGE_FIRST_SECTION( ntheader ) ((PIMAGE_S/
+IMAGE_NT_OPTIONAL_HDR64_MAGIC	src/loader/efi/ia64/pe.h	/^#define IMAGE_NT_OPTIONAL_HDR64_MAGIC      0x20b$/
+IMAGE_NT_OPTIONAL_HDR_MAGIC	src/loader/efi/ia32/pe.h	/^#define IMAGE_NT_OPTIONAL_HDR_MAGIC        0x10b$/
+IMAGE_NT_SIGNATURE	src/loader/efi/ia32/pe.h	/^#define IMAGE_NT_SIGNATURE                  0x0000/
+IMAGE_NUMBEROF_DIRECTORY_ENTRIES	src/loader/efi/ia32/pe.h	/^#define IMAGE_NUMBEROF_DIRECTORY_ENTRIES    16$/
+IMAGE_ORDINAL	src/loader/efi/ia32/pe.h	/^#define IMAGE_ORDINAL(Ordinal) (Ordinal & 0xffff)$/
+IMAGE_ORDINAL_FLAG	src/loader/efi/ia32/pe.h	/^#define IMAGE_ORDINAL_FLAG 0x80000000$/
+IMAGE_OS2_SIGNATURE	src/loader/efi/ia32/pe.h	/^#define IMAGE_OS2_SIGNATURE                 0x454E/
+IMAGE_OS2_SIGNATURE_LE	src/loader/efi/ia32/pe.h	/^#define IMAGE_OS2_SIGNATURE_LE              0x454C/
+IMAGE_REL_BASED_IA64_DIR64	src/loader/efi/ia64/pe.h	/^#define IMAGE_REL_BASED_IA64_DIR64            10$/
+IMAGE_REL_BASED_IA64_IMM64	src/loader/efi/ia64/pe.h	/^#define IMAGE_REL_BASED_IA64_IMM64            9$/
+IMAGE_ROM_OPTIONAL_HDR_MAGIC	src/loader/efi/ia32/pe.h	/^#define IMAGE_ROM_OPTIONAL_HDR_MAGIC       0x107$/
+IMAGE_SIZEOF_ARCHIVE_MEMBER_HDR	src/loader/efi/ia32/pe.h	/^#define IMAGE_SIZEOF_ARCHIVE_MEMBER_HDR      60$/
+IMAGE_SIZEOF_FILE_HEADER	src/loader/efi/ia32/pe.h	/^#define IMAGE_SIZEOF_FILE_HEADER             20$/
+IMAGE_SIZEOF_NT_OPTIONAL64_HEADER	src/loader/efi/ia64/pe.h	/^#define IMAGE_SIZEOF_NT_OPTIONAL64_HEADER    244$/
+IMAGE_SIZEOF_NT_OPTIONAL_HEADER	src/loader/efi/ia32/pe.h	/^#define IMAGE_SIZEOF_NT_OPTIONAL_HEADER      224$/
+IMAGE_SIZEOF_ROM_OPTIONAL_HEADER	src/loader/efi/ia32/pe.h	/^#define IMAGE_SIZEOF_ROM_OPTIONAL_HEADER      56$/
+IMAGE_SIZEOF_STD_OPTIONAL_HEADER	src/loader/efi/ia32/pe.h	/^#define IMAGE_SIZEOF_STD_OPTIONAL_HEADER      28$/
+IMAGE_SNAP_BY_ORDINAL	src/loader/efi/ia32/pe.h	/^#define IMAGE_SNAP_BY_ORDINAL(Ordinal) ((Ordinal &/
+IMAGE_SUBSYSTEM_EFI_APPLICATION	src/loader/efi/efiapi.h	/^#define IMAGE_SUBSYSTEM_EFI_APPLICATION           /
+IMAGE_SUBSYSTEM_EFI_BOOT_SERVICE_DRIVER	src/loader/efi/efiapi.h	/^#define IMAGE_SUBSYSTEM_EFI_BOOT_SERVICE_DRIVER   /
+IMAGE_SUBSYSTEM_EFI_RUNTIME_DRIVER	src/loader/efi/efiapi.h	/^#define IMAGE_SUBSYSTEM_EFI_RUNTIME_DRIVER        /
+IMAGE_SUBSYSTEM_NATIVE	src/loader/efi/ia32/pe.h	/^#define IMAGE_SUBSYSTEM_NATIVE               1   /
+IMAGE_SUBSYSTEM_UNKNOWN	src/loader/efi/ia32/pe.h	/^#define IMAGE_SUBSYSTEM_UNKNOWN              0   /
+INFINIBAND_DEVICE_PATH	src/loader/efi/efidevp.h	/^} INFINIBAND_DEVICE_PATH;$/
+INSTALL_VGA_DRIVER_INTERFACE	src/loader/efi/protocol/vgaclass.h	/^} INSTALL_VGA_DRIVER_INTERFACE;$/
+INT16	src/loader/efi/aarch64/efibind.h	/^typedef int16_t    INT16;$/
+INT32	src/loader/efi/aarch64/efibind.h	/^typedef int32_t    INT32;$/
+INT64	src/loader/efi/aarch64/efibind.h	/^typedef int64_t    INT64;$/
+INT8	src/loader/efi/aarch64/efibind.h	/^typedef int8_t     INT8;$/
+INTERFACE_DECL	src/loader/efi/ia64/efibind.h	/^#define INTERFACE_DECL(x)$/
+INTERNAL	src/loader/efi/efilib.h	/^#define INTERNAL$/
+INTERNAL_SHELL_GUID	src/loader/efi/protocol/intload.h	/^#define INTERNAL_SHELL_GUID \\$/
+INTN	src/loader/efi/aarch64/efibind.h	/^typedef int64_t    INTN;$/
+IPv4_DEVICE_PATH	src/loader/efi/efidevp.h	/^} IPv4_DEVICE_PATH;$/
+IPv6_DEVICE_PATH	src/loader/efi/efidevp.h	/^} IPv6_DEVICE_PATH;$/
+ISO_639_2	src/loader/efi/efidef.h	/^typedef UINT8   ISO_639_2;$/
+ISO_639_2_ENTRY_SIZE	src/loader/efi/efidef.h	/^#define ISO_639_2_ENTRY_SIZE    3$/
+IS_PCI_BRIDGE	src/loader/efi/pci22.h	/^#define IS_PCI_BRIDGE(_p) ((((_p)->Hdr.HeaderType)/
+IS_PCI_MULTI_FUNC	src/loader/efi/pci22.h	/^#define IS_PCI_MULTI_FUNC(_p)   (((_p)->Hdr.Header/
+ImageHandle	src/loader/efi/efiapi.h	/^    );$/
+Index	src/loader/efi/efiapi.h	/^    );$/
+InitializeLib	src/loader/data.c	/^\/\/ LibInitialized - TRUE once InitializeLib() is/
+InitializeListHead	src/loader/efi/efilink.h	/^#define InitializeListHead(ListHead) \\$/
+InsertHeadList	src/loader/efi/efilink.h	/^#define InsertHeadList(ListHead,Entry) {\\$/
+InsertTailList	src/loader/efi/efilink.h	/^#define InsertTailList(ListHead,Entry) {\\$/
+IsDevicePathEnd	src/loader/efi/efidevp.h	/^#define IsDevicePathEnd(a)          ( IsDevicePath/
+IsDevicePathEndSubType	src/loader/efi/efidevp.h	/^#define IsDevicePathEndSubType(a)   ( (a)->SubType/
+IsDevicePathEndType	src/loader/efi/efidevp.h	/^\/\/#define IsDevicePathEndType(a)      ( DevicePa/
+IsDevicePathUnpacked	src/loader/efi/efidevp.h	/^#define IsDevicePathUnpacked(a)     ( (a)->Type & /
+IsListEmpty	src/loader/efi/efilink.h	/^#define IsListEmpty(ListHead) \\$/
+JMPBUF_ALIGN	src/loader/efi/aarch64/efisetjmp_arch.h	/^#define JMPBUF_ALIGN 8$/
+LEGACY_BOOT_PROTOCOL	src/loader/efi/protocol/legacyboot.h	/^#define LEGACY_BOOT_PROTOCOL \\$/
+LIST_ENTRY	src/loader/efi/efilink.h	/^} LIST_ENTRY;$/
+LOADED_IMAGE_PROTOCOL	src/loader/efi/efiprot.h	/^#define LOADED_IMAGE_PROTOCOL EFI_LOADED_IMAGE_PRO/
+LOAD_FILE_PROTOCOL	src/loader/efi/efiprot.h	/^#define LOAD_FILE_PROTOCOL EFI_LOAD_FILE_PROTOCOL_/
+LOAD_INTERNAL_DRIVER	src/loader/efi/aarch64/efibind.h	/^#define LOAD_INTERNAL_DRIVER(_if, type, name, entr/
+LOAD_OPTION_ACTIVE	src/loader/efi/efilib.h	/^#define LOAD_OPTION_ACTIVE      0x00000001$/
+LOOPBACK_EXTERNAL	src/loader/efi/efi_pxe.h	/^#define LOOPBACK_EXTERNAL 2$/
+LOOPBACK_INTERNAL	src/loader/efi/efi_pxe.h	/^#define LOOPBACK_INTERNAL 1$/
+LOOPBACK_NORMAL	src/loader/efi/efi_pxe.h	/^#define LOOPBACK_NORMAL 0$/
+LanguageCodeEnglish	src/loader/efi/efilib.h	/^#define LanguageCodeEnglish    "eng"$/
+LoadFileProtocol	src/loader/efi/efilib.h	/^#define LoadFileProtocol gEfiLoadFileProtocolGuid$/
+LoadedImageProtocol	src/loader/efi/efilib.h	/^#define LoadedImageProtocol gEfiLoadedImageProtoco/
+MAC_ADDR_DEVICE_PATH	src/loader/efi/efidevp.h	/^} MAC_ADDR_DEVICE_PATH;$/
+MASTER_BOOT_RECORD	src/loader/efi/efipart.h	/^} MASTER_BOOT_RECORD;$/
+MAX_ADDRESS	src/loader/efi/aarch64/efibind.h	/^#define MAX_ADDRESS         0xFFFFFFFFFFFFFFFF$/
+MAX_ARM_EXCEPTION	src/loader/efi/efidebug.h	/^#define MAX_ARM_EXCEPTION                   EXCEPT/
+MAX_CONSOLE_GEOMETRY	src/loader/efi/protocol/vgaclass.h	/^} MAX_CONSOLE_GEOMETRY;$/
+MAX_EBC_EXCEPTION	src/loader/efi/efidebug.h	/^#define MAX_EBC_EXCEPTION               EXCEPT_EBC/
+MAX_EEPROM_LEN	src/loader/efi/efi_pxe.h	/^#define MAX_EEPROM_LEN 128       \/\/ #of dwords$/
+MAX_MBR_PARTITIONS	src/loader/efi/efipart.h	/^#define MAX_MBR_PARTITIONS  4   $/
+MAX_MCAST_ADDRESS_CNT	src/loader/efi/efi_pxe.h	/^#define MAX_MCAST_ADDRESS_CNT 8$/
+MAX_MCAST_FILTER_CNT	src/loader/efi/efinet.h	/^#define MAX_MCAST_FILTER_CNT    16$/
+MAX_PCI_CONFIG_LEN	src/loader/efi/efi_pxe.h	/^#define MAX_PCI_CONFIG_LEN 64   \/\/ # of dwords$/
+MAX_XMIT_BUFFERS	src/loader/efi/efi_pxe.h	/^#define MAX_XMIT_BUFFERS    32  \/\/ recycling Q l/
+MAX_XMIT_FRAGMENTS	src/loader/efi/efi_pxe.h	/^#define MAX_XMIT_FRAGMENTS 16$/
+MBR_ERRATA_PAD	src/loader/efi/efipart.h	/^#define MBR_ERRATA_PAD          0x40000 \/\/ 128 M/
+MBR_PARTITION_RECORD	src/loader/efi/efipart.h	/^} MBR_PARTITION_RECORD;$/
+MBR_SIGNATURE	src/loader/efi/efipart.h	/^#define MBR_SIGNATURE           0xaa55$/
+MBR_SIZE	src/loader/efi/efipart.h	/^#define MBR_SIZE        512$/
+MBR_TYPE_EFI_PARTITION_TABLE_HEADER	src/loader/efi/efidevp.h	/^#define MBR_TYPE_EFI_PARTITION_TABLE_HEADER 0x02$/
+MBR_TYPE_PCAT	src/loader/efi/efidevp.h	/^#define MBR_TYPE_PCAT                       0x01$/
+MEDIA_CDROM_DP	src/loader/efi/efidevp.h	/^#define MEDIA_CDROM_DP                  0x02$/
+MEDIA_DEVICE_PATH	src/loader/efi/efidevp.h	/^#define MEDIA_DEVICE_PATH               0x04$/
+MEDIA_FILEPATH_DP	src/loader/efi/efidevp.h	/^#define MEDIA_FILEPATH_DP               0x04$/
+MEDIA_FW_VOL_DEVICE_PATH	src/loader/efi/efidevp.h	/^} MEDIA_FW_VOL_DEVICE_PATH ;$/
+MEDIA_FW_VOL_FILEPATH_DEVICE_PATH	src/loader/efi/efidevp.h	/^} MEDIA_FW_VOL_FILEPATH_DEVICE_PATH ;$/
+MEDIA_HARDDRIVE_DP	src/loader/efi/efidevp.h	/^#define MEDIA_HARDDRIVE_DP              0x01$/
+MEDIA_PIWG_FW_FILE_DP	src/loader/efi/efidevp.h	/^#define MEDIA_PIWG_FW_FILE_DP 6$/
+MEDIA_PIWG_FW_VOL_DP	src/loader/efi/efidevp.h	/^#define MEDIA_PIWG_FW_VOL_DP 7$/
+MEDIA_PROTOCOL_DEVICE_PATH	src/loader/efi/efidevp.h	/^} MEDIA_PROTOCOL_DEVICE_PATH;$/
+MEDIA_PROTOCOL_DP	src/loader/efi/efidevp.h	/^#define MEDIA_PROTOCOL_DP               0x05$/
+MEDIA_RELATIVE_OFFSET_RANGE_DEVICE_PATH	src/loader/efi/efidevp.h	/^} MEDIA_RELATIVE_OFFSET_RANGE_DEVICE_PATH ;$/
+MEDIA_RELATIVE_OFFSET_RANGE_DP	src/loader/efi/efidevp.h	/^#define MEDIA_RELATIVE_OFFSET_RANGE_DP 8$/
+MEDIA_VENDOR_DP	src/loader/efi/efidevp.h	/^#define MEDIA_VENDOR_DP                 0x03$/
+MEMMAP_DEVICE_PATH	src/loader/efi/efidevp.h	/^} MEMMAP_DEVICE_PATH;$/
+MEMORY_FENCE	src/loader/efi/aarch64/efibind.h	/^#define MEMORY_FENCE            __sync_synchronize/
+MESSAGING_DEVICE_PATH	src/loader/efi/efidevp.h	/^#define MESSAGING_DEVICE_PATH           0x03$/
+MIN_ALIGNMENT_SIZE	src/loader/efi/aarch64/efibind.h	/^#define MIN_ALIGNMENT_SIZE  8$/
+MIN_EFI_PARTITION_BLOCK_SIZE	src/loader/efi/efifs.h	/^#define MIN_EFI_PARTITION_BLOCK_SIZE    512$/
+MIN_MBR_DEVICE_SIZE	src/loader/efi/efipart.h	/^#define MIN_MBR_DEVICE_SIZE     0x80000$/
+MPS_TABLE_GUID	src/loader/efi/efiapi.h	/^#define MPS_TABLE_GUID    \\$/
+MSG_1394_DP	src/loader/efi/efidevp.h	/^#define MSG_1394_DP                     0x04$/
+MSG_ATAPI_DP	src/loader/efi/efidevp.h	/^#define MSG_ATAPI_DP                    0x01$/
+MSG_DEVICE_LOGICAL_UNIT_DP	src/loader/efi/efidevp.h	/^#define MSG_DEVICE_LOGICAL_UNIT_DP 17$/
+MSG_FIBRECHANNELEX_DP	src/loader/efi/efidevp.h	/^#define MSG_FIBRECHANNELEX_DP 21$/
+MSG_FIBRECHANNEL_DP	src/loader/efi/efidevp.h	/^#define MSG_FIBRECHANNEL_DP             0x03$/
+MSG_I2O_DP	src/loader/efi/efidevp.h	/^#define MSG_I2O_DP                      0x06$/
+MSG_INFINIBAND_DP	src/loader/efi/efidevp.h	/^#define MSG_INFINIBAND_DP               0x09$/
+MSG_IPv4_DP	src/loader/efi/efidevp.h	/^#define MSG_IPv4_DP                     0x0c$/
+MSG_IPv6_DP	src/loader/efi/efidevp.h	/^#define MSG_IPv6_DP                     0x0d$/
+MSG_MAC_ADDR_DP	src/loader/efi/efidevp.h	/^#define MSG_MAC_ADDR_DP                 0x0b$/
+MSG_SATA_DP	src/loader/efi/efidevp.h	/^#define MSG_SATA_DP 18$/
+MSG_SCSI_DP	src/loader/efi/efidevp.h	/^#define MSG_SCSI_DP                     0x02$/
+MSG_UART_DP	src/loader/efi/efidevp.h	/^#define MSG_UART_DP                     0x0e$/
+MSG_URI_DP	src/loader/efi/efidevp.h	/^#define MSG_URI_DP                      24$/
+MSG_USB_CLASS_DP	src/loader/efi/efidevp.h	/^#define MSG_USB_CLASS_DP                0x0F$/
+MSG_USB_DP	src/loader/efi/efidevp.h	/^#define MSG_USB_DP                      0x05$/
+MSG_USB_WWID_DP	src/loader/efi/efidevp.h	/^#define MSG_USB_WWID_DP 16$/
+MSG_VENDOR_DP	src/loader/efi/efidevp.h	/^#define MSG_VENDOR_DP                   0x0A$/
+MSG_VLAN_DP	src/loader/efi/efidevp.h	/^#define MSG_VLAN_DP 20$/
+Mtftp	src/loader/efi/efipxebc.h	/^\/\/ Mtftp() definitions$/
+NULL	src/loader/efi/efidef.h	/^    #define NULL    ((VOID *) 0)$/
+NetworkInterfaceIdentifierProtocol	src/loader/efi/efilib.h	/^#define NetworkInterfaceIdentifierProtocol gEfiNet/
+NextDevicePathNode	src/loader/efi/efidevp.h	/^#define NextDevicePathNode(a)       ( (EFI_DEVICE_/
+NextMemoryDescriptor	src/loader/efi/efiapi.h	/^#define NextMemoryDescriptor(Ptr,Size)  ((EFI_MEMO/
+OPTIONAL	src/loader/efi/efiapi.h	/^    );$/
+PCCARD_DEVICE_PATH	src/loader/efi/efidevp.h	/^} PCCARD_DEVICE_PATH;$/
+PCIDS_SIGNATURE	src/loader/efi/romload.h	/^#define PCIDS_SIGNATURE "PCIR"$/
+PCI_BRIDGE_CONTROL_REGISTER	src/loader/efi/pci22.h	/^} PCI_BRIDGE_CONTROL_REGISTER;$/
+PCI_CLASS_BRIDGE	src/loader/efi/pci22.h	/^#define PCI_CLASS_BRIDGE                0x06$/
+PCI_CLASS_DISPLAY_CTRL	src/loader/efi/pci22.h	/^#define PCI_CLASS_DISPLAY_CTRL          0x03$/
+PCI_CLASS_ETHERNET	src/loader/efi/pci22.h	/^#define PCI_CLASS_ETHERNET              0x00$/
+PCI_CLASS_ISA	src/loader/efi/pci22.h	/^#define PCI_CLASS_ISA                   0x01$/
+PCI_CLASS_ISA_POSITIVE_DECODE	src/loader/efi/pci22.h	/^#define PCI_CLASS_ISA_POSITIVE_DECODE   0x80$/
+PCI_CLASS_NETWORK	src/loader/efi/pci22.h	/^#define PCI_CLASS_NETWORK               0x02 $/
+PCI_CLASS_VGA	src/loader/efi/pci22.h	/^#define PCI_CLASS_VGA                   0x00$/
+PCI_CONFIG_ACCESS_CF8	src/loader/efi/pci22.h	/^} PCI_CONFIG_ACCESS_CF8;$/
+PCI_DATA_STRUCTURE	src/loader/efi/pci22.h	/^} PCI_DATA_STRUCTURE;$/
+PCI_DATA_STRUCTURE_SIGNATURE	src/loader/efi/pci22.h	/^#define PCI_DATA_STRUCTURE_SIGNATURE              /
+PCI_DEVICE_HEADER_TYPE_REGION	src/loader/efi/pci22.h	/^} PCI_DEVICE_HEADER_TYPE_REGION;$/
+PCI_DEVICE_INDEPENDENT_REGION	src/loader/efi/pci22.h	/^} PCI_DEVICE_INDEPENDENT_REGION;$/
+PCI_DEVICE_PATH	src/loader/efi/efidevp.h	/^} PCI_DEVICE_PATH;$/
+PCI_EXPANSION_ROM_HEADER	src/loader/efi/pci22.h	/^} PCI_EXPANSION_ROM_HEADER;$/
+PCI_EXPANSION_ROM_HEADER_SIGNATURE	src/loader/efi/pci22.h	/^#define PCI_EXPANSION_ROM_HEADER_SIGNATURE        /
+PCI_MAX_BUS	src/loader/efi/pci22.h	/^#define PCI_MAX_BUS     1$/
+PCI_MAX_DEVICE	src/loader/efi/pci22.h	/^#define PCI_MAX_DEVICE  31$/
+PCI_MAX_FUNC	src/loader/efi/pci22.h	/^#define PCI_MAX_FUNC    7$/
+PCI_ROOT_BRIDGE_ENTRY	src/loader/efi/pci22.h	/^} PCI_ROOT_BRIDGE_ENTRY;$/
+PCI_TYPE00	src/loader/efi/pci22.h	/^} PCI_TYPE00;$/
+PCI_TYPE01	src/loader/efi/pci22.h	/^} PCI_TYPE01;$/
+PCI_VGA_PALETTE_SNOOP_DISABLED	src/loader/efi/pci22.h	/^#define PCI_VGA_PALETTE_SNOOP_DISABLED   0x20$/
+PIMAGE_DATA_DIRECTORY	src/loader/efi/ia32/pe.h	/^} IMAGE_DATA_DIRECTORY, *PIMAGE_DATA_DIRECTORY;$/
+PIMAGE_DOS_HEADER	src/loader/efi/ia32/pe.h	/^  } IMAGE_DOS_HEADER, *PIMAGE_DOS_HEADER;$/
+PIMAGE_EXPORT_DIRECTORY	src/loader/efi/ia32/pe.h	/^} IMAGE_EXPORT_DIRECTORY, *PIMAGE_EXPORT_DIRECTORY/
+PIMAGE_FILE_HEADER	src/loader/efi/ia32/pe.h	/^} IMAGE_FILE_HEADER, *PIMAGE_FILE_HEADER;$/
+PIMAGE_IMPORT_BY_NAME	src/loader/efi/ia32/pe.h	/^} IMAGE_IMPORT_BY_NAME, *PIMAGE_IMPORT_BY_NAME;$/
+PIMAGE_IMPORT_DESCRIPTOR	src/loader/efi/ia32/pe.h	/^} IMAGE_IMPORT_DESCRIPTOR, *PIMAGE_IMPORT_DESCRIPT/
+PIMAGE_NT_HEADERS	src/loader/efi/ia32/pe.h	/^} IMAGE_NT_HEADERS, *PIMAGE_NT_HEADERS;$/
+PIMAGE_OPTIONAL_HEADER	src/loader/efi/ia32/pe.h	/^} IMAGE_OPTIONAL_HEADER, *PIMAGE_OPTIONAL_HEADER;$/
+PIMAGE_OS2_HEADER	src/loader/efi/ia32/pe.h	/^  } IMAGE_OS2_HEADER, *PIMAGE_OS2_HEADER;$/
+PIMAGE_ROM_HEADERS	src/loader/efi/ia32/pe.h	/^} IMAGE_ROM_HEADERS, *PIMAGE_ROM_HEADERS;$/
+PIMAGE_ROM_OPTIONAL_HEADER	src/loader/efi/ia32/pe.h	/^} IMAGE_ROM_OPTIONAL_HEADER, *PIMAGE_ROM_OPTIONAL_/
+PIMAGE_THUNK_DATA	src/loader/efi/ia32/pe.h	/^} IMAGE_THUNK_DATA, *PIMAGE_THUNK_DATA;$/
+PLABEL	src/loader/efi/ia64/salproc.h	/^} PLABEL;$/
+PLATFORM_IOBASE_ADDRESS	src/loader/efi/ia64/efibind.h	/^#define PLATFORM_IOBASE_ADDRESS   (0xffffc000000 |/
+PNP_EISA_ID_CONST	src/loader/efi/efidevp.h	/^#define PNP_EISA_ID_CONST       0x41d0$/
+PNP_EISA_ID_MASK	src/loader/efi/efidevp.h	/^#define PNP_EISA_ID_MASK        0xffff$/
+POOL_PRINT	src/loader/efi/efilib.h	/^} POOL_PRINT;$/
+PORT_TO_MEMD	src/loader/efi/ia64/efibind.h	/^#define PORT_TO_MEMD(_Port) (PLATFORM_IOBASE_ADDRE/
+PRIMARY_PART_HEADER_LBA	src/loader/efi/efigpt.h	/^#define PRIMARY_PART_HEADER_LBA         1$/
+PRINTF	src/loader/uefi_loader.c	/^#define PRINTF(s, ...) (_printf(L##s, ##__VA_ARGS_/
+PUTS	src/loader/uefi_loader.c	/^#define PUTS(s)          (ST->ConOut->OutputString/
+PXE_1394_CONFIG_INFO	src/loader/efi/efi_pxe.h	/^} PXE_1394_CONFIG_INFO;$/
+PXE_BOOL	src/loader/efi/efi_pxe.h	/^typedef PXE_UINT8 PXE_BOOL;$/
+PXE_BUSTYPE	src/loader/efi/efi_pxe.h	/^#define PXE_BUSTYPE(a,b,c,d)            \\$/
+PXE_BUSTYPE_1394	src/loader/efi/efi_pxe.h	/^#define PXE_BUSTYPE_1394        PXE_BUSTYPE('1', '/
+PXE_BUSTYPE_PCI	src/loader/efi/efi_pxe.h	/^#define PXE_BUSTYPE_PCI         PXE_BUSTYPE('P', '/
+PXE_BUSTYPE_PC_CARD	src/loader/efi/efi_pxe.h	/^#define PXE_BUSTYPE_PC_CARD     PXE_BUSTYPE('P', '/
+PXE_BUSTYPE_PXE	src/loader/efi/efi_pxe.h	/^#define PXE_BUSTYPE_PXE         PXE_BUSTYPE('!', '/
+PXE_BUSTYPE_USB	src/loader/efi/efi_pxe.h	/^#define PXE_BUSTYPE_USB         PXE_BUSTYPE('U', '/
+PXE_CDB	src/loader/efi/efi_pxe.h	/^} PXE_CDB;$/
+PXE_CONST	src/loader/efi/efi_pxe.h	/^#define PXE_CONST const$/
+PXE_CONTROL	src/loader/efi/efi_pxe.h	/^typedef PXE_UINT16 PXE_CONTROL;$/
+PXE_CONTROL_LAST_CDB_IN_LIST	src/loader/efi/efi_pxe.h	/^#define PXE_CONTROL_LAST_CDB_IN_LIST              /
+PXE_CONTROL_LINK	src/loader/efi/efi_pxe.h	/^#define PXE_CONTROL_LINK                    0x0001/
+PXE_CONTROL_QUEUE_IF_BUSY	src/loader/efi/efi_pxe.h	/^#define PXE_CONTROL_QUEUE_IF_BUSY               0x/
+PXE_CPBADDR_NOT_USED	src/loader/efi/efi_pxe.h	/^#define PXE_CPBADDR_NOT_USED        (PXE_UINT64)0 /
+PXE_CPBSIZE_NOT_USED	src/loader/efi/efi_pxe.h	/^#define PXE_CPBSIZE_NOT_USED            0   \/\/ z/
+PXE_CPB_FILL_HEADER	src/loader/efi/efi_pxe.h	/^} PXE_CPB_FILL_HEADER;$/
+PXE_CPB_FILL_HEADER_FRAGMENTED	src/loader/efi/efi_pxe.h	/^} PXE_CPB_FILL_HEADER_FRAGMENTED;$/
+PXE_CPB_INITIALIZE	src/loader/efi/efi_pxe.h	/^} PXE_CPB_INITIALIZE;$/
+PXE_CPB_MCAST_IP_TO_MAC	src/loader/efi/efi_pxe.h	/^} PXE_CPB_MCAST_IP_TO_MAC;$/
+PXE_CPB_NVDATA_BULK	src/loader/efi/efi_pxe.h	/^} PXE_CPB_NVDATA_BULK;$/
+PXE_CPB_NVDATA_SPARSE	src/loader/efi/efi_pxe.h	/^} PXE_CPB_NVDATA_SPARSE;$/
+PXE_CPB_RECEIVE	src/loader/efi/efi_pxe.h	/^} PXE_CPB_RECEIVE;$/
+PXE_CPB_RECEIVE_FILTERS	src/loader/efi/efi_pxe.h	/^} PXE_CPB_RECEIVE_FILTERS;$/
+PXE_CPB_START	src/loader/efi/efi_pxe.h	/^} PXE_CPB_START;$/
+PXE_CPB_STATION_ADDRESS	src/loader/efi/efi_pxe.h	/^} PXE_CPB_STATION_ADDRESS;$/
+PXE_CPB_TRANSMIT	src/loader/efi/efi_pxe.h	/^} PXE_CPB_TRANSMIT;$/
+PXE_CPB_TRANSMIT_FRAGMENTS	src/loader/efi/efi_pxe.h	/^} PXE_CPB_TRANSMIT_FRAGMENTS;$/
+PXE_DBADDR_NOT_USED	src/loader/efi/efi_pxe.h	/^#define PXE_DBADDR_NOT_USED     (PXE_UINT64)0     /
+PXE_DBSIZE_NOT_USED	src/loader/efi/efi_pxe.h	/^#define PXE_DBSIZE_NOT_USED         0   \/\/ zero$/
+PXE_DB_GET_CONFIG_INFO	src/loader/efi/efi_pxe.h	/^} PXE_DB_GET_CONFIG_INFO;$/
+PXE_DB_GET_INIT_INFO	src/loader/efi/efi_pxe.h	/^} PXE_DB_GET_INIT_INFO;$/
+PXE_DB_GET_STATUS	src/loader/efi/efi_pxe.h	/^} PXE_DB_GET_STATUS;$/
+PXE_DB_INITIALIZE	src/loader/efi/efi_pxe.h	/^} PXE_DB_INITIALIZE;$/
+PXE_DB_MCAST_IP_TO_MAC	src/loader/efi/efi_pxe.h	/^} PXE_DB_MCAST_IP_TO_MAC;$/
+PXE_DB_NVDATA	src/loader/efi/efi_pxe.h	/^} PXE_DB_NVDATA;$/
+PXE_DB_RECEIVE	src/loader/efi/efi_pxe.h	/^} PXE_DB_RECEIVE;$/
+PXE_DB_RECEIVE_FILTERS	src/loader/efi/efi_pxe.h	/^} PXE_DB_RECEIVE_FILTERS;$/
+PXE_DB_STATION_ADDRESS	src/loader/efi/efi_pxe.h	/^} PXE_DB_STATION_ADDRESS;$/
+PXE_DB_STATISTICS	src/loader/efi/efi_pxe.h	/^} PXE_DB_STATISTICS;$/
+PXE_DELAY_MILLISECOND	src/loader/efi/efi_pxe.h	/^#define PXE_DELAY_MILLISECOND                   10/
+PXE_DELAY_SECOND	src/loader/efi/efi_pxe.h	/^#define PXE_DELAY_SECOND                    100000/
+PXE_DEVICE	src/loader/efi/efi_pxe.h	/^} PXE_DEVICE;$/
+PXE_DUPLEX_DEFAULT	src/loader/efi/efi_pxe.h	/^#define PXE_DUPLEX_DEFAULT                  0x00$/
+PXE_DUPLEX_ENABLE_FULL_SUPPORTED	src/loader/efi/efi_pxe.h	/^#define PXE_DUPLEX_ENABLE_FULL_SUPPORTED          /
+PXE_DUPLEX_FORCE_FULL_SUPPORTED	src/loader/efi/efi_pxe.h	/^#define PXE_DUPLEX_FORCE_FULL_SUPPORTED         2$/
+PXE_ENABLE_FULL_DUPLEX	src/loader/efi/efi_pxe.h	/^#define PXE_ENABLE_FULL_DUPLEX              0x02$/
+PXE_FALSE	src/loader/efi/efi_pxe.h	/^#define PXE_FALSE               0   \/\/ zero$/
+PXE_FORCE_FULL_DUPLEX	src/loader/efi/efi_pxe.h	/^#define PXE_FORCE_FULL_DUPLEX                   0x/
+PXE_FRAME_TYPE	src/loader/efi/efi_pxe.h	/^typedef PXE_UINT8 PXE_FRAME_TYPE;$/
+PXE_FRAME_TYPE_BROADCAST	src/loader/efi/efi_pxe.h	/^#define PXE_FRAME_TYPE_BROADCAST                0x/
+PXE_FRAME_TYPE_MULTICAST	src/loader/efi/efi_pxe.h	/^#define PXE_FRAME_TYPE_MULTICAST            0x03$/
+PXE_FRAME_TYPE_NONE	src/loader/efi/efi_pxe.h	/^#define PXE_FRAME_TYPE_NONE                 0x00$/
+PXE_FRAME_TYPE_PROMISCUOUS	src/loader/efi/efi_pxe.h	/^#define PXE_FRAME_TYPE_PROMISCUOUS              0x/
+PXE_FRAME_TYPE_UNICAST	src/loader/efi/efi_pxe.h	/^#define PXE_FRAME_TYPE_UNICAST              0x01$/
+PXE_HWADDR_LEN_ETHER	src/loader/efi/efi_pxe.h	/^#define PXE_HWADDR_LEN_ETHER                    0x/
+PXE_HWCMD_BROADCAST_RX_ENABLE	src/loader/efi/efi_pxe.h	/^#define PXE_HWCMD_BROADCAST_RX_ENABLE           0x/
+PXE_HWCMD_CLEAR_CMD_COMPLETE_INT	src/loader/efi/efi_pxe.h	/^#define PXE_HWCMD_CLEAR_CMD_COMPLETE_INT          /
+PXE_HWCMD_CLEAR_PACKET_RX_INT	src/loader/efi/efi_pxe.h	/^#define PXE_HWCMD_CLEAR_PACKET_RX_INT           0x/
+PXE_HWCMD_CLEAR_SOFTWARE_INT	src/loader/efi/efi_pxe.h	/^#define PXE_HWCMD_CLEAR_SOFTWARE_INT              /
+PXE_HWCMD_CLEAR_TX_COMPLETE_INT	src/loader/efi/efi_pxe.h	/^#define PXE_HWCMD_CLEAR_TX_COMPLETE_INT         0x/
+PXE_HWCMD_CMD_COMPLETE_INT_ENABLE	src/loader/efi/efi_pxe.h	/^#define PXE_HWCMD_CMD_COMPLETE_INT_ENABLE         /
+PXE_HWCMD_INTS_AND_FILTS	src/loader/efi/efi_pxe.h	/^#define PXE_HWCMD_INTS_AND_FILTS                0x/
+PXE_HWCMD_ISSUE_COMMAND	src/loader/efi/efi_pxe.h	/^#define PXE_HWCMD_ISSUE_COMMAND             0x8000/
+PXE_HWCMD_MULTICAST_RX_ENABLE	src/loader/efi/efi_pxe.h	/^#define PXE_HWCMD_MULTICAST_RX_ENABLE           0x/
+PXE_HWCMD_PACKET_RX_INT_ENABLE	src/loader/efi/efi_pxe.h	/^#define PXE_HWCMD_PACKET_RX_INT_ENABLE          0x/
+PXE_HWCMD_PROMISCUOUS_MULTICAST_RX_ENABLE	src/loader/efi/efi_pxe.h	/^#define PXE_HWCMD_PROMISCUOUS_MULTICAST_RX_ENABLE /
+PXE_HWCMD_PROMISCUOUS_RX_ENABLE	src/loader/efi/efi_pxe.h	/^#define PXE_HWCMD_PROMISCUOUS_RX_ENABLE         0x/
+PXE_HWCMD_SOFTWARE_INT_ENABLE	src/loader/efi/efi_pxe.h	/^#define PXE_HWCMD_SOFTWARE_INT_ENABLE           0x/
+PXE_HWCMD_TX_COMPLETE_INT_ENABLE	src/loader/efi/efi_pxe.h	/^#define PXE_HWCMD_TX_COMPLETE_INT_ENABLE          /
+PXE_HWCMD_UNICAST_RX_ENABLE	src/loader/efi/efi_pxe.h	/^#define PXE_HWCMD_UNICAST_RX_ENABLE             0x/
+PXE_HWSTAT_BROADCAST_RX_ENABLED	src/loader/efi/efi_pxe.h	/^#define PXE_HWSTAT_BROADCAST_RX_ENABLED         0x/
+PXE_HWSTAT_BUSY	src/loader/efi/efi_pxe.h	/^#define PXE_HWSTAT_BUSY                     0xC000/
+PXE_HWSTAT_CMD_COMPLETE_INT_ENABLED	src/loader/efi/efi_pxe.h	/^#define PXE_HWSTAT_CMD_COMPLETE_INT_ENABLED       /
+PXE_HWSTAT_CMD_COMPLETE_INT_PENDING	src/loader/efi/efi_pxe.h	/^#define PXE_HWSTAT_CMD_COMPLETE_INT_PENDING       /
+PXE_HWSTAT_COMMAND_FAILED	src/loader/efi/efi_pxe.h	/^#define PXE_HWSTAT_COMMAND_FAILED               0x/
+PXE_HWSTAT_INITIALIZED	src/loader/efi/efi_pxe.h	/^#define PXE_HWSTAT_INITIALIZED              0x8000/
+PXE_HWSTAT_MULTICAST_RX_ENABLED	src/loader/efi/efi_pxe.h	/^#define PXE_HWSTAT_MULTICAST_RX_ENABLED         0x/
+PXE_HWSTAT_PACKET_RX_INT_ENABLED	src/loader/efi/efi_pxe.h	/^#define PXE_HWSTAT_PACKET_RX_INT_ENABLED          /
+PXE_HWSTAT_PACKET_RX_INT_PENDING	src/loader/efi/efi_pxe.h	/^#define PXE_HWSTAT_PACKET_RX_INT_PENDING          /
+PXE_HWSTAT_PROMISCUOUS_MULTICAST_RX_ENABLED	src/loader/efi/efi_pxe.h	/^#define PXE_HWSTAT_PROMISCUOUS_MULTICAST_RX_ENABLE/
+PXE_HWSTAT_PROMISCUOUS_RX_ENABLED	src/loader/efi/efi_pxe.h	/^#define PXE_HWSTAT_PROMISCUOUS_RX_ENABLED         /
+PXE_HWSTAT_SOFTWARE_INT_ENABLED	src/loader/efi/efi_pxe.h	/^#define PXE_HWSTAT_SOFTWARE_INT_ENABLED         0x/
+PXE_HWSTAT_SOFTWARE_INT_PENDING	src/loader/efi/efi_pxe.h	/^#define PXE_HWSTAT_SOFTWARE_INT_PENDING         0x/
+PXE_HWSTAT_STARTED	src/loader/efi/efi_pxe.h	/^#define PXE_HWSTAT_STARTED                  0x4000/
+PXE_HWSTAT_STATE_MASK	src/loader/efi/efi_pxe.h	/^#define PXE_HWSTAT_STATE_MASK                   0x/
+PXE_HWSTAT_STOPPED	src/loader/efi/efi_pxe.h	/^#define PXE_HWSTAT_STOPPED                  0x0000/
+PXE_HWSTAT_TX_COMPLETE_INT_ENABLED	src/loader/efi/efi_pxe.h	/^#define PXE_HWSTAT_TX_COMPLETE_INT_ENABLED        /
+PXE_HWSTAT_TX_COMPLETE_INT_PENDING	src/loader/efi/efi_pxe.h	/^#define PXE_HWSTAT_TX_COMPLETE_INT_PENDING        /
+PXE_HWSTAT_UNICAST_RX_ENABLED	src/loader/efi/efi_pxe.h	/^#define PXE_HWSTAT_UNICAST_RX_ENABLED           0x/
+PXE_HW_UNDI	src/loader/efi/efi_pxe.h	/^} PXE_HW_UNDI;$/
+PXE_IFNUM	src/loader/efi/efi_pxe.h	/^typedef PXE_UINT16 PXE_IFNUM;$/
+PXE_IFNUM_INVALID	src/loader/efi/efi_pxe.h	/^#define PXE_IFNUM_INVALID                   0x0000/
+PXE_IFNUM_START	src/loader/efi/efi_pxe.h	/^#define PXE_IFNUM_START                     0x0000/
+PXE_IFTYPE	src/loader/efi/efi_pxe.h	/^typedef PXE_UINT8 PXE_IFTYPE;$/
+PXE_IFTYPE_ETHERNET	src/loader/efi/efi_pxe.h	/^#define PXE_IFTYPE_ETHERNET                 0x01$/
+PXE_IFTYPE_FIBRE_CHANNEL	src/loader/efi/efi_pxe.h	/^#define PXE_IFTYPE_FIBRE_CHANNEL                0x/
+PXE_IFTYPE_TOKENRING	src/loader/efi/efi_pxe.h	/^#define PXE_IFTYPE_TOKENRING                    0x/
+PXE_INTEL_ORDER	src/loader/efi/efi_pxe.h	/^#define PXE_INTEL_ORDER         1   \/\/ Intel ord/
+PXE_IO_READ	src/loader/efi/efi_pxe.h	/^#define PXE_IO_READ                     0$/
+PXE_IO_WRITE	src/loader/efi/efi_pxe.h	/^#define PXE_IO_WRITE                        1$/
+PXE_IPV4	src/loader/efi/efi_pxe.h	/^typedef PXE_UINT32 PXE_IPV4;$/
+PXE_IPV6	src/loader/efi/efi_pxe.h	/^typedef PXE_UINT32 PXE_IPV6[4];$/
+PXE_IP_ADDR	src/loader/efi/efi_pxe.h	/^} PXE_IP_ADDR;$/
+PXE_LOOPBACK_EXTERNAL_SUPPORTED	src/loader/efi/efi_pxe.h	/^#define PXE_LOOPBACK_EXTERNAL_SUPPORTED         2$/
+PXE_LOOPBACK_INTERNAL_SUPPORTED	src/loader/efi/efi_pxe.h	/^#define PXE_LOOPBACK_INTERNAL_SUPPORTED         1$/
+PXE_MAC_HEADER_LEN_ETHER	src/loader/efi/efi_pxe.h	/^#define PXE_MAC_HEADER_LEN_ETHER                0x/
+PXE_MAC_LENGTH	src/loader/efi/efi_pxe.h	/^#define PXE_MAC_LENGTH 32$/
+PXE_MAX_TXRX_UNIT_ETHER	src/loader/efi/efi_pxe.h	/^#define PXE_MAX_TXRX_UNIT_ETHER             1500$/
+PXE_MEDIA_PROTOCOL	src/loader/efi/efi_pxe.h	/^typedef PXE_UINT16 PXE_MEDIA_PROTOCOL;$/
+PXE_MEM_READ	src/loader/efi/efi_pxe.h	/^#define PXE_MEM_READ                        2$/
+PXE_MEM_WRITE	src/loader/efi/efi_pxe.h	/^#define PXE_MEM_WRITE                       4$/
+PXE_NETWORK_ORDER	src/loader/efi/efi_pxe.h	/^\/\/#define PXE_NETWORK_ORDER         1   \/\/ net/
+PXE_NO_UINT64_SUPPORT	src/loader/efi/efi_pxe.h	/^\/\/#define PXE_NO_UINT64_SUPPORT     1   \/\/ UIN/
+PXE_OPCODE	src/loader/efi/efi_pxe.h	/^typedef PXE_UINT16 PXE_OPCODE;$/
+PXE_OPCODE_FILL_HEADER	src/loader/efi/efi_pxe.h	/^#define PXE_OPCODE_FILL_HEADER              0x000F/
+PXE_OPCODE_GET_CONFIG_INFO	src/loader/efi/efi_pxe.h	/^#define PXE_OPCODE_GET_CONFIG_INFO              0x/
+PXE_OPCODE_GET_INIT_INFO	src/loader/efi/efi_pxe.h	/^#define PXE_OPCODE_GET_INIT_INFO                0x/
+PXE_OPCODE_GET_STATE	src/loader/efi/efi_pxe.h	/^#define PXE_OPCODE_GET_STATE                    0x/
+PXE_OPCODE_GET_STATUS	src/loader/efi/efi_pxe.h	/^#define PXE_OPCODE_GET_STATUS                   0x/
+PXE_OPCODE_INITIALIZE	src/loader/efi/efi_pxe.h	/^#define PXE_OPCODE_INITIALIZE                   0x/
+PXE_OPCODE_INTERRUPT_ENABLES	src/loader/efi/efi_pxe.h	/^#define PXE_OPCODE_INTERRUPT_ENABLES              /
+PXE_OPCODE_LAST_VALID	src/loader/efi/efi_pxe.h	/^#define PXE_OPCODE_LAST_VALID                   0x/
+PXE_OPCODE_MCAST_IP_TO_MAC	src/loader/efi/efi_pxe.h	/^#define PXE_OPCODE_MCAST_IP_TO_MAC              0x/
+PXE_OPCODE_NVDATA	src/loader/efi/efi_pxe.h	/^#define PXE_OPCODE_NVDATA                   0x000D/
+PXE_OPCODE_RECEIVE	src/loader/efi/efi_pxe.h	/^#define PXE_OPCODE_RECEIVE                  0x0011/
+PXE_OPCODE_RECEIVE_FILTERS	src/loader/efi/efi_pxe.h	/^#define PXE_OPCODE_RECEIVE_FILTERS              0x/
+PXE_OPCODE_RESET	src/loader/efi/efi_pxe.h	/^#define PXE_OPCODE_RESET                    0x0006/
+PXE_OPCODE_SHUTDOWN	src/loader/efi/efi_pxe.h	/^#define PXE_OPCODE_SHUTDOWN                 0x0007/
+PXE_OPCODE_START	src/loader/efi/efi_pxe.h	/^#define PXE_OPCODE_START                    0x0001/
+PXE_OPCODE_STATION_ADDRESS	src/loader/efi/efi_pxe.h	/^#define PXE_OPCODE_STATION_ADDRESS              0x/
+PXE_OPCODE_STATISTICS	src/loader/efi/efi_pxe.h	/^#define PXE_OPCODE_STATISTICS                   0x/
+PXE_OPCODE_STOP	src/loader/efi/efi_pxe.h	/^#define PXE_OPCODE_STOP                     0x0002/
+PXE_OPCODE_TRANSMIT	src/loader/efi/efi_pxe.h	/^#define PXE_OPCODE_TRANSMIT                 0x0010/
+PXE_OPCODE_VALID_MAX	src/loader/efi/efi_pxe.h	/^#define PXE_OPCODE_VALID_MAX                    0x/
+PXE_OPFLAGS	src/loader/efi/efi_pxe.h	/^typedef PXE_UINT16 PXE_OPFLAGS;$/
+PXE_OPFLAGS_FILL_HEADER_FRAGMENTED	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_FILL_HEADER_FRAGMENTED        /
+PXE_OPFLAGS_FILL_HEADER_OPMASK	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_FILL_HEADER_OPMASK          0x/
+PXE_OPFLAGS_FILL_HEADER_WHOLE	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_FILL_HEADER_WHOLE           0x/
+PXE_OPFLAGS_GET_INTERRUPT_STATUS	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_GET_INTERRUPT_STATUS          /
+PXE_OPFLAGS_GET_TRANSMITTED_BUFFERS	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_GET_TRANSMITTED_BUFFERS       /
+PXE_OPFLAGS_INITIALIZE_CABLE_DETECT_MASK	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_INITIALIZE_CABLE_DETECT_MASK  /
+PXE_OPFLAGS_INITIALIZE_DETECT_CABLE	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_INITIALIZE_DETECT_CABLE       /
+PXE_OPFLAGS_INITIALIZE_DO_NOT_DETECT_CABLE	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_INITIALIZE_DO_NOT_DETECT_CABLE/
+PXE_OPFLAGS_INTERRUPT_COMMAND	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_INTERRUPT_COMMAND           0x/
+PXE_OPFLAGS_INTERRUPT_DISABLE	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_INTERRUPT_DISABLE           0x/
+PXE_OPFLAGS_INTERRUPT_ENABLE	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_INTERRUPT_ENABLE              /
+PXE_OPFLAGS_INTERRUPT_OPMASK	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_INTERRUPT_OPMASK              /
+PXE_OPFLAGS_INTERRUPT_READ	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_INTERRUPT_READ              0x/
+PXE_OPFLAGS_INTERRUPT_RECEIVE	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_INTERRUPT_RECEIVE           0x/
+PXE_OPFLAGS_INTERRUPT_SOFTWARE	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_INTERRUPT_SOFTWARE          0x/
+PXE_OPFLAGS_INTERRUPT_TRANSMIT	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_INTERRUPT_TRANSMIT          0x/
+PXE_OPFLAGS_MCAST_IPV4_TO_MAC	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_MCAST_IPV4_TO_MAC           0x/
+PXE_OPFLAGS_MCAST_IPV6_TO_MAC	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_MCAST_IPV6_TO_MAC           0x/
+PXE_OPFLAGS_MCAST_IP_TO_MAC_OPMASK	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_MCAST_IP_TO_MAC_OPMASK        /
+PXE_OPFLAGS_NOT_USED	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_NOT_USED                    0x/
+PXE_OPFLAGS_NVDATA_OPMASK	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_NVDATA_OPMASK               0x/
+PXE_OPFLAGS_NVDATA_READ	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_NVDATA_READ             0x0000/
+PXE_OPFLAGS_NVDATA_WRITE	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_NVDATA_WRITE                0x/
+PXE_OPFLAGS_RECEIVE_FILTER_ALL_MULTICAST	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_RECEIVE_FILTER_ALL_MULTICAST  /
+PXE_OPFLAGS_RECEIVE_FILTER_BROADCAST	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_RECEIVE_FILTER_BROADCAST      /
+PXE_OPFLAGS_RECEIVE_FILTER_DISABLE	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_RECEIVE_FILTER_DISABLE        /
+PXE_OPFLAGS_RECEIVE_FILTER_ENABLE	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_RECEIVE_FILTER_ENABLE         /
+PXE_OPFLAGS_RECEIVE_FILTER_FILTERED_MULTICAST	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_RECEIVE_FILTER_FILTERED_MULTIC/
+PXE_OPFLAGS_RECEIVE_FILTER_OPMASK	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_RECEIVE_FILTER_OPMASK         /
+PXE_OPFLAGS_RECEIVE_FILTER_PROMISCUOUS	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_RECEIVE_FILTER_PROMISCUOUS    /
+PXE_OPFLAGS_RECEIVE_FILTER_READ	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_RECEIVE_FILTER_READ         0x/
+PXE_OPFLAGS_RECEIVE_FILTER_RESET_MCAST_LIST	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_RECEIVE_FILTER_RESET_MCAST_LIS/
+PXE_OPFLAGS_RECEIVE_FILTER_UNICAST	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_RECEIVE_FILTER_UNICAST        /
+PXE_OPFLAGS_RESET_DISABLE_FILTERS	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_RESET_DISABLE_FILTERS         /
+PXE_OPFLAGS_RESET_DISABLE_INTERRUPTS	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_RESET_DISABLE_INTERRUPTS      /
+PXE_OPFLAGS_STATION_ADDRESS_READ	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_STATION_ADDRESS_READ          /
+PXE_OPFLAGS_STATION_ADDRESS_RESET	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_STATION_ADDRESS_RESET         /
+PXE_OPFLAGS_STATISTICS_READ	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_STATISTICS_READ             0x/
+PXE_OPFLAGS_STATISTICS_RESET	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_STATISTICS_RESET              /
+PXE_OPFLAGS_SWUNDI_TRANSMIT_OPMASK	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_SWUNDI_TRANSMIT_OPMASK        /
+PXE_OPFLAGS_TRANSMIT_BLOCK	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_TRANSMIT_BLOCK              0x/
+PXE_OPFLAGS_TRANSMIT_DONT_BLOCK	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_TRANSMIT_DONT_BLOCK         0x/
+PXE_OPFLAGS_TRANSMIT_FRAGMENTED	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_TRANSMIT_FRAGMENTED         0x/
+PXE_OPFLAGS_TRANSMIT_OPMASK	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_TRANSMIT_OPMASK             0x/
+PXE_OPFLAGS_TRANSMIT_WHOLE	src/loader/efi/efi_pxe.h	/^#define PXE_OPFLAGS_TRANSMIT_WHOLE              0x/
+PXE_PCC_CONFIG_INFO	src/loader/efi/efi_pxe.h	/^} PXE_PCC_CONFIG_INFO;$/
+PXE_PCI_CONFIG_INFO	src/loader/efi/efi_pxe.h	/^} PXE_PCI_CONFIG_INFO;$/
+PXE_PROTOCOL_ETHERNET_ARP	src/loader/efi/efi_pxe.h	/^#define PXE_PROTOCOL_ETHERNET_ARP               0x/
+PXE_PROTOCOL_ETHERNET_IP	src/loader/efi/efi_pxe.h	/^#define PXE_PROTOCOL_ETHERNET_IP                0x/
+PXE_ROMID_IMP_64BIT_DEVICE	src/loader/efi/efi_pxe.h	/^#define PXE_ROMID_IMP_64BIT_DEVICE              0x/
+PXE_ROMID_IMP_BROADCAST_RX_SUPPORTED	src/loader/efi/efi_pxe.h	/^#define PXE_ROMID_IMP_BROADCAST_RX_SUPPORTED      /
+PXE_ROMID_IMP_CMD_COMPLETE_INT_SUPPORTED	src/loader/efi/efi_pxe.h	/^#define PXE_ROMID_IMP_CMD_COMPLETE_INT_SUPPORTED  /
+PXE_ROMID_IMP_CMD_LINK_SUPPORTED	src/loader/efi/efi_pxe.h	/^#define PXE_ROMID_IMP_CMD_LINK_SUPPORTED          /
+PXE_ROMID_IMP_CMD_QUEUE_SUPPORTED	src/loader/efi/efi_pxe.h	/^#define PXE_ROMID_IMP_CMD_QUEUE_SUPPORTED         /
+PXE_ROMID_IMP_FILTERED_MULTICAST_RX_SUPPORTED	src/loader/efi/efi_pxe.h	/^#define PXE_ROMID_IMP_FILTERED_MULTICAST_RX_SUPPOR/
+PXE_ROMID_IMP_FRAG_SUPPORTED	src/loader/efi/efi_pxe.h	/^#define PXE_ROMID_IMP_FRAG_SUPPORTED              /
+PXE_ROMID_IMP_HW_UNDI	src/loader/efi/efi_pxe.h	/^#define PXE_ROMID_IMP_HW_UNDI                   0x/
+PXE_ROMID_IMP_MULTI_FRAME_SUPPORTED	src/loader/efi/efi_pxe.h	/^#define PXE_ROMID_IMP_MULTI_FRAME_SUPPORTED       /
+PXE_ROMID_IMP_NVDATA_BULK_WRITABLE	src/loader/efi/efi_pxe.h	/^#define PXE_ROMID_IMP_NVDATA_BULK_WRITABLE        /
+PXE_ROMID_IMP_NVDATA_NOT_AVAILABLE	src/loader/efi/efi_pxe.h	/^#define PXE_ROMID_IMP_NVDATA_NOT_AVAILABLE        /
+PXE_ROMID_IMP_NVDATA_READ_ONLY	src/loader/efi/efi_pxe.h	/^#define PXE_ROMID_IMP_NVDATA_READ_ONLY          0x/
+PXE_ROMID_IMP_NVDATA_SPARSE_WRITABLE	src/loader/efi/efi_pxe.h	/^#define PXE_ROMID_IMP_NVDATA_SPARSE_WRITABLE      /
+PXE_ROMID_IMP_NVDATA_SUPPORT_MASK	src/loader/efi/efi_pxe.h	/^#define PXE_ROMID_IMP_NVDATA_SUPPORT_MASK         /
+PXE_ROMID_IMP_PACKET_RX_INT_SUPPORTED	src/loader/efi/efi_pxe.h	/^#define PXE_ROMID_IMP_PACKET_RX_INT_SUPPORTED     /
+PXE_ROMID_IMP_PROMISCUOUS_MULTICAST_RX_SUPPORTED	src/loader/efi/efi_pxe.h	/^#define PXE_ROMID_IMP_PROMISCUOUS_MULTICAST_RX_SUP/
+PXE_ROMID_IMP_PROMISCUOUS_RX_SUPPORTED	src/loader/efi/efi_pxe.h	/^#define PXE_ROMID_IMP_PROMISCUOUS_RX_SUPPORTED    /
+PXE_ROMID_IMP_SOFTWARE_INT_SUPPORTED	src/loader/efi/efi_pxe.h	/^#define PXE_ROMID_IMP_SOFTWARE_INT_SUPPORTED      /
+PXE_ROMID_IMP_STATION_ADDR_SETTABLE	src/loader/efi/efi_pxe.h	/^#define PXE_ROMID_IMP_STATION_ADDR_SETTABLE       /
+PXE_ROMID_IMP_STATISTICS_SUPPORTED	src/loader/efi/efi_pxe.h	/^#define PXE_ROMID_IMP_STATISTICS_SUPPORTED        /
+PXE_ROMID_IMP_SW_VIRT_ADDR	src/loader/efi/efi_pxe.h	/^#define PXE_ROMID_IMP_SW_VIRT_ADDR              0x/
+PXE_ROMID_IMP_TX_COMPLETE_INT_SUPPORTED	src/loader/efi/efi_pxe.h	/^#define PXE_ROMID_IMP_TX_COMPLETE_INT_SUPPORTED   /
+PXE_ROMID_MAJORVER	src/loader/efi/efi_pxe.h	/^#define PXE_ROMID_MAJORVER                  0x03$/
+PXE_ROMID_MINORVER	src/loader/efi/efi_pxe.h	/^#define PXE_ROMID_MINORVER                  0x00$/
+PXE_ROMID_REV	src/loader/efi/efi_pxe.h	/^#define PXE_ROMID_REV                       0x02$/
+PXE_ROMID_SIGNATURE	src/loader/efi/efi_pxe.h	/^#define PXE_ROMID_SIGNATURE     PXE_BUSTYPE('!', '/
+PXE_STATCODE	src/loader/efi/efi_pxe.h	/^typedef PXE_UINT16 PXE_STATCODE;$/
+PXE_STATCODE_ALREADY_INITIALIZED	src/loader/efi/efi_pxe.h	/^#define PXE_STATCODE_ALREADY_INITIALIZED        0x/
+PXE_STATCODE_ALREADY_STARTED	src/loader/efi/efi_pxe.h	/^#define PXE_STATCODE_ALREADY_STARTED            0x/
+PXE_STATCODE_BUFFER_FULL	src/loader/efi/efi_pxe.h	/^#define PXE_STATCODE_BUFFER_FULL                0x/
+PXE_STATCODE_BUSY	src/loader/efi/efi_pxe.h	/^#define PXE_STATCODE_BUSY                   	0x000/
+PXE_STATCODE_DEVICE_FAILURE	src/loader/efi/efi_pxe.h	/^#define PXE_STATCODE_DEVICE_FAILURE             0x/
+PXE_STATCODE_INITIALIZE	src/loader/efi/efi_pxe.h	/^#define PXE_STATCODE_INITIALIZE             0x0000/
+PXE_STATCODE_INVALID_CDB	src/loader/efi/efi_pxe.h	/^#define PXE_STATCODE_INVALID_CDB                0x/
+PXE_STATCODE_INVALID_CPB	src/loader/efi/efi_pxe.h	/^#define PXE_STATCODE_INVALID_CPB                0x/
+PXE_STATCODE_INVALID_PARAMETER	src/loader/efi/efi_pxe.h	/^#define PXE_STATCODE_INVALID_PARAMETER		0x000E$/
+PXE_STATCODE_INVALID_UNDI	src/loader/efi/efi_pxe.h	/^#define PXE_STATCODE_INVALID_UNDI		0x000F$/
+PXE_STATCODE_IPV4_NOT_SUPPORTED	src/loader/efi/efi_pxe.h	/^#define PXE_STATCODE_IPV4_NOT_SUPPORTED		0x0010$/
+PXE_STATCODE_IPV6_NOT_SUPPORTED	src/loader/efi/efi_pxe.h	/^#define PXE_STATCODE_IPV6_NOT_SUPPORTED		0x0011$/
+PXE_STATCODE_NOT_ENOUGH_MEMORY	src/loader/efi/efi_pxe.h	/^#define PXE_STATCODE_NOT_ENOUGH_MEMORY		0x0012$/
+PXE_STATCODE_NOT_INITIALIZED	src/loader/efi/efi_pxe.h	/^#define PXE_STATCODE_NOT_INITIALIZED            0x/
+PXE_STATCODE_NOT_SHUTDOWN	src/loader/efi/efi_pxe.h	/^#define PXE_STATCODE_NOT_SHUTDOWN               0x/
+PXE_STATCODE_NOT_STARTED	src/loader/efi/efi_pxe.h	/^#define PXE_STATCODE_NOT_STARTED                0x/
+PXE_STATCODE_NO_DATA	src/loader/efi/efi_pxe.h	/^#define PXE_STATCODE_NO_DATA			0x0013$/
+PXE_STATCODE_NVDATA_FAILURE	src/loader/efi/efi_pxe.h	/^#define PXE_STATCODE_NVDATA_FAILURE             0x/
+PXE_STATCODE_QUEUE_FULL	src/loader/efi/efi_pxe.h	/^#define PXE_STATCODE_QUEUE_FULL             	0x000/
+PXE_STATCODE_SUCCESS	src/loader/efi/efi_pxe.h	/^#define PXE_STATCODE_SUCCESS                    0x/
+PXE_STATCODE_UNSUPPORTED	src/loader/efi/efi_pxe.h	/^#define PXE_STATCODE_UNSUPPORTED                0x/
+PXE_STATFLAGS	src/loader/efi/efi_pxe.h	/^typedef PXE_UINT16 PXE_STATFLAGS;$/
+PXE_STATFLAGS_CABLE_DETECT_MASK	src/loader/efi/efi_pxe.h	/^#define PXE_STATFLAGS_CABLE_DETECT_MASK          0/
+PXE_STATFLAGS_CABLE_DETECT_NOT_SUPPORTED	src/loader/efi/efi_pxe.h	/^#define PXE_STATFLAGS_CABLE_DETECT_NOT_SUPPORTED 0/
+PXE_STATFLAGS_CABLE_DETECT_SUPPORTED	src/loader/efi/efi_pxe.h	/^#define PXE_STATFLAGS_CABLE_DETECT_SUPPORTED     0/
+PXE_STATFLAGS_COMMAND_COMPLETE	src/loader/efi/efi_pxe.h	/^#define PXE_STATFLAGS_COMMAND_COMPLETE          0x/
+PXE_STATFLAGS_COMMAND_FAILED	src/loader/efi/efi_pxe.h	/^#define PXE_STATFLAGS_COMMAND_FAILED              /
+PXE_STATFLAGS_COMMAND_QUEUED	src/loader/efi/efi_pxe.h	/^#define PXE_STATFLAGS_COMMAND_QUEUED              /
+PXE_STATFLAGS_DB_WRITE_TRUNCATED	src/loader/efi/efi_pxe.h	/^#define PXE_STATFLAGS_DB_WRITE_TRUNCATED          /
+PXE_STATFLAGS_GET_STATE_INITIALIZED	src/loader/efi/efi_pxe.h	/^#define PXE_STATFLAGS_GET_STATE_INITIALIZED       /
+PXE_STATFLAGS_GET_STATE_MASK	src/loader/efi/efi_pxe.h	/^#define PXE_STATFLAGS_GET_STATE_MASK              /
+PXE_STATFLAGS_GET_STATE_STARTED	src/loader/efi/efi_pxe.h	/^#define PXE_STATFLAGS_GET_STATE_STARTED         0x/
+PXE_STATFLAGS_GET_STATE_STOPPED	src/loader/efi/efi_pxe.h	/^#define PXE_STATFLAGS_GET_STATE_STOPPED         0x/
+PXE_STATFLAGS_GET_STATUS_COMMAND	src/loader/efi/efi_pxe.h	/^#define PXE_STATFLAGS_GET_STATUS_COMMAND          /
+PXE_STATFLAGS_GET_STATUS_INTERRUPT_MASK	src/loader/efi/efi_pxe.h	/^#define PXE_STATFLAGS_GET_STATUS_INTERRUPT_MASK   /
+PXE_STATFLAGS_GET_STATUS_NO_INTERRUPTS	src/loader/efi/efi_pxe.h	/^#define PXE_STATFLAGS_GET_STATUS_NO_INTERRUPTS    /
+PXE_STATFLAGS_GET_STATUS_NO_TXBUFS_WRITTEN	src/loader/efi/efi_pxe.h	/^#define PXE_STATFLAGS_GET_STATUS_NO_TXBUFS_WRITTEN/
+PXE_STATFLAGS_GET_STATUS_RECEIVE	src/loader/efi/efi_pxe.h	/^#define PXE_STATFLAGS_GET_STATUS_RECEIVE          /
+PXE_STATFLAGS_GET_STATUS_SOFTWARE	src/loader/efi/efi_pxe.h	/^#define PXE_STATFLAGS_GET_STATUS_SOFTWARE         /
+PXE_STATFLAGS_GET_STATUS_TRANSMIT	src/loader/efi/efi_pxe.h	/^#define PXE_STATFLAGS_GET_STATUS_TRANSMIT         /
+PXE_STATFLAGS_GET_STATUS_TXBUF_QUEUE_EMPTY	src/loader/efi/efi_pxe.h	/^#define PXE_STATFLAGS_GET_STATUS_TXBUF_QUEUE_EMPTY/
+PXE_STATFLAGS_INITIALIZE	src/loader/efi/efi_pxe.h	/^#define PXE_STATFLAGS_INITIALIZE                0x/
+PXE_STATFLAGS_INITIALIZED_NO_MEDIA	src/loader/efi/efi_pxe.h	/^#define PXE_STATFLAGS_INITIALIZED_NO_MEDIA        /
+PXE_STATFLAGS_INTERRUPT_COMMAND	src/loader/efi/efi_pxe.h	/^#define PXE_STATFLAGS_INTERRUPT_COMMAND         0x/
+PXE_STATFLAGS_INTERRUPT_RECEIVE	src/loader/efi/efi_pxe.h	/^#define PXE_STATFLAGS_INTERRUPT_RECEIVE         0x/
+PXE_STATFLAGS_INTERRUPT_TRANSMIT	src/loader/efi/efi_pxe.h	/^#define PXE_STATFLAGS_INTERRUPT_TRANSMIT          /
+PXE_STATFLAGS_RECEIVE_FILTER_ALL_MULTICAST	src/loader/efi/efi_pxe.h	/^#define PXE_STATFLAGS_RECEIVE_FILTER_ALL_MULTICAST/
+PXE_STATFLAGS_RECEIVE_FILTER_BROADCAST	src/loader/efi/efi_pxe.h	/^#define PXE_STATFLAGS_RECEIVE_FILTER_BROADCAST    /
+PXE_STATFLAGS_RECEIVE_FILTER_FILTERED_MULTICAST	src/loader/efi/efi_pxe.h	/^#define PXE_STATFLAGS_RECEIVE_FILTER_FILTERED_MULT/
+PXE_STATFLAGS_RECEIVE_FILTER_PROMISCUOUS	src/loader/efi/efi_pxe.h	/^#define PXE_STATFLAGS_RECEIVE_FILTER_PROMISCUOUS  /
+PXE_STATFLAGS_RECEIVE_FILTER_UNICAST	src/loader/efi/efi_pxe.h	/^#define PXE_STATFLAGS_RECEIVE_FILTER_UNICAST      /
+PXE_STATFLAGS_RESET_NO_MEDIA	src/loader/efi/efi_pxe.h	/^#define PXE_STATFLAGS_RESET_NO_MEDIA              /
+PXE_STATFLAGS_STATUS_MASK	src/loader/efi/efi_pxe.h	/^#define PXE_STATFLAGS_STATUS_MASK               0x/
+PXE_STATISTICS_COLLISIONS	src/loader/efi/efi_pxe.h	/^#define PXE_STATISTICS_COLLISIONS               0x/
+PXE_STATISTICS_RX_BROADCAST_FRAMES	src/loader/efi/efi_pxe.h	/^#define PXE_STATISTICS_RX_BROADCAST_FRAMES        /
+PXE_STATISTICS_RX_CRC_ERROR_FRAMES	src/loader/efi/efi_pxe.h	/^#define PXE_STATISTICS_RX_CRC_ERROR_FRAMES        /
+PXE_STATISTICS_RX_DROPPED_FRAMES	src/loader/efi/efi_pxe.h	/^#define PXE_STATISTICS_RX_DROPPED_FRAMES          /
+PXE_STATISTICS_RX_GOOD_FRAMES	src/loader/efi/efi_pxe.h	/^#define PXE_STATISTICS_RX_GOOD_FRAMES           0x/
+PXE_STATISTICS_RX_MULTICAST_FRAMES	src/loader/efi/efi_pxe.h	/^#define PXE_STATISTICS_RX_MULTICAST_FRAMES        /
+PXE_STATISTICS_RX_OVERSIZE_FRAMES	src/loader/efi/efi_pxe.h	/^#define PXE_STATISTICS_RX_OVERSIZE_FRAMES         /
+PXE_STATISTICS_RX_TOTAL_BYTES	src/loader/efi/efi_pxe.h	/^#define PXE_STATISTICS_RX_TOTAL_BYTES           0x/
+PXE_STATISTICS_RX_TOTAL_FRAMES	src/loader/efi/efi_pxe.h	/^#define PXE_STATISTICS_RX_TOTAL_FRAMES          0x/
+PXE_STATISTICS_RX_UNDERSIZE_FRAMES	src/loader/efi/efi_pxe.h	/^#define PXE_STATISTICS_RX_UNDERSIZE_FRAMES        /
+PXE_STATISTICS_RX_UNICAST_FRAMES	src/loader/efi/efi_pxe.h	/^#define PXE_STATISTICS_RX_UNICAST_FRAMES          /
+PXE_STATISTICS_TX_BROADCAST_FRAMES	src/loader/efi/efi_pxe.h	/^#define PXE_STATISTICS_TX_BROADCAST_FRAMES        /
+PXE_STATISTICS_TX_CRC_ERROR_FRAMES	src/loader/efi/efi_pxe.h	/^#define PXE_STATISTICS_TX_CRC_ERROR_FRAMES        /
+PXE_STATISTICS_TX_DROPPED_FRAMES	src/loader/efi/efi_pxe.h	/^#define PXE_STATISTICS_TX_DROPPED_FRAMES          /
+PXE_STATISTICS_TX_GOOD_FRAMES	src/loader/efi/efi_pxe.h	/^#define PXE_STATISTICS_TX_GOOD_FRAMES           0x/
+PXE_STATISTICS_TX_MULTICAST_FRAMES	src/loader/efi/efi_pxe.h	/^#define PXE_STATISTICS_TX_MULTICAST_FRAMES        /
+PXE_STATISTICS_TX_OVERSIZE_FRAMES	src/loader/efi/efi_pxe.h	/^#define PXE_STATISTICS_TX_OVERSIZE_FRAMES         /
+PXE_STATISTICS_TX_TOTAL_BYTES	src/loader/efi/efi_pxe.h	/^#define PXE_STATISTICS_TX_TOTAL_BYTES           0x/
+PXE_STATISTICS_TX_TOTAL_FRAMES	src/loader/efi/efi_pxe.h	/^#define PXE_STATISTICS_TX_TOTAL_FRAMES          0x/
+PXE_STATISTICS_TX_UNDERSIZE_FRAMES	src/loader/efi/efi_pxe.h	/^#define PXE_STATISTICS_TX_UNDERSIZE_FRAMES        /
+PXE_STATISTICS_TX_UNICAST_FRAMES	src/loader/efi/efi_pxe.h	/^#define PXE_STATISTICS_TX_UNICAST_FRAMES          /
+PXE_STATISTICS_UNSUPPORTED_PROTOCOL	src/loader/efi/efi_pxe.h	/^#define PXE_STATISTICS_UNSUPPORTED_PROTOCOL       /
+PXE_SWAP_UINT16	src/loader/efi/efi_pxe.h	/^#define PXE_SWAP_UINT16(n)          \\$/
+PXE_SWAP_UINT32	src/loader/efi/efi_pxe.h	/^#define PXE_SWAP_UINT32(n)              \\$/
+PXE_SWAP_UINT64	src/loader/efi/efi_pxe.h	/^#define PXE_SWAP_UINT64(n)                  \\$/
+PXE_SW_UNDI	src/loader/efi/efi_pxe.h	/^} PXE_SW_UNDI;$/
+PXE_TRUE	src/loader/efi/efi_pxe.h	/^#define PXE_TRUE                    (!PXE_FALSE)$/
+PXE_UINT16	src/loader/efi/efi_pxe.h	/^typedef unsigned short PXE_UINT16;$/
+PXE_UINT32	src/loader/efi/efi_pxe.h	/^typedef unsigned PXE_UINT32;$/
+PXE_UINT64	src/loader/efi/efi_pxe.h	/^\/\/ typedef unsigned long PXE_UINT64;$/
+PXE_UINT64_SUPPORT	src/loader/efi/efi_pxe.h	/^#define PXE_UINT64_SUPPORT          1   \/\/ UINT6/
+PXE_UINT8	src/loader/efi/efi_pxe.h	/^typedef unsigned char PXE_UINT8;$/
+PXE_UINTN	src/loader/efi/efi_pxe.h	/^typedef unsigned PXE_UINTN;$/
+PXE_UNDI	src/loader/efi/efi_pxe.h	/^} PXE_UNDI;$/
+PXE_USB_CONFIG_INFO	src/loader/efi/efi_pxe.h	/^} PXE_USB_CONFIG_INFO;$/
+PXE_VOID	src/loader/efi/efi_pxe.h	/^typedef void PXE_VOID;$/
+PXE_VOLATILE	src/loader/efi/efi_pxe.h	/^#define PXE_VOLATILE volatile$/
+Pause	src/loader/efi/efilib.h	/^#define Pause()             WaitForSingleEvent (ST/
+PcAnsiProtocol	src/loader/efi/efilib.h	/^#define PcAnsiProtocol gEfiPcAnsiGuid$/
+PciDataStructure	src/loader/efi/romload.h	/^}PciDataStructure;$/
+PciIoProtocol	src/loader/efi/efilib.h	/^#define PciIoProtocol gEfiPciIoProtocolGuid$/
+Plabel	src/loader/efi/ia64/pe.h	/^struct Plabel { $/
+PlatformDriverOverrideProtocol	src/loader/efi/efilib.h	/^#define PlatformDriverOverrideProtocol gEfiPlatfor/
+Port80	src/loader/efi/efilib.h	/^#define Port80(_PostCode)   GlobalIoFncs->Io.Write/
+PxeBaseCodeProtocol	src/loader/efi/efilib.h	/^#define PxeBaseCodeProtocol gEfiPxeBaseCodeProtoco/
+PxeCallbackProtocol	src/loader/efi/efilib.h	/^#define PxeCallbackProtocol gEfiPxeBaseCodeCallbac/
+ROM_SIGNATURE	src/loader/efi/romload.h	/^#define ROM_SIGNATURE 0xaa55$/
+RUNTIMEFUNCTION	src/loader/efi/aarch64/efibind.h	/^#define RUNTIMEFUNCTION$/
+RUNTIMESERVICE	src/loader/efi/aarch64/efibind.h	/^#define RUNTIMESERVICE$/
+RUNTIME_CODE	src/loader/efi/aarch64/efibind.h	/^#define RUNTIME_CODE(a)         alloc_text("rtcode/
+RemoveEntryList	src/loader/efi/efilink.h	/^    #define RemoveEntryList(Entry)                /
+RomHeader	src/loader/efi/romload.h	/^}RomHeader;$/
+SAL_COHERENCE_DOMAIN_INFO	src/loader/efi/ia64/salproc.h	/^} SAL_COHERENCE_DOMAIN_INFO;$/
+SAL_IO_PORT_MAPPING	src/loader/efi/ia64/salproc.h	/^#define SAL_IO_PORT_MAPPING 0x0003$/
+SAL_PCI_CONFIG_READ	src/loader/efi/ia64/salproc.h	/^#define  SAL_PCI_CONFIG_READ                    0x/
+SAL_PCI_CONFIG_WRITE	src/loader/efi/ia64/salproc.h	/^#define  SAL_PCI_CONFIG_WRITE                   0x/
+SAL_SAPIC_IPI_BLOCK	src/loader/efi/ia64/salproc.h	/^#define SAL_SAPIC_IPI_BLOCK 0x0002$/
+SAL_ST_AP_WAKEUP	src/loader/efi/ia64/salproc.h	/^#define SAL_ST_AP_WAKEUP            5$/
+SAL_ST_AP_WAKEUP_DECRIPTOR	src/loader/efi/ia64/salproc.h	/^} SAL_ST_AP_WAKEUP_DECRIPTOR;$/
+SAL_ST_CACHE_COHERENCE_DECRIPTOR	src/loader/efi/ia64/salproc.h	/^} SAL_ST_CACHE_COHERENCE_DECRIPTOR;$/
+SAL_ST_ENTRY_POINT	src/loader/efi/ia64/salproc.h	/^#define SAL_ST_ENTRY_POINT          0$/
+SAL_ST_ENTRY_POINT_DESCRIPTOR	src/loader/efi/ia64/salproc.h	/^} SAL_ST_ENTRY_POINT_DESCRIPTOR;$/
+SAL_ST_MEMORY_DECRIPTOR	src/loader/efi/ia64/salproc.h	/^} SAL_ST_MEMORY_DECRIPTOR;$/
+SAL_ST_MEMORY_DESCRIPTOR	src/loader/efi/ia64/salproc.h	/^#define SAL_ST_MEMORY_DESCRIPTOR    1$/
+SAL_ST_MEMORY_DESCRIPTOR_ENTRY	src/loader/efi/ia64/salproc.h	/^} SAL_ST_MEMORY_DESCRIPTOR_ENTRY;$/
+SAL_ST_PLATFORM_FEATURES	src/loader/efi/ia64/salproc.h	/^#define SAL_ST_PLATFORM_FEATURES    2$/
+SAL_ST_PTC	src/loader/efi/ia64/salproc.h	/^#define SAL_ST_PTC                  4$/
+SAL_ST_TR_DECRIPTOR	src/loader/efi/ia64/salproc.h	/^} SAL_ST_TR_DECRIPTOR;$/
+SAL_ST_TR_USAGE	src/loader/efi/ia64/salproc.h	/^#define SAL_ST_TR_USAGE             3$/
+SAL_SYSTEM_TABLE_ASCENDING_ORDER	src/loader/efi/ia64/salproc.h	/^} SAL_SYSTEM_TABLE_ASCENDING_ORDER;$/
+SAL_SYSTEM_TABLE_GUID	src/loader/efi/efiapi.h	/^#define SAL_SYSTEM_TABLE_GUID    \\$/
+SAL_SYSTEM_TABLE_HDR	src/loader/efi/ia64/salproc.h	/^} SAL_SYSTEM_TABLE_HDR;$/
+SATA_DEVICE_PATH	src/loader/efi/efidevp.h	/^} SATA_DEVICE_PATH ;$/
+SCSI_DEVICE_PATH	src/loader/efi/efidevp.h	/^} SCSI_DEVICE_PATH;$/
+SERIAL_IO_INTERFACE	src/loader/efi/efiser.h	/^typedef EFI_SERIAL_IO_PROTOCOL SERIAL_IO_INTERFACE/
+SERIAL_IO_INTERFACE_REVISION	src/loader/efi/efiser.h	/^#define SERIAL_IO_INTERFACE_REVISION    0x00010000/
+SERIAL_IO_MODE	src/loader/efi/efiser.h	/^} SERIAL_IO_MODE;$/
+SERIAL_IO_PROTOCOL	src/loader/efi/efiser.h	/^#define SERIAL_IO_PROTOCOL EFI_SERIAL_IO_PROTOCOL_/
+SHELL_INTERFACE_PROTOCOL_GUID	src/loader/efi/efishellintf.h	/^#define SHELL_INTERFACE_PROTOCOL_GUID \\$/
+SIGNATURE_TYPE_GUID	src/loader/efi/efidevp.h	/^#define SIGNATURE_TYPE_GUID                 0x02$/
+SIGNATURE_TYPE_MBR	src/loader/efi/efidevp.h	/^#define SIGNATURE_TYPE_MBR                  0x01$/
+SIMPLE_FILE_SYSTEM_PROTOCOL	src/loader/efi/efiprot.h	/^#define SIMPLE_FILE_SYSTEM_PROTOCOL EFI_SIMPLE_FIL/
+SIMPLE_READ_FILE	src/loader/efi/efilib.h	/^typedef VOID        *SIMPLE_READ_FILE;$/
+SIMPLE_TEXT_OUTPUT_MODE	src/loader/efi/eficon.h	/^} SIMPLE_TEXT_OUTPUT_MODE;$/
+SIMPLE_TEXT_OUTPUT_PROTOCOL	src/loader/efi/eficon.h	/^#define SIMPLE_TEXT_OUTPUT_PROTOCOL EFI_SIMPLE_TEX/
+SIZE_OF_EFI_FILE_INFO	src/loader/efi/efiprot.h	/^#define SIZE_OF_EFI_FILE_INFO EFI_FIELD_OFFSET(EFI/
+SIZE_OF_EFI_FILE_SYSTEM_INFO	src/loader/efi/efiprot.h	/^#define SIZE_OF_EFI_FILE_SYSTEM_INFO EFI_FIELD_OFF/
+SIZE_OF_EFI_FILE_SYSTEM_VOLUME_LABEL_INFO	src/loader/efi/efiprot.h	/^#define SIZE_OF_EFI_FILE_SYSTEM_VOLUME_LABEL_INFO /
+SIZE_OF_FILEPATH_DEVICE_PATH	src/loader/efi/efidevp.h	/^#define SIZE_OF_FILEPATH_DEVICE_PATH EFI_FIELD_OFF/
+SLEEP	src/loader/uefi_loader.c	/^#define SLEEP(s)         (BS->Stall((s) * 1000000)/
+SMBIOS3_TABLE_GUID	src/loader/efi/efiapi.h	/^#define SMBIOS3_TABLE_GUID    \\$/
+SMBIOS_HEADER	src/loader/efi/libsmbios.h	/^} SMBIOS_HEADER;$/
+SMBIOS_STRING	src/loader/efi/libsmbios.h	/^typedef UINT8   SMBIOS_STRING;$/
+SMBIOS_STRUCTURE_POINTER	src/loader/efi/libsmbios.h	/^} SMBIOS_STRUCTURE_POINTER;$/
+SMBIOS_STRUCTURE_TABLE	src/loader/efi/libsmbios.h	/^} SMBIOS_STRUCTURE_TABLE;$/
+SMBIOS_TABLE_GUID	src/loader/efi/efiapi.h	/^#define SMBIOS_TABLE_GUID    \\$/
+SMBIOS_TYPE0	src/loader/efi/libsmbios.h	/^} SMBIOS_TYPE0;$/
+SMBIOS_TYPE1	src/loader/efi/libsmbios.h	/^} SMBIOS_TYPE1;$/
+SMBIOS_TYPE2	src/loader/efi/libsmbios.h	/^} SMBIOS_TYPE2;$/
+SMBIOS_TYPE3	src/loader/efi/libsmbios.h	/^} SMBIOS_TYPE3;$/
+SMBIOS_TYPE4	src/loader/efi/libsmbios.h	/^} SMBIOS_TYPE4;$/
+STATIC	src/loader/efi/efilib.h	/^#define STATIC$/
+SUCCESS_OR_ERR	src/loader/uefi_loader.c	/^#define SUCCESS_OR_ERR(what)             \\$/
+SYSTEM_CONTEXT	src/loader/efi/protocol/ia64/eficontext.h	/^} SYSTEM_CONTEXT;$/
+SerialIoProtocol	src/loader/efi/efilib.h	/^#define SerialIoProtocol gEfiSerialIoProtocolGuid$/
+SetDevicePathEndNode	src/loader/efi/efidevp.h	/^#define SetDevicePathEndNode(a)  {                /
+SetDevicePathNodeLength	src/loader/efi/efidevp.h	/^#define SetDevicePathNodeLength(a,l) {            /
+SimpleNetworkProtocol	src/loader/efi/efilib.h	/^#define SimpleNetworkProtocol gEfiSimpleNetworkPro/
+State	src/loader/efi/efipoint.h	/^);$/
+SwapListEntries	src/loader/efi/efilink.h	/^#define SwapListEntries(Entry1,Entry2) {\\$/
+SystemTable	src/loader/efi/efiapi.h	/^    );$/
+TEXT_IN_SPLITER_PROTOCOL	src/loader/efi/protocol/eficonsplit.h	/^#define TEXT_IN_SPLITER_PROTOCOL    \\$/
+TEXT_OUT_SPLITER_PROTOCOL	src/loader/efi/protocol/eficonsplit.h	/^#define TEXT_OUT_SPLITER_PROTOCOL    \\$/
+TPL_APPLICATION	src/loader/efi/efiapi.h	/^#define TPL_APPLICATION       4$/
+TPL_CALLBACK	src/loader/efi/efiapi.h	/^#define TPL_CALLBACK          8$/
+TPL_HIGH_LEVEL	src/loader/efi/efiapi.h	/^#define TPL_HIGH_LEVEL       31$/
+TPL_NOTIFY	src/loader/efi/efiapi.h	/^#define TPL_NOTIFY           16$/
+TRUE	src/loader/efi/efidef.h	/^    #define TRUE    ((BOOLEAN) 1)$/
+TextInProtocol	src/loader/efi/efilib.h	/^#define TextInProtocol gEfiSimpleTextInProtocolGui/
+TextOutProtocol	src/loader/efi/efilib.h	/^#define TextOutProtocol gEfiSimpleTextOutProtocolG/
+UART_DEVICE_PATH	src/loader/efi/efidevp.h	/^} UART_DEVICE_PATH;$/
+UINT16	src/loader/efi/aarch64/efibind.h	/^typedef uint16_t   UINT16;$/
+UINT32	src/loader/efi/aarch64/efibind.h	/^typedef uint32_t   UINT32;$/
+UINT64	src/loader/efi/aarch64/efibind.h	/^typedef uint64_t   UINT64;$/
+UINT8	src/loader/efi/aarch64/efibind.h	/^typedef uint8_t    UINT8;$/
+UINTN	src/loader/efi/aarch64/efibind.h	/^typedef uint64_t   UINTN;$/
+UI_INTERFACE	src/loader/efi/efiui.h	/^typedef EFI_UI_INTERFACE_PROTOCOL UI_INTERFACE;$/
+UI_STRING_ENTRY	src/loader/efi/efiui.h	/^} UI_STRING_ENTRY;$/
+UI_STRING_TYPE	src/loader/efi/efiui.h	/^} UI_STRING_TYPE;$/
+UNICODE_BYTE_ORDER_MARK	src/loader/efi/efiprot.h	/^#define UNICODE_BYTE_ORDER_MARK EFI_UNICODE_BYTE_O/
+UNICODE_COLLATION_PROTOCOL	src/loader/efi/efiprot.h	/^#define UNICODE_COLLATION_PROTOCOL EFI_UNICODE_COL/
+UNKNOWN_DEVICE_GUID	src/loader/efi/efidevp.h	/^#define UNKNOWN_DEVICE_GUID \\$/
+UNKNOWN_DEVICE_VENDOR_DEVICE_PATH	src/loader/efi/efidevp.h	/^} UNKNOWN_DEVICE_VENDOR_DEVICE_PATH;$/
+URI_DEVICE_PATH	src/loader/efi/efidevp.h	/^} URI_DEVICE_PATH;$/
+USB_CLASS_DEVICE_PATH	src/loader/efi/efidevp.h	/^} USB_CLASS_DEVICE_PATH;$/
+USB_DEVICE_PATH	src/loader/efi/efidevp.h	/^} USB_DEVICE_PATH;$/
+USB_WWID_DEVICE_PATH	src/loader/efi/efidevp.h	/^} USB_WWID_DEVICE_PATH ;$/
+UiProtocol	src/loader/efi/efilib.h	/^#define UiProtocol gEFiUiInterfaceProtocolGuid$/
+UnicodeCollationProtocol	src/loader/efi/efilib.h	/^#define UnicodeCollationProtocol gEfiUnicodeCollat/
+VARIABLE_STORE_PROTOCOL	src/loader/efi/protocol/efivar.h	/^#define VARIABLE_STORE_PROTOCOL    \\$/
+VENDOR_DEVICE_PATH	src/loader/efi/efidevp.h	/^} VENDOR_DEVICE_PATH;$/
+VGA_CLASS_DRIVER_PROTOCOL	src/loader/efi/protocol/vgaclass.h	/^#define VGA_CLASS_DRIVER_PROTOCOL \\$/
+VGA_CON_OUT_DEV	src/loader/efi/protocol/vgaclass.h	/^} VGA_CON_OUT_DEV;$/
+VGA_CON_OUT_DEV_FROM_THIS	src/loader/efi/protocol/vgaclass.h	/^#define VGA_CON_OUT_DEV_FROM_THIS(a) CR(a, VGA_CON/
+VGA_CON_OUT_DEV_SIGNATURE	src/loader/efi/protocol/vgaclass.h	/^#define VGA_CON_OUT_DEV_SIGNATURE   EFI_SIGNATURE_/
+VLAN_DEVICE_PATH	src/loader/efi/efidevp.h	/^} VLAN_DEVICE_PATH;$/
+VOID	src/loader/efi/aarch64/efibind.h	/^#define VOID    void$/
+VOLATILE	src/loader/efi/aarch64/efibind.h	/^#define VOLATILE                volatile$/
+VarBootCurrent	src/loader/efi/efilib.h	/^#define VarBootCurrent         L"BootCurrent"$/
+VarBootNext	src/loader/efi/efilib.h	/^#define VarBootNext            L"BootNext"$/
+VarBootOption	src/loader/efi/efilib.h	/^#define VarBootOption          L"Boot%04x"$/
+VarBootOrder	src/loader/efi/efilib.h	/^#define VarBootOrder           L"BootOrder"$/
+VarConsoleInp	src/loader/efi/efilib.h	/^#define VarConsoleInp          L"ConIn"$/
+VarConsoleInpDev	src/loader/efi/efilib.h	/^#define VarConsoleInpDev       L"ConInDev"$/
+VarConsoleOut	src/loader/efi/efilib.h	/^#define VarConsoleOut          L"ConOut"$/
+VarConsoleOutDev	src/loader/efi/efilib.h	/^#define VarConsoleOutDev       L"ConOutDev"$/
+VarDriverOption	src/loader/efi/efilib.h	/^#define VarDriverOption        L"Driver%04x"$/
+VarDriverOrder	src/loader/efi/efilib.h	/^#define VarDriverOrder         L"DriverOrder"$/
+VarErrorOut	src/loader/efi/efilib.h	/^#define VarErrorOut            L"ErrOut"$/
+VarErrorOutDev	src/loader/efi/efilib.h	/^#define VarErrorOutDev         L"ErrOutDev"$/
+VarLanguage	src/loader/efi/efilib.h	/^#define VarLanguage            L"Lang"$/
+VarLanguageCodes	src/loader/efi/efilib.h	/^#define VarLanguageCodes       L"LangCodes"$/
+VarTimeout	src/loader/efi/efilib.h	/^#define VarTimeout             L"Timeout"$/
+VirtualMap	src/loader/efi/efiapi.h	/^    );$/
+Vt100Protocol	src/loader/efi/efilib.h	/^#define Vt100Protocol gEfiVT100Guid$/
+WCHAR	src/loader/efi/aarch64/efibind.h	/^typedef __WCHAR_TYPE__ WCHAR;$/
+X86_64_EFI_BIND	src/loader/efi/x86_64/efibind.h	/^#define X86_64_EFI_BIND$/
+_ADAPTER_DEBUG_H	src/loader/efi/protocol/adapterdebug.h	/^#define _ADAPTER_DEBUG_H$/
+_DEVPATH_H	src/loader/efi/efidevp.h	/^#define _DEVPATH_H$/
+_EFICONTEXT_H_	src/loader/efi/protocol/ia64/eficontext.h	/^#define _EFICONTEXT_H_$/
+_EFIDBG_H_	src/loader/efi/protocol/efidbg.h	/^#define _EFIDBG_H_$/
+_EFILIB_INCLUDE_	src/loader/efi/efilib.h	/^#define _EFILIB_INCLUDE_$/
+_EFINET_H	src/loader/efi/efinet.h	/^#define _EFINET_H$/
+_EFIPXEBC_H	src/loader/efi/efipxebc.h	/^#define _EFIPXEBC_H$/
+_EFISTDARG_H_	src/loader/efi/efistdarg.h	/^#define _EFISTDARG_H_$/
+_EFI_API_H	src/loader/efi/efiapi.h	/^#define _EFI_API_H$/
+_EFI_BLOCK_IO	src/loader/efi/efiprot.h	/^typedef struct _EFI_BLOCK_IO_PROTOCOL _EFI_BLOCK_I/
+_EFI_COMPONENT_NAME	src/loader/efi/efiprot.h	/^typedef struct _EFI_COMPONENT_NAME_PROTOCOL _EFI_C/
+_EFI_COMPONENT_NAME2	src/loader/efi/efiprot.h	/^typedef struct _EFI_COMPONENT_NAME2_PROTOCOL _EFI_/
+_EFI_CONFORK_H	src/loader/efi/protocol/eficonsplit.h	/^#define _EFI_CONFORK_H$/
+_EFI_CON_H	src/loader/efi/eficon.h	/^#define _EFI_CON_H$/
+_EFI_DEBUG_H	src/loader/efi/efidebug.h	/^#define _EFI_DEBUG_H$/
+_EFI_DEF_H	src/loader/efi/efidef.h	/^#define _EFI_DEF_H$/
+_EFI_DEVICE_IO_INTERFACE	src/loader/efi/efiprot.h	/^typedef struct _EFI_DEVICE_IO_PROTOCOL _EFI_DEVICE/
+_EFI_DEVICE_PATH	src/loader/efi/efidevp.h	/^typedef struct _EFI_DEVICE_PATH_PROTOCOL _EFI_DEVI/
+_EFI_DISK_IO	src/loader/efi/efiprot.h	/^typedef struct _EFI_DISK_IO_PROTOCOL _EFI_DISK_IO;/
+_EFI_DRIVER_BINDING	src/loader/efi/efiprot.h	/^typedef struct _EFI_DRIVER_BINDING_PROTOCOL _EFI_D/
+_EFI_ERR_H	src/loader/efi/efierr.h	/^#define _EFI_ERR_H$/
+_EFI_FILE_IO_INTERFACE	src/loader/efi/efiprot.h	/^typedef struct _EFI_SIMPLE_FILE_SYSTEM_PROTOCOL _E/
+_EFI_FS_H	src/loader/efi/efifs.h	/^#define _EFI_FS_H$/
+_EFI_GPT_H	src/loader/efi/efigpt.h	/^#define _EFI_GPT_H$/
+_EFI_GRAPHICS_OUTPUT_PROTOCOL	src/loader/efi/efiprot.h	/^struct _EFI_GRAPHICS_OUTPUT_PROTOCOL {$/
+_EFI_HASH	src/loader/efi/efiprot.h	/^typedef struct _EFI_HASH_PROTOCOL _EFI_HASH;$/
+_EFI_INCLUDE_	src/loader/efi/efi.h	/^#define _EFI_INCLUDE_$/
+_EFI_IP_H	src/loader/efi/efiip.h	/^#define _EFI_IP_H$/
+_EFI_LIB_PLAT_H	src/loader/efi/ia64/efilibplat.h	/^#define _EFI_LIB_PLAT_H$/
+_EFI_LINK_H	src/loader/efi/efilink.h	/^#define _EFI_LINK_H$/
+_EFI_LOAD_FILE_INTERFACE	src/loader/efi/efiprot.h	/^typedef struct _EFI_LOAD_FILE_PROTOCOL _EFI_LOAD_F/
+_EFI_NII_H	src/loader/efi/efi_nii.h	/^#define _EFI_NII_H$/
+_EFI_PART_H	src/loader/efi/efipart.h	/^#define _EFI_PART_H$/
+_EFI_PCI_IO	src/loader/efi/efipciio.h	/^typedef struct _EFI_PCI_IO_PROTOCOL _EFI_PCI_IO;$/
+_EFI_PCI_IO_H	src/loader/efi/efipciio.h	/^#define _EFI_PCI_IO_H$/
+_EFI_POINT_H	src/loader/efi/efipoint.h	/^#define _EFI_POINT_H$/
+_EFI_PROT_H	src/loader/efi/efiprot.h	/^#define _EFI_PROT_H$/
+_EFI_PXE_BASE_CODE	src/loader/efi/efipxebc.h	/^typedef struct _EFI_PXE_BASE_CODE_PROTOCOL _EFI_PX/
+_EFI_PXE_BASE_CODE_CALLBACK	src/loader/efi/efipxebc.h	/^typedef struct _EFI_PXE_BASE_CODE_CALLBACK_PROTOCO/
+_EFI_PXE_H	src/loader/efi/efi_pxe.h	/^#define _EFI_PXE_H$/
+_EFI_ROMLOAD_H	src/loader/efi/romload.h	/^#define _EFI_ROMLOAD_H$/
+_EFI_RT_LIB_INCLUDE_	src/loader/efi/efirtlib.h	/^#define _EFI_RT_LIB_INCLUDE_$/
+_EFI_SER_H	src/loader/efi/efiser.h	/^#define _EFI_SER_H$/
+_EFI_SIMPLE_NETWORK	src/loader/efi/efinet.h	/^typedef struct _EFI_SIMPLE_NETWORK_PROTOCOL _EFI_S/
+_EFI_TCP_H	src/loader/efi/efitcp.h	/^#define _EFI_TCP_H$/
+_EFI_UDP_H	src/loader/efi/efiudp.h	/^#define _EFI_UDP_H$/
+_EFI_UI_H	src/loader/efi/efiui.h	/^#define _EFI_UI_H$/
+_GNU_EFI	src/loader/efi/efi.h	/^#define _GNU_EFI$/
+_INTERNAL_LOAD_INCLUDE_	src/loader/efi/protocol/intload.h	/^#define _INTERNAL_LOAD_INCLUDE_$/
+_LEGACY_BOOT_INCLUDE_	src/loader/efi/protocol/legacyboot.h	/^#define _LEGACY_BOOT_INCLUDE_$/
+_LIB_SMBIOS_H	src/loader/efi/libsmbios.h	/^#define _LIB_SMBIOS_H$/
+_PCI22_H	src/loader/efi/pci22.h	/^#define _PCI22_H$/
+_PE_H	src/loader/efi/ia32/pe.h	/^#define _PE_H$/
+_PIFLASH64_H	src/loader/efi/protocol/piflash64.h	/^#define _PIFLASH64_H$/
+_RemoveEntryList	src/loader/efi/efilink.h	/^#define _RemoveEntryList(Entry) {       \\$/
+_SAL_PROC_H	src/loader/efi/ia64/salproc.h	/^#define _SAL_PROC_H$/
+_SERIAL_IO_INTERFACE	src/loader/efi/efiser.h	/^typedef struct _EFI_SERIAL_IO_PROTOCOL _SERIAL_IO_/
+_SHELLINTERFACE_H_	src/loader/efi/efishellintf.h	/^#define _SHELLINTERFACE_H_$/
+_UI_INTERFACE	src/loader/efi/efiui.h	/^typedef struct _EFI_UI_INTERFACE_PROTOCOL _UI_INTE/
+_VGA_CLASS_H	src/loader/efi/protocol/vgaclass.h	/^#define _VGA_CLASS_H$/
+__EFI_SHELL_PARAMETERS_PROTOCOL__	src/loader/efi/efishellparm.h	/^#define __EFI_SHELL_PARAMETERS_PROTOCOL__$/
+__attribute__	src/loader/efi/eficompiler.h	/^#define __attribute__(x)$/
+_printf	src/loader/uefi_loader.c	/^static void _printf(CHAR16 *fmt, ...) {$/
+_vprintf	src/loader/uefi_loader.c	/^static void _vprintf(CHAR16 *fmt, va_list args) {$/
+argument	src/loader/efi/efidef.h	/^\/\/ OUT - argument (pointer) is returned from the/
+below	src/loader/efi/efi_pxe.h	/^    \/\/ Supported duplex.  See PXE_DUPLEX_xxxxx #/
+gBS	src/loader/efi/efilib.h	/^#define gBS                      BS$/
+gRT	src/loader/efi/efilib.h	/^#define gRT                      RT$/
+gST	src/loader/efi/efilib.h	/^#define gST                      ST$/
+get_memory_map	src/loader/uefi_loader.c	/^static EFI_STATUS get_memory_map(void) {$/
+inp	src/loader/efi/efilib.h	/^#define inp(_Port)              (UINT8)ReadPort(Gl/
+inpd	src/loader/efi/efilib.h	/^#define inpd(_Port)             (UINT32)ReadPort(G/
+inpw	src/loader/efi/efilib.h	/^#define inpw(_Port)             (UINT16)ReadPort(G/
+int16_t	src/loader/efi/aarch64/efibind.h	/^typedef short               int16_t;$/
+int32_t	src/loader/efi/aarch64/efibind.h	/^typedef int                 int32_t;$/
+int64_t	src/loader/efi/aarch64/efibind.h	/^typedef long                int64_t;$/
+int8_t	src/loader/efi/aarch64/efibind.h	/^typedef signed char         int8_t;   \/\/ unquali/
+intptr_t	src/loader/efi/aarch64/efibind.h	/^typedef int64_t             intptr_t;$/
+outp	src/loader/efi/efilib.h	/^#define outp(_Port, _DataByte)  (UINT8)WritePort(G/
+outpd	src/loader/efi/efilib.h	/^#define outpd(_Port, _DataByte) (UINT32)WritePort(/
+outpw	src/loader/efi/efilib.h	/^#define outpw(_Port, _DataByte) (UINT16)WritePort(/
+proc	src/kernel/kmain.si	/^kmain = proc () {$/
+put_hex	src/loader/uefi_loader.c	/^static void put_hex(u64 u) {$/
+put_signed	src/loader/uefi_loader.c	/^static void put_signed(s64 s) {$/
+put_unsigned	src/loader/uefi_loader.c	/^static void put_unsigned(u64 u) {$/
+readpci16	src/loader/efi/efilib.h	/^#define readpci16(_Addr)             (UINT16)ReadP/
+readpci32	src/loader/efi/efilib.h	/^#define readpci32(_Addr)             (UINT32)ReadP/
+readpci8	src/loader/efi/efilib.h	/^#define readpci8(_Addr)              (UINT8)ReadPc/
+s16	src/loader/uefi_loader.c	/^#define s16   int16_t$/
+s32	src/loader/uefi_loader.c	/^#define s32   int32_t$/
+s64	src/loader/uefi_loader.c	/^#define s64   int64_t$/
+s8	src/loader/uefi_loader.c	/^#define s8    int8_t$/
+sSIZE	src/loader/uefi_loader.c	/^#define sSIZE INTN$/
+sizeof	src/loader/efi/protocol/legacyboot.h	/^    IN OUT  UINTN       *PrioritySize, \/\/ MaxCou/
+u16	src/loader/uefi_loader.c	/^#define u16   uint16_t$/
+u32	src/loader/uefi_loader.c	/^#define u32   uint32_t$/
+u64	src/loader/uefi_loader.c	/^#define u64   uint64_t$/
+u8	src/loader/uefi_loader.c	/^#define u8    uint8_t$/
+uSIZE	src/loader/uefi_loader.c	/^#define uSIZE UINTN$/
+uefi_call_wrapper	src/loader/efi/ia64/efibind.h	/^#define uefi_call_wrapper(func, va_num, ...)	func(/
+uefi_loader_main	src/loader/uefi_loader.c	/^EFI_STATUS uefi_loader_main(EFI_HANDLE ImageHandle/
+uint16_t	src/loader/efi/aarch64/efibind.h	/^typedef unsigned short      uint16_t;$/
+uint32_t	src/loader/efi/aarch64/efibind.h	/^typedef unsigned int        uint32_t;$/
+uint64_t	src/loader/efi/aarch64/efibind.h	/^typedef unsigned long       uint64_t;$/
+uint8_t	src/loader/efi/aarch64/efibind.h	/^typedef unsigned char       uint8_t;$/
+uintptr_t	src/loader/efi/aarch64/efibind.h	/^typedef uint64_t            uintptr_t;$/
+va_list	src/loader/efi/efistdarg.h	/^typedef __builtin_va_list va_list;$/
+writepci16	src/loader/efi/efilib.h	/^#define writepci16(_Addr, _DataByte) (UINT16)Write/
+writepci32	src/loader/efi/efilib.h	/^#define writepci32(_Addr, _DataByte) (UINT32)Write/
+writepci8	src/loader/efi/efilib.h	/^#define writepci8(_Addr, _DataByte)  (UINT8)WriteP/
