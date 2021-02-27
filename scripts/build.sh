@@ -19,10 +19,15 @@ fi
 ### Setup vars ###
 # JOBS="yes"
 
-# CLANG="clang"
-# LLD_LINK="lld-link"
-CLANG="/usr/local/Cellar/llvm/11.1.0/bin/clang"
-LLD_LINK="/usr/local/Cellar/llvm/11.1.0/bin/lld-link"
+if [ $(uname) = "Linux" ]; then
+    CLANG="clang"
+    LLD_LINK="lld-link"
+elif [ $(uname) = "Darwin" ]; then
+    LLVM_PATH=$(find /usr/local/Cellar -type d -name "llvm" | head -n 1)
+    LLVM_BIN_PATH=$(find ${LLVM_PATH} -type d -name "bin" | head -n 1)
+    CLANG="${LLVM_BIN_PATH}/clang"
+    LLD_LINK="${LLVM_BIN_PATH}/lld-link"
+fi
 
 SIMON=~/projects/simon/build/bin/simon
 # SI_FLAGS="-v --threads=1"

@@ -1,1 +1,2 @@
 set builder-build-command 'scripts/build.sh'
+vimish-bind normal ctrl-t shell-run-silent 'scripts/run.sh'

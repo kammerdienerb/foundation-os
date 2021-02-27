@@ -284,33 +284,45 @@ static s32 guid_equ(EFI_GUID *a, EFI_GUID *b) {
 }
 
 struct RSDPDescriptor {
-    char     Signature[8];
-    uint8_t  Checksum;
-    char     OEMID[6];
-    uint8_t  Revision;
-    uint32_t RsdtAddress;
+    char Signature[8];
+    u8   Checksum;
+    char OEMID[6];
+    u8   Revision;
+    u32  RsdtAddress;
 } __attribute__ ((packed));
 
 struct RSDPDescriptor20 {
     struct RSDPDescriptor firstPart;
-
-    uint32_t              Length;
-    uint64_t              XsdtAddress;
-    uint8_t               ExtendedChecksum;
-    uint8_t               reserved[3];
+    u32                   Length;
+    u64                   XsdtAddress;
+    u8                    ExtendedChecksum;
+    u8                    reserved[3];
 } __attribute__ ((packed));
 
 struct ACPISDTHeader {
-  char     Signature[4];
-  uint32_t Length;
-  uint8_t  Revision;
-  uint8_t  Checksum;
-  char     OEMID[6];
-  char     OEMTableID[8];
-  uint32_t OEMRevision;
-  uint32_t CreatorID;
-  uint32_t CreatorRevision;
+  char Signature[4];
+  u32  Length;
+  u8   Revision;
+  u8   Checksum;
+  char OEMID[6];
+  char OEMTableID[8];
+  u32  OEMRevision;
+  u32  CreatorID;
+  u32  CreatorRevision;
 };
+
+static u32 acpi_table_checksum(struct ACPISDTHeader *header) {
+    u8  sum;
+    u64 i;
+
+    sum = 0;
+
+    for (i = 0; i < header->Length; i += 1) {
+        sum += ((u8*)(void*)(header))[i];
+    }
+
+    return sum == 0;
+}
 
 static EFI_STATUS get_acpi_tables(void) {
     EFI_STATUS               status;
@@ -318,14 +330,20 @@ static EFI_STATUS get_acpi_tables(void) {
     EFI_GUID                 acpi2_guid;
     void                    *vrsdpd;
     void                    *vrsdpd2;
+    u64                      acpi_sz;
+    CHAR16                  *sdt_kind;
     struct RSDPDescriptor   *rsdpd;
     struct RSDPDescriptor20 *rsdpd2;
     uSIZE                    i;
-    EFI_CONFIGURATION_TABLE *config_table;
+    cEFI_CONFIGURATION_TABLE *config_table;
     CHAR16                   sig16[9];
     CHAR16                   oemid16[7];
     struct ACPISDTHeader    *root_table_header;
+    u64                      num_tables;
+    void                    *tables_start;
     struct ACPISDTHeader    *table_header;
+    CHAR16                   tab_sig16[5];
+    uSIZE                    j;
 
     PRINTF("\r\nAttempting to acquire ACPI tables..\r\n");
 
@@ -352,10 +370,27 @@ static EFI_STATUS get_acpi_tables(void) {
         goto err;
     }
 
-    rsdpd  = vrsdpd;
-    rsdpd2 = vrsdpd2;
+    rsdpd             = vrsdpd;
+    acpi_sz           = sizeof(u32);
+    sdt_kind          = L"R";
+    root_table_header = (void*)(uSIZE)rsdpd->RsdtAddress;
+    tables_start      = ((void*)root_table_header) + sizeof(struct ACPISDTHeader);
 
-    /* @todo -- checksum */
+    if (vrsdpd2 != NULL) {
+        acpi_sz           = sizeof(u64);
+        sdt_kind          = L"X";
+        rsdpd2            = vrsdpd2;
+        rsdpd             = &rsdpd2->firstPart;
+        root_table_header = (void*)rsdpd2->XsdtAddress;
+        tables_start      = ((void*)root_table_header) + sizeof(struct ACPISDTHeader);
+    }
+
+    if (acpi_table_checksum(root_table_header) == 1) {
+        PRINTF("%sSDT checksum PASSED!\r\n", sdt_kind);
+    } else {
+        SUCCESS_OR_ERR(EFI_COMPROMISED_DATA,
+                       "%sSDT checksum FAILED!\r\n", sdt_kind);
+    }
 
     sig16[8] = 0;
     for (i = 0; i < 8; i += 1) { sig16[i] = (CHAR16)rsdpd->Signature[i]; }
@@ -363,17 +398,21 @@ static EFI_STATUS get_acpi_tables(void) {
     oemid16[6] = 0;
     for (i = 0; i < 6; i += 1) { oemid16[i] = (CHAR16)rsdpd->OEMID[i]; }
 
-    root_table_header = (void*)(rsdpd->Revision ? rsdpd2->XsdtAddress : rsdpd->RsdtAddress);
+    num_tables = (root_table_header->Length - sizeof(struct ACPISDTHeader)) / acpi_sz;
 
     PRINTF("============================ ACPI ============================\r\n");
+    PRINTF("    64-bit?:       %s\r\n", rsdpd2 ? L"YES" : L"NO");
     PRINTF("    Signature:     '%s'\r\n", sig16);
     PRINTF("    OEM ID:        '%s'\r\n", oemid16);
     PRINTF("    ACPI Revision: %u\r\n", rsdpd->Revision);
-    PRINTF("    %s address:  %x\r\n", rsdpd->Revision ? L"XSDT" : L"RSDT", (void*)root_table_header);
+    PRINTF("    %sSDT address:  %x\r\n", sdt_kind, (void*)root_table_header);
+    PRINTF("    %sSDT # tables: %u\r\n", sdt_kind, num_tables);
 
-    for (i = 0; i < root_table_header->Length; i += 1) {
-        table_header = ((void*)root_table_header) + sizeof(struct ACPISDTHeader) + (i * sizeof(uSIZE));
-        PRINTF("    TABLE: %x\r\n", (void*)table_header);
+    for (i = 0; i < num_tables; i += 1) {
+        table_header = *(struct ACPISDTHeader**)(tables_start + (i * acpi_sz));
+        tab_sig16[4] = 0;
+        for (j = 0; j < 4; j += 1) { tab_sig16[j] = (CHAR16)table_header->Signature[j]; }
+        PRINTF("        TABLE: %s at %x\r\n", tab_sig16, (void*)table_header);
     }
 
     PRINTF("==============================================================\r\n");
