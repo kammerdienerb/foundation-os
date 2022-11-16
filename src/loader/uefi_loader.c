@@ -18,6 +18,10 @@
 #define GET_KEY(key_ptr) (ST->ConIn->ReadKeyStroke(ST->ConIn, (key_ptr)))
 #define SLEEP(s)         (BS->Stall((s) * 1000000))
 #define MSLEEP(s)        (BS->Stall((s) * 1000))
+#define WAIT_FOR_KEY()                                                 \
+do {                                                                   \
+    while ((status = GET_KEY(&key)) == EFI_NOT_READY) { MSLEEP(100); } \
+} while (0)
 
 /* NOTE: @bad -- assuming little-endianess */
 
@@ -255,11 +259,11 @@ static EFI_STATUS get_memory_map(void) {
         PRINTF("attr: %x", mem_region->Attribute);
         PRINTF("\r\n");
 
-/*         if (i % 10 == 0 && i > 0) { */
-/*             PRINTF("[ PRESS ANY KEY TO SEE MORE MEMORY MAP ENTRIES ]"); */
-/*             while ((status = GET_KEY(&key)) == EFI_NOT_READY) { MSLEEP(100); } */
-/*             PRINTF("\r                                                   \r"); */
-/*         } */
+        if (i % 10 == 0 && i > 0) {
+            PRINTF("[ PRESS ANY KEY TO SEE MORE MEMORY MAP ENTRIES ]");
+            WAIT_FOR_KEY();
+            PRINTF("\r                                                   \r");
+        }
     }
     PRINTF("==============================================================\r\n");
 

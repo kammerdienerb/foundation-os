@@ -21,19 +21,15 @@ fi
 
 if [ $(uname) = "Linux" ]; then
     CLANG="clang"
-    LLD_LINK="lld-link"
+    LLD_LINK="lld"
 elif [ $(uname) = "Darwin" ]; then
     LLVM_PATH=$(brew --prefix llvm)
     LLVM_BIN_PATH=${LLVM_PATH}/bin
-    CLANG="${LLVM_BIN_PATH}/clang"
-    LLD_LINK="${LLVM_BIN_PATH}/lld-link"
+    export PATH="${LLVM_BIN_PATH}:${PATH}"
+    CLANG="clang"
+    LLD_LINK="lld"
 fi
 
-SIMON=~/projects/simon/build/bin/simon
-SI_FLAGS=""
-SI_FLAGS+=" --c-source --output=build/kernel/src/foundation_kernel.c"
-# SI_FLAGS+=" -v"
-# SI_FLAGS+=" --dump-symbols"
 
 CONFIG=config
 
@@ -46,6 +42,12 @@ source <(si_source config/${CONFIG}.si) || exit $?
 
 export ARCH=${!CONFIG_ARCH}
 
+
+SIMON=~/projects/simon/build/bin/simon
+SI_FLAGS=""
+SI_FLAGS+=" --c-source --output=build/kernel/src/foundation_kernel_${ARCH}.c"
+# SI_FLAGS+=" -v"
+# SI_FLAGS+=" --dump-symbols"
 
 function clean {
     if [ -t 1 ]; then
@@ -70,17 +72,18 @@ function build_loader {
         echo "Building loader.."
     fi
 
-    CFLAGS="-target ${ARCH}-unknown-windows \
-            -ffreestanding                  \
-            -fshort-wchar                   \
-            -mno-red-zone                   \
-            -Isrc/loader/efi -Isrc/loader/efi/${ARCH} -Isrc/loader/efi/protocol"
+    CFLAGS="-target ${ARCH}-unknown-windows           \
+            -ffreestanding                            \
+            -fshort-wchar                             \
+            -mno-red-zone                             \
+            -Isrc/loader/efi -Isrc/loader/efi/${ARCH} \
+            -Isrc/loader/efi/protocol"
 
     LDFLAGS="-target ${ARCH}-unknown-windows \
             -nostdlib                        \
             -Wl,-entry:uefi_loader_main      \
             -Wl,-subsystem:efi_application   \
-            -fuse-ld=lld-link"
+            -fuse-ld=${LLD_LINK}"
 
     ${CLANG} $CFLAGS  -c -o build/loader/obj/uefi_loader.o src/loader/uefi_loader.c                                         || exit $?
     ${CLANG} $CFLAGS  -c -o build/loader/obj/uefi_loader_data.o src/loader/data.c                                           || exit $?
@@ -99,6 +102,24 @@ function build_kernel {
         echo "Building kernel.."
     fi
     ${SIMON} ${SI_FLAGS} ${SI_SRC} || exit 1
+
+    COMMON_FLAGS="-O0 -g                                \
+                  -fno-builtin -nostdlib -ffreestanding \
+                  -mno-red-zone -mcmodel=kernel         \
+                  -fno-pie                              \
+                  -Wall -Wextra -Werror                 \
+                  -target ${ARCH}-unknown-elf"
+    COMMON_C_FLAGS="${COMMON_FLAGS} -nostdinc"
+    BOOT_C_FLAGS="-c ${COMMON_C_FLAGS} -Isrc/kernel/arch/${ARCH}"
+
+    ${CLANG} -o build/kernel/obj/boot_${ARCH}.o src/kernel/arch/${ARCH}/boot.S ${BOOT_C_FLAGS} || exit $?
+
+    KERN_C_FLAGS="-c ${COMMON_C_FLAGS} -Wno-unused-label"
+    ${CLANG} -o build/kernel/obj/foundation_kernel_${ARCH}.o build/kernel/src/foundation_kernel_${ARCH}.c ${KERN_C_FLAGS} || exit $?
+
+    LINK_C_FLAGS="-v ${COMMON_FLAGS} -fuse-ld=${LLD_LINK} -Wl,-z,max-page-size=4096,--build-id=none,-T,src/kernel/arch/${ARCH}/kernel.lds"
+    LINK_OBJS="build/kernel/obj/boot_${ARCH}.o build/kernel/obj/foundation_kernel_${ARCH}.o"
+    ${CLANG} -o build/kernel/bin/foundation_kernel_${ARCH}.elf ${LINK_OBJS} ${LINK_C_FLAGS} || exit $?
 }
 
 function make_images {
