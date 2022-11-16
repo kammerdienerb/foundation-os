@@ -8,4 +8,4 @@ if [ -z ${ARCH} ]; then
     exit 1
 fi
 
-deps/mkgpt/mkgpt -o build/bin/foundation_uefi_${ARCH}.bin --image-size 4096 --part build/bin/UEFI_${ARCH}_FAT.img --type system
+deps/mkgpt/mkgpt -o build/loader/bin/foundation_uefi_${ARCH}.bin --image-size 4096 --part build/loader/bin/UEFI_${ARCH}_FAT.img --type system

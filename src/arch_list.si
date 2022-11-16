@@ -1,10 +1,11 @@
-#COMMENT arch_list.si
+# arch_list.si
 
-#COMMENT This file is meant to be a valid Simon file **AS WELL AS a valid shell file**.
-#COMMENT build.sh sources this file to get config options that will help it select source
-#COMMENT files, among other things.
+# This file is meant to be a valid Simon file as well as a file taken in by shell script.
+# build.sh reads this file to get config options that will help it select source
+# files, among other things.
+# Only simple assignments are valid in this file.
 
-#COMMENT The names of these architectures should match their respective directory name in src/*/arch.
-ARCH_X86_64="x86_64"
-ARCH_AARCH64="aarch64"
-ARCH_RISCV="risc_v"
+# The names of these architectures should match their respective directory name in src/*/arch.
+ARCH_X86_64  := "x86_64";
+ARCH_AARCH64 := "aarch64";
+ARCH_RISCV   := "risc_v";

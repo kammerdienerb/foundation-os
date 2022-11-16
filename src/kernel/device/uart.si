@@ -1,13 +1,12 @@
-; uart.si
+# uart.si
 
-uart = module {
+uart := module {
     [[ const ]] [[ volatile ]]
-    register_addr = cast(pointer(u32), 0x09000000)
+    register_addr : *u32 = ~~0x09000000;
 
-    print_string = proc (s) {
-        loop : *s != 0 : {
-            *register_addr = cast(u32, *s)
-            s += 1
+    print_string := proc (s: str) {
+        loop i := 0 ; s[i] != 0; i += 1 {
+            @register_addr = ~~s[i];
         }
     }
 }

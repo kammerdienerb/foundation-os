@@ -335,7 +335,7 @@ static EFI_STATUS get_acpi_tables(void) {
     struct RSDPDescriptor   *rsdpd;
     struct RSDPDescriptor20 *rsdpd2;
     uSIZE                    i;
-    cEFI_CONFIGURATION_TABLE *config_table;
+    EFI_CONFIGURATION_TABLE *config_table;
     CHAR16                   sig16[9];
     CHAR16                   oemid16[7];
     struct ACPISDTHeader    *root_table_header;

@@ -23,21 +23,27 @@ if [ $(uname) = "Linux" ]; then
     CLANG="clang"
     LLD_LINK="lld-link"
 elif [ $(uname) = "Darwin" ]; then
-    LLVM_PATH=$(find /usr/local/Cellar -type d -name "llvm" | head -n 1)
-    LLVM_BIN_PATH=$(find ${LLVM_PATH} -type d -name "bin" | head -n 1)
+    LLVM_PATH=$(brew --prefix llvm)
+    LLVM_BIN_PATH=${LLVM_PATH}/bin
     CLANG="${LLVM_BIN_PATH}/clang"
     LLD_LINK="${LLVM_BIN_PATH}/lld-link"
 fi
 
 SIMON=~/projects/simon/build/bin/simon
-# SI_FLAGS="-v --threads=1"
-# SI_FLAGS="--dump-symbols"
 SI_FLAGS=""
+SI_FLAGS+=" --c-source --output=build/kernel/src/foundation_kernel.c"
+# SI_FLAGS+=" -v"
+# SI_FLAGS+=" --dump-symbols"
 
 CONFIG=config
 
-source src/arch_list.si    || exit $?
-source config/${CONFIG}.si || exit $?
+function si_source {
+    sed 's/ *:= */=/g; s/; *$//g' < $1
+}
+
+source <(si_source src/arch_list.si)    || exit $?
+source <(si_source config/${CONFIG}.si) || exit $?
+
 export ARCH=${!CONFIG_ARCH}
 
 
@@ -47,11 +53,14 @@ function clean {
     else
         echo "Cleaning.."
     fi
-    rm    -rf build         || exit $?
-    mkdir -p  build         || exit $?
-    mkdir -p  build/obj     || exit $?
-    mkdir -p  build/bin     || exit $?
-    mkdir -p  build/img     || exit $?
+    rm    -rf build            || exit $?
+    mkdir -p  build            || exit $?
+    mkdir -p  build/loader/obj || exit $?
+    mkdir -p  build/loader/bin || exit $?
+    mkdir -p  build/loader/img || exit $?
+    mkdir -p  build/kernel/src || exit $?
+    mkdir -p  build/kernel/obj || exit $?
+    mkdir -p  build/kernel/bin || exit $?
 }
 
 function build_loader {
@@ -73,13 +82,14 @@ function build_loader {
             -Wl,-subsystem:efi_application   \
             -fuse-ld=lld-link"
 
-    ${CLANG} $CFLAGS  -c -o build/obj/uefi_loader.o src/loader/uefi_loader.c                           || exit $?
-    ${CLANG} $CFLAGS  -c -o build/obj/uefi_loader_data.o src/loader/data.c                             || exit $?
-    ${CLANG} $LDFLAGS    -o build/bin/BOOTX64.EFI build/obj/uefi_loader.o build/obj/uefi_loader_data.o || exit $?
+    ${CLANG} $CFLAGS  -c -o build/loader/obj/uefi_loader.o src/loader/uefi_loader.c                                         || exit $?
+    ${CLANG} $CFLAGS  -c -o build/loader/obj/uefi_loader_data.o src/loader/data.c                                           || exit $?
+    ${CLANG} $LDFLAGS    -o build/loader/bin/BOOTX64.EFI build/loader/obj/uefi_loader.o build/loader/obj/uefi_loader_data.o || exit $?
 }
 
 function build_kernel {
-    SI_SRC="config/${CONFIG}.si "
+#     SI_SRC="src/arch_list.si config/${CONFIG}.si "
+    SI_SRC="src/arch_list.si "
     SI_SRC+="$(find src/kernel/arch/${ARCH} -name "*.si") "
     SI_SRC+="$(find src/kernel -path src/kernel/arch -prune -false -o -name "*.si") "
 

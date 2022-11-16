@@ -1,15 +1,11 @@
-#COMMENT config.si
+# config.si
 
-#COMMENT This file is meant to be a valid Simon file **AS WELL AS a valid shell file**.
-#COMMENT build.sh sources this file to get config options that will help it select source
-#COMMENT files, among other things.
+# This file is meant to be a valid Simon file as well as a file taken in by shell script.
+# build.sh reads this file to get config options that will help it select source
+# files, among other things.
+# Only simple assignments are valid in this file.
 
-
-#COMMENT CONFIG_ARCH should be a value from arch_list.si
-#COMMENT CONFIG_ARCH=ARCH_AARCH64
-CONFIG_ARCH=ARCH_X86_64
-#COMMENT CONFIG_ARCH=ARCH_RISCV
-
-
-#COMMENT Below are some validations.. don't modify.
-#ASSERT CONFIG_ARCH
+# CONFIG_ARCH should be a value from arch_list.si
+# CONFIG_ARCH := ARCH_AARCH64;
+CONFIG_ARCH := ARCH_X86_64;
+# CONFIG_ARCH := ARCH_RISCV;

@@ -8,7 +8,7 @@ if [ -z ${ARCH} ]; then
     exit 1
 fi
 
-fat_img=build/bin/UEFI_${ARCH}_FAT.img
+fat_img=build/loader/bin/UEFI_${ARCH}_FAT.img
 
 if [ $(uname) = "Darwin" ]; then
     dd if=/dev/zero of=${fat_img} bs=1k count=1440 >/dev/null 2>&1
@@ -26,7 +26,7 @@ else
     dd if=/dev/zero of=${fat_img} bs=1k count=1440 status=${DDSTATUS} || exit $?
 fi
 
-mformat -i ${fat_img} -f 1440 ::                      || exit $?
-mmd -i ${fat_img} ::/EFI                              || exit $?
-mmd -i ${fat_img} ::/EFI/BOOT                         || exit $?
-mcopy -i ${fat_img} build/bin/BOOTX64.EFI ::/EFI/BOOT || exit $?
+mformat -i ${fat_img} -f 1440 ::                             || exit $?
+mmd -i ${fat_img} ::/EFI                                     || exit $?
+mmd -i ${fat_img} ::/EFI/BOOT                                || exit $?
+mcopy -i ${fat_img} build/loader/bin/BOOTX64.EFI ::/EFI/BOOT || exit $?
