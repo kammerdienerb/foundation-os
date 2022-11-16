@@ -21,15 +21,12 @@ fi
 
 if [ $(uname) = "Linux" ]; then
     CLANG="clang"
-    LLD_LINK="lld"
 elif [ $(uname) = "Darwin" ]; then
     LLVM_PATH=$(brew --prefix llvm)
     LLVM_BIN_PATH=${LLVM_PATH}/bin
     export PATH="${LLVM_BIN_PATH}:${PATH}"
     CLANG="clang"
-    LLD_LINK="lld"
 fi
-
 
 CONFIG=config
 
@@ -83,7 +80,7 @@ function build_loader {
             -nostdlib                        \
             -Wl,-entry:uefi_loader_main      \
             -Wl,-subsystem:efi_application   \
-            -fuse-ld=${LLD_LINK}"
+            -fuse-ld=lld-link"
 
     ${CLANG} $CFLAGS  -c -o build/loader/obj/uefi_loader.o src/loader/uefi_loader.c                                         || exit $?
     ${CLANG} $CFLAGS  -c -o build/loader/obj/uefi_loader_data.o src/loader/data.c                                           || exit $?
@@ -103,10 +100,10 @@ function build_kernel {
     fi
     ${SIMON} ${SI_FLAGS} ${SI_SRC} || exit 1
 
-    COMMON_FLAGS="-O0 -g                                \
+    COMMON_FLAGS="-O0                                 \
                   -fno-builtin -nostdlib -ffreestanding \
                   -mno-red-zone -mcmodel=kernel         \
-                  -fno-pie                              \
+                  -fno-pie -fno-pic                     \
                   -Wall -Wextra -Werror                 \
                   -target ${ARCH}-unknown-elf"
     COMMON_C_FLAGS="${COMMON_FLAGS} -nostdinc"
@@ -117,9 +114,10 @@ function build_kernel {
     KERN_C_FLAGS="-c ${COMMON_C_FLAGS} -Wno-unused-label"
     ${CLANG} -o build/kernel/obj/foundation_kernel_${ARCH}.o build/kernel/src/foundation_kernel_${ARCH}.c ${KERN_C_FLAGS} || exit $?
 
-    LINK_C_FLAGS="-v ${COMMON_FLAGS} -fuse-ld=${LLD_LINK} -Wl,-z,max-page-size=4096,--build-id=none,-T,src/kernel/arch/${ARCH}/kernel.lds"
+    LINK_FLAGS="--build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -e _start -no-pie -z max-page-size=0x1000 --build-id=none"
     LINK_OBJS="build/kernel/obj/boot_${ARCH}.o build/kernel/obj/foundation_kernel_${ARCH}.o"
-    ${CLANG} -o build/kernel/bin/foundation_kernel_${ARCH}.elf ${LINK_OBJS} ${LINK_C_FLAGS} || exit $?
+    echo ld.lld -o build/kernel/bin/foundation_kernel_${ARCH}.elf ${LINK_OBJS} ${LINK_FLAGS} -T src/kernel/arch/${ARCH}/kernel.lds
+    ld.lld -o build/kernel/bin/foundation_kernel_${ARCH}.elf ${LINK_OBJS} ${LINK_FLAGS} -T src/kernel/arch/${ARCH}/kernel.lds || exit $?
 }
 
 function make_images {
