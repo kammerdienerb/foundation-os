@@ -116,7 +116,7 @@ function build_kernel {
 
     LINK_FLAGS="-no-pie -z max-page-size=0x1000 --build-id=none"
     LINK_OBJS="build/kernel/obj/boot_${ARCH}.o build/kernel/obj/foundation_kernel_${ARCH}.o"
-    ld -o build/kernel/bin/foundation_kernel_${ARCH}.elf ${LINK_OBJS} ${LINK_FLAGS} -T src/kernel/arch/${ARCH}/kernel.lds || exit $?
+    ld.lld -o build/kernel/bin/foundation_kernel_${ARCH}.elf ${LINK_OBJS} ${LINK_FLAGS} -T src/kernel/arch/${ARCH}/kernel.lds || exit $?
 }
 
 function make_images {
