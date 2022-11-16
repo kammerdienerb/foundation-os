@@ -7,21 +7,21 @@ SECTIONS
 
   .boottext :
     {
-      boot.o (.multiboot)
-      boot.o (.text)
+      build/kernel/obj/boot_x86_64.o (.multiboot)
+      build/kernel/obj/boot_x86_64.o (.text)
     }
   .bootrodata :
     {
-      boot.o (.rodata)
+      build/kernel/obj/boot_x86_64.o (.rodata)
     }
   .bootdata :
     {
-      boot.o (.data)
+      build/kernel/obj/boot_x86_64.o (.data)
     }
   .bootbss :
     {
-      boot.o (.bss)
-      boot.o (COMMON)
+      build/kernel/obj/boot_x86_64.o (.bss)
+      build/kernel/obj/boot_x86_64.o (COMMON)
     }
 
   . = ALIGN(0x1000);
@@ -39,7 +39,7 @@ SECTIONS
 
   .rodata : AT ( (LOADADDR (.text) + SIZEOF (.text) + 0xFFF) & 0xFFFFFFFFFFFFF000 )
   {
-    *(.rodata)
+    *(.rodata.*)
   }
 
   . = ALIGN(0x1000);

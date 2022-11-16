@@ -89,7 +89,7 @@ function build_loader {
 
 function build_kernel {
 #     SI_SRC="src/arch_list.si config/${CONFIG}.si "
-    SI_SRC="src/arch_list.si "
+    SI_SRC="" # "src/arch_list.si "
     SI_SRC+="$(find src/kernel/arch/${ARCH} -name "*.si") "
     SI_SRC+="$(find src/kernel -path src/kernel/arch -prune -false -o -name "*.si") "
 
@@ -100,7 +100,7 @@ function build_kernel {
     fi
     ${SIMON} ${SI_FLAGS} ${SI_SRC} || exit 1
 
-    COMMON_FLAGS="-O0                                 \
+    COMMON_FLAGS="-O0 -g                                \
                   -fno-builtin -nostdlib -ffreestanding \
                   -mno-red-zone -mcmodel=kernel         \
                   -fno-pie -fno-pic                     \
@@ -114,10 +114,9 @@ function build_kernel {
     KERN_C_FLAGS="-c ${COMMON_C_FLAGS} -Wno-unused-label"
     ${CLANG} -o build/kernel/obj/foundation_kernel_${ARCH}.o build/kernel/src/foundation_kernel_${ARCH}.c ${KERN_C_FLAGS} || exit $?
 
-    LINK_FLAGS="--build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -e _start -no-pie -z max-page-size=0x1000 --build-id=none"
+    LINK_FLAGS="-no-pie -z max-page-size=0x1000 --build-id=none"
     LINK_OBJS="build/kernel/obj/boot_${ARCH}.o build/kernel/obj/foundation_kernel_${ARCH}.o"
-    echo ld.lld -o build/kernel/bin/foundation_kernel_${ARCH}.elf ${LINK_OBJS} ${LINK_FLAGS} -T src/kernel/arch/${ARCH}/kernel.lds
-    ld.lld -o build/kernel/bin/foundation_kernel_${ARCH}.elf ${LINK_OBJS} ${LINK_FLAGS} -T src/kernel/arch/${ARCH}/kernel.lds || exit $?
+    ld -o build/kernel/bin/foundation_kernel_${ARCH}.elf ${LINK_OBJS} ${LINK_FLAGS} -T src/kernel/arch/${ARCH}/kernel.lds || exit $?
 }
 
 function make_images {

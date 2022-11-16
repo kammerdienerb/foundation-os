@@ -1,8 +1,10 @@
 # kmain.si
 
+my_str := "string";
+
 [[ program_entry ]]
 kmain := proc () {
-    uart.print_string("in kmain()\n");
+    # uart.print_string("in kmain()\n");
 
     # arch.enable_interrupts();
     # arch.switch_to_umode();
