@@ -1,1 +1,3 @@
 set builder-build-command 'scripts/build.sh'
+vimish-bind normal "T R" term-feed-text *term0 "scripts/run.sh\n"
+vimish-bind normal "T D" term-feed-text *term0 "scripts/run.sh --debug\n"

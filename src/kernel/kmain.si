@@ -1,13 +1,16 @@
 # kmain.si
 
-my_str := "string";
+panic := proc() { loop ;; {} }
 
 [[ program_entry ]]
 kmain := proc () {
-    # uart.print_string("in kmain()\n");
+    x: u32;
 
-    # arch.enable_interrupts();
-    # arch.switch_to_umode();
+    UART.init();
 
-    # loop ;; { arch.wait_for_interrupt(); }
+    kprint("Booted Foundation\n");
+
+    MultiBoot2.enumerate_tags();
+
+    loop ;; {}
 }

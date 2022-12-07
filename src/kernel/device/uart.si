@@ -1,12 +1,19 @@
 # uart.si
 
-uart := module {
-    [[ const ]] [[ volatile ]]
-    register_addr : *u32 = ~~0x09000000;
+# This is _not_ a real serial driver.
+# Instead, we have the bare minimum that gives us characters on the console with QEMU.
 
-    print_string := proc (s: str) {
-        loop i := 0 ; s[i] != 0; i += 1 {
-            @register_addr = ~~s[i];
-        }
+UART := module {
+    # [[ const ]] [[ volatile ]]
+    # uart_mmio_base : *u8 = ~~0x10000000;
+
+    init := proc() {
+        _builtin_outb(~~(0x3f8 + 3), ~~3); # Word length select bits, we want 8 bits
+        _builtin_outb(~~(0x3f8 + 2), ~~1); # enable FIFO
+    }
+
+    putc := proc(c: u8) {
+        loop ; not(_builtin_inb(~~(0x3f8 + 5)) & (1 << 5)); {}
+        _builtin_outb(~~0x3f8, c);
     }
 }

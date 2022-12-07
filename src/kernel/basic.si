@@ -1,0 +1,338 @@
+# basic.si
+
+
+NULL : *u8 = ~~0;
+
+
+SUCCESS       := 0;
+ERR_TOO_SMALL := -1;
+ERR_BAD_ALLOC := -2;
+
+DEFAULT_HEAP_ALLOCATOR: Heap_Allocator.T;
+
+heap_alloc := proc(n_bytes: u64): *u8 { return Allocator.alloc(*DEFAULT_HEAP_ALLOCATOR, n_bytes); }
+heap_free  := proc(ptr: *u8)          { Allocator.free(*DEFAULT_HEAP_ALLOCATOR, ptr);             }
+
+Allocator := module {
+    alloc := proc(allocator: *%allocator_type, n_bytes: u64): *u8 { \ERROR "allocator does not implement alloc()" }
+    free  := proc(allocator: *%allocator_type, ptr: *u8)          { \ERROR "allocator does not implement free()"  }
+}
+
+Heap_Allocator := module {
+    T := struct {}
+
+    [[ specialization(Allocator.alloc) ]]
+    alloc := proc(allocator: *T, n_bytes: u64): *u8 { return NULL; }
+
+    [[ specialization(Allocator.free) ]]
+    free := proc(allocator: *T, ptr: *u8) {  }
+}
+
+Fixed_Allocator := module {
+    T := struct {
+        ptr: *u8,
+        end: *u8,
+    }
+
+    new := proc(buff: *u8, size: u64): T {
+        ret: T;
+
+        ret.ptr = buff;
+        ret.end = buff + size;
+
+        return ret;
+    }
+
+    [[ specialization(Allocator.alloc) ]]
+    alloc := proc(allocator: *T, n_bytes: u64): *u8 {
+        # @todo: alignment
+
+        if (allocator.ptr + n_bytes > allocator.end) { return NULL; }
+
+        ret := allocator.ptr;
+
+        allocator.ptr += n_bytes;
+
+        return ret;
+    }
+
+    [[ specialization(Allocator.free) ]]
+    free := proc(allocator: *T, ptr: *u8) {  }
+}
+
+Util := module {
+    slen := proc(s: str) : u64 {
+        len := cast(u64, 0);
+
+        loop i := 0; s[i] != ~~0; i += 1 { len += 1; }
+
+        return len;
+    }
+
+    putc := proc(c: u8) {
+        UART.putc(c);
+    }
+    puts := proc(s: str) {
+        l := slen(s);
+        loop i := 0; i < ~~l; i += 1 { UART.putc(s[i]); }
+    }
+    putsn := proc(s: str, n: u64) {
+        loop i := 0; i < ~~n; i += 1 { UART.putc(s[i]); }
+    }
+}
+
+Format := module {
+    JUST_LEFT   : u8 = ~~0;
+    JUST_RIGHT  : u8 = ~~1;
+    JUST_CENTER : u8 = ~~2;
+
+    HEX_LOWER   : u8 = ~~1;
+    HEX_UPPER   : u8 = ~~2;
+
+
+    [[ bitfield_struct(u64) ]]
+    Format_Info := struct {
+        [[ bitfield( 0, 31) ]] width:     u32,
+        [[ bitfield(32, 33) ]] just:      u8,
+        [[ bitfield(34, 35) ]] hex:       u8,
+        [[ bitfield(36, 49) ]] float_int: u32,
+        [[ bitfield(50, 63) ]] float_rat: u32,
+    }
+
+
+    to_formatted_str := proc(buff: *u8, len: *u64, arg: %T, f: Format_Info): s64 {
+        \ERROR "no specialization provided for type T"
+    }
+
+
+
+    [[ specialization(to_formatted_str) ]]
+    u64_to_formatted_str := proc(buff: *u8, len: *u64, arg: u64, f: Format.Format_Info): s64 {
+        if f.hex {
+            if @len < ~~16 {
+                @len = ~~16;
+                return ERR_TOO_SMALL;
+            }
+
+            @len = ~~0;
+
+            save_arg := arg;
+
+            loop ; arg >= ~~16; arg = arg >> 4 { @len += 1; }
+            @len += 1;
+
+            digits := "0123456789abcdef";
+            if f.hex == HEX_UPPER {
+                digits = "0123456789ABCDEF";
+            }
+
+            ptr    := buff + @len - 1;
+            arg     = save_arg;
+
+            loop ; arg >= ~~16; arg = arg >> 4 {
+                @ptr  = digits[arg & 0xF];
+                ptr  -= 1;
+            }
+            @ptr  = digits[arg & 0xF];
+            ptr  -= 1;
+        } else {
+            if @len < ~~20 {
+                @len = ~~20;
+                return ERR_TOO_SMALL;
+            }
+
+            @len = ~~0;
+
+            save_arg := arg;
+
+            loop ; arg >= ~~10; arg /= 10 { @len += 1; }
+            @len += 1;
+
+            ptr := buff + @len - 1;
+            arg  = save_arg;
+
+            loop ; arg >= ~~10; arg /= 10 {
+                @ptr  = '0' + ~~(arg % 10);
+                ptr  -= 1;
+            }
+            @ptr  = '0' + ~~(arg % 10);
+            ptr  -= 1;
+        }
+
+        return SUCCESS;
+    }
+
+    [[ specialization(to_formatted_str) ]]
+    u32_to_formatted_str := proc(buff: *u8, len: *u64, arg: u32, f: Format.Format_Info): s64 {
+        return u64_to_formatted_str(buff, len, ~~arg, f);
+    }
+    [[ specialization(to_formatted_str) ]]
+    u16_to_formatted_str := proc(buff: *u8, len: *u64, arg: u16, f: Format.Format_Info): s64 {
+        return u64_to_formatted_str(buff, len, ~~arg, f);
+    }
+    [[ specialization(to_formatted_str) ]]
+    u8_to_formatted_str := proc(buff: *u8, len: *u64, arg: u8, f: Format.Format_Info): s64 {
+        return u64_to_formatted_str(buff, len, ~~arg, f);
+    }
+
+    [[ specialization(to_formatted_str) ]]
+    s64_to_formatted_str := proc(buff: *u8, len: *u64, arg: s64, f: Format.Format_Info): s64 {
+        if f.hex { return u64_to_formatted_str(buff, len, ~~arg, f); }
+
+        if @len < ~~21 {
+            @len = ~~21;
+            return ERR_TOO_SMALL;
+        }
+
+        @len  = ~~0;
+        neg  := 0;
+        if arg < 0 {
+            @len += 1;
+            neg   = 1;
+            arg   = -arg;
+        }
+
+        save_arg := arg;
+
+        loop ; arg >= 10; arg /= 10 { @len += 1; }
+        @len += 1;
+
+        ptr := buff + @len - 1;
+        arg  = save_arg;
+
+        loop ; arg >= 10; arg /= 10 {
+            @ptr  = '0' + ~~(arg % 10);
+            ptr  -= 1;
+        }
+        @ptr  = '0' + ~~(arg % 10);
+        ptr  -= 1;
+
+        if neg {
+            @ptr = '-';
+        }
+
+        return SUCCESS;
+    }
+
+    [[ specialization(to_formatted_str) ]]
+    s32_to_formatted_str := proc(buff: *u8, len: *u64, arg: s32, f: Format.Format_Info): s64 {
+        return s64_to_formatted_str(buff, len, ~~arg, f);
+    }
+    [[ specialization(to_formatted_str) ]]
+    s16_to_formatted_str := proc(buff: *u8, len: *u64, arg: s16, f: Format.Format_Info): s64 {
+        return s64_to_formatted_str(buff, len, ~~arg, f);
+    }
+    [[ specialization(to_formatted_str) ]]
+    s8_to_formatted_str := proc(buff: *u8, len: *u64, arg: s8, f: Format.Format_Info): s64 {
+        return s64_to_formatted_str(buff, len, ~~arg, f);
+    }
+
+    [[ specialization(to_formatted_str) ]]
+    ptr_to_formatted_str := proc(buff: *u8, len: *u64, arg: *u8, f: Format.Format_Info): s64 {
+        if not f.hex {
+            f.hex = HEX_UPPER;
+        }
+
+        save_len := @len;
+        @len     -= 2;
+
+
+        err := u64_to_formatted_str(buff + 2, len, ~~arg, f);
+
+        if err == SUCCESS {
+            buff[0] = '0';
+            buff[1] = 'x';
+        }
+
+        @len += 2;
+
+        return err;
+    }
+
+    [[ specialization(to_formatted_str) ]]
+    str_to_formatted_str := proc(buff: *u8, len: *u64, arg: str, f: Format.Format_Info): s64 {
+        arg_len := Util.slen(arg);
+
+        if @len < arg_len {
+            @len = arg_len;
+            return ERR_TOO_SMALL;
+        }
+
+        @len = arg_len;
+
+        loop i := 0; i < ~~arg_len; i += 1 { buff[i] = arg[i]; }
+
+        return SUCCESS;
+    }
+
+    # [[ specialization(to_formatted_str) ]]
+    # f64_to_formatted_str := proc(buff: *u8, len: *u64, arg: f64, f: Format.Format_Info): s64 {
+    #     return ERR_TOO_SMALL;
+    # }
+
+    _fmt := proc(allocator: *%allocator_type, fmt: str, args: %...): s64 {
+        buff      :=      NULL;
+        buff_len  : u64 = ~~0;
+        fmt_len   :=      Util.slen(fmt);
+        which_arg :=      0;
+
+        defer { Allocator.free(allocator, buff); }
+
+        loop i := 0; i < ~~fmt_len; i += 1 {
+            if fmt[i] == '{' {
+                info: Format_Info = ~~0;
+
+                loop ; i < ~~fmt_len and fmt[i] != '}'; i += 1 {
+                    if      fmt[i] == 'x' { info.hex = HEX_LOWER; }
+                    else if fmt[i] == 'X' { info.hex = HEX_UPPER; }
+                    # parse formatting stuff
+                }
+
+                a := 0;
+                \VARGS [
+                    if a == which_arg {
+                        len := buff_len;
+                        err := to_formatted_str(buff, *len, _builtin_varg(), info);
+
+                        if err == ERR_TOO_SMALL {
+                            Allocator.free(allocator, buff);
+
+                            buff = Allocator.alloc(allocator, len);
+                            if buff == NULL { return ERR_BAD_ALLOC; }
+
+                            buff_len = len;
+
+                            err = to_formatted_str(buff, *len, _builtin_varg(), info);
+                            if err { return err; }
+                        } else if err {
+                            return err;
+                        }
+
+                        Util.putsn(~~buff, len);
+                    }
+                    a += 1;
+                ]
+
+                which_arg += 1;
+            } else {
+                Util.putc(fmt[i]);
+            }
+        }
+
+        return SUCCESS;
+    }
+}
+
+printf := proc(fmt: str, args: %...): s64 {
+    return Format._fmt(*DEFAULT_HEAP_ALLOCATOR, fmt, args);
+}
+
+aprintf := proc(allocator: *%allocator_type, fmt: str, args: %...): s64 {
+    return Format._fmt(allocator, fmt, args);
+}
+
+kprint := proc(fmt: str, args: %...): s64 {
+    N: u64 = ~~512;
+    block_alloc := Fixed_Allocator.new(_builtin_stack_alloc(N), N);
+    return aprintf(*block_alloc, fmt, args);
+}

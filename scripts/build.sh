@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+function cleanup {
+    if [ -t 1 ]; then
+        printf "${CRESET}"
+    fi
+}
+
+trap cleanup EXIT
+
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 cd ${DIR}/..
 
@@ -21,11 +29,13 @@ fi
 
 if [ $(uname) = "Linux" ]; then
     CLANG="clang"
+    LLD="ld.lld"
 elif [ $(uname) = "Darwin" ]; then
     LLVM_PATH=$(brew --prefix llvm)
     LLVM_BIN_PATH=${LLVM_PATH}/bin
     export PATH="${LLVM_BIN_PATH}:${PATH}"
     CLANG="clang"
+    LLD="ld.lld"
 fi
 
 CONFIG=config
@@ -60,6 +70,7 @@ function clean {
     mkdir -p  build/kernel/src || exit $?
     mkdir -p  build/kernel/obj || exit $?
     mkdir -p  build/kernel/bin || exit $?
+    mkdir -p  build/iso        || exit $?
 }
 
 function build_loader {
@@ -100,11 +111,13 @@ function build_kernel {
     fi
     ${SIMON} ${SI_FLAGS} ${SI_SRC} || exit 1
 
-    COMMON_FLAGS="-O0 -g                                \
-                  -fno-builtin -nostdlib -ffreestanding \
-                  -mno-red-zone -mcmodel=kernel         \
-                  -fno-pie -fno-pic                     \
-                  -Wall -Wextra -Werror                 \
+    COMMON_FLAGS="-O0 -g                                     \
+                  -fno-builtin -nostdlib -ffreestanding      \
+                  -mno-red-zone -mcmodel=kernel              \
+                  -fno-pie -fno-pic                          \
+                  -Wall -Wextra -Werror                      \
+                  -Wno-unused-parameter -Wno-unused-variable \
+                  -Wno-unused-but-set-variable               \
                   -target ${ARCH}-unknown-elf"
     COMMON_C_FLAGS="${COMMON_FLAGS} -nostdinc"
     BOOT_C_FLAGS="-c ${COMMON_C_FLAGS} -Isrc/kernel/arch/${ARCH}"
@@ -116,7 +129,7 @@ function build_kernel {
 
     LINK_FLAGS="-no-pie -z max-page-size=0x1000 --build-id=none"
     LINK_OBJS="build/kernel/obj/boot_${ARCH}.o build/kernel/obj/foundation_kernel_${ARCH}.o"
-    ld.lld -o build/kernel/bin/foundation_kernel_${ARCH}.elf ${LINK_OBJS} ${LINK_FLAGS} -T src/kernel/arch/${ARCH}/kernel.lds || exit $?
+    ${LLD} -o build/kernel/bin/foundation_kernel_${ARCH}.elf ${LINK_OBJS} ${LINK_FLAGS} -T src/kernel/arch/${ARCH}/kernel.lds || exit $?
 }
 
 function make_images {
@@ -192,7 +205,7 @@ main || exit $?
 do_wait
 
 if [ -t 1 ]; then
-    printf "%sTotal time: ${SECONDS}s%s\n" ${CMAGENTA} ${CRESET}
+    printf "%sTotal time: ${SECONDS}s%s\n" ${CGREEN} ${CRESET}
 else
     echo "Total time: ${SECONDS}s"
 fi
