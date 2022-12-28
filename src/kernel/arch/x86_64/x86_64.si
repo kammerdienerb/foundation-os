@@ -2,7 +2,7 @@
 
 #ASSERT CONFIG_ARCH == ARCH_X86_64
 
-arch := module {
+arch :: module {
     # name := ARCH_X86_64;
 
     # [[ extern ]] asm_enable_interrupts  := proc (); # found in asm/enable_interrupts.S

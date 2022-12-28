@@ -6,6 +6,6 @@
 # Only simple assignments are valid in this file.
 
 # CONFIG_ARCH should be a value from arch_list.si
-# CONFIG_ARCH := ARCH_AARCH64;
-CONFIG_ARCH := ARCH_X86_64;
-# CONFIG_ARCH := ARCH_RISCV;
+# CONFIG_ARCH :: ARCH_AARCH64;
+CONFIG_ARCH :: ARCH_X86_64;
+# CONFIG_ARCH :: ARCH_RISCV;

@@ -1,14 +1,12 @@
 # kmain.si
 
-panic := proc() { loop ;; {} }
+panic :: proc() { loop ;; {} }
 
 [[ program_entry ]]
-kmain := proc () {
-    x: u32;
-
+kmain :: proc () {
     UART.init();
 
-    kprint("Booted Foundation\n");
+    kprint("Booted Foundation on {}\n", CONFIG_ARCH);
 
     MultiBoot2.enumerate_tags();
 

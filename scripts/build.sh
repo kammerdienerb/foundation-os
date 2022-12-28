@@ -41,7 +41,7 @@ fi
 CONFIG=config
 
 function si_source {
-    sed 's/ *:= */=/g; s/; *$//g' < $1
+    sed 's/ *:: */=/g; s/; *$//g' < $1
 }
 
 source <(si_source src/arch_list.si)    || exit $?
@@ -53,7 +53,7 @@ export ARCH=${!CONFIG_ARCH}
 SIMON=~/projects/simon/build/bin/simon
 SI_FLAGS=""
 SI_FLAGS+=" --c-source --output=build/kernel/src/foundation_kernel_${ARCH}.c"
-# SI_FLAGS+=" -v"
+SI_FLAGS+=" -v"
 # SI_FLAGS+=" --dump-symbols"
 
 function clean {
@@ -99,8 +99,7 @@ function build_loader {
 }
 
 function build_kernel {
-#     SI_SRC="src/arch_list.si config/${CONFIG}.si "
-    SI_SRC="" # "src/arch_list.si "
+    SI_SRC="src/arch_list.si config/${CONFIG}.si "
     SI_SRC+="$(find src/kernel/arch/${ARCH} -name "*.si") "
     SI_SRC+="$(find src/kernel -path src/kernel/arch -prune -false -o -name "*.si") "
 

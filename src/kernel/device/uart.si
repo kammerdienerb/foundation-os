@@ -3,17 +3,16 @@
 # This is _not_ a real serial driver.
 # Instead, we have the bare minimum that gives us characters on the console with QEMU.
 
-UART := module {
-    # [[ const ]] [[ volatile ]]
-    # uart_mmio_base : *u8 = ~~0x10000000;
+UART :: module {
+    BASE :: cast(*u8, 0x3f8);
 
-    init := proc() {
-        _builtin_outb(~~(0x3f8 + 3), ~~3); # Word length select bits, we want 8 bits
-        _builtin_outb(~~(0x3f8 + 2), ~~1); # enable FIFO
+    init :: proc() {
+        _builtin_outb(BASE + 3, 3); # Word length select bits, we want 8 bits
+        _builtin_outb(BASE + 2, 1); # enable FIFO
     }
 
-    putc := proc(c: u8) {
-        loop ; not(_builtin_inb(~~(0x3f8 + 5)) & (1 << 5)); {}
-        _builtin_outb(~~0x3f8, c);
+    putc :: proc(c: u8) {
+        loop ; not(_builtin_inb(BASE + 5) & (1 << 5)); {}
+        _builtin_outb(BASE, c);
     }
 }

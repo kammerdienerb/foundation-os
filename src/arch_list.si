@@ -6,6 +6,6 @@
 # Only simple assignments are valid in this file.
 
 # The names of these architectures should match their respective directory name in src/*/arch.
-ARCH_X86_64  := "x86_64";
-ARCH_AARCH64 := "aarch64";
-ARCH_RISCV   := "risc_v";
+ARCH_X86_64  :: "x86_64";
+ARCH_AARCH64 :: "aarch64";
+ARCH_RISCV   :: "risc_v";

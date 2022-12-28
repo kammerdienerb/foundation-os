@@ -1,43 +1,43 @@
-MultiBoot2 := module {
+MultiBoot2 :: module {
     [[ extern ]] multiboot_magic:      u32;
     [[ extern ]] multiboot_info_addr: *u8;
 
-    TAG_ALIGN:                 u32 = ~~8;
-    TAG_TYPE_END:              u32 = ~~0;
-    TAG_TYPE_CMDLINE:          u32 = ~~1;
-    TAG_TYPE_BOOT_LOADER_NAME: u32 = ~~2;
-    TAG_TYPE_MODULE:           u32 = ~~3;
-    TAG_TYPE_BASIC_MEMINFO:    u32 = ~~4;
-    TAG_TYPE_BOOTDEV:          u32 = ~~5;
-    TAG_TYPE_MMAP:             u32 = ~~6;
-    TAG_TYPE_VBE:              u32 = ~~7;
-    TAG_TYPE_FRAMEBUFFER:      u32 = ~~8;
-    TAG_TYPE_ELF_SECTIONS:     u32 = ~~9;
-    TAG_TYPE_APM:              u32 = ~~10;
-    TAG_TYPE_EFI32:            u32 = ~~11;
-    TAG_TYPE_EFI64:            u32 = ~~12;
-    TAG_TYPE_SMBIOS:           u32 = ~~13;
-    TAG_TYPE_ACPI_OLD:         u32 = ~~14;
-    TAG_TYPE_ACPI_NEW:         u32 = ~~15;
-    TAG_TYPE_NETWORK:          u32 = ~~16;
-    TAG_TYPE_EFI_MMAP:         u32 = ~~17;
-    TAG_TYPE_EFI_BS:           u32 = ~~18;
-    TAG_TYPE_EFI32_IH:         u32 = ~~19;
-    TAG_TYPE_EFI64_IH:         u32 = ~~20;
-    TAG_TYPE_LOAD_BASE_ADDR:   u32 = ~~21;
+    TAG_ALIGN                  :: 8;
+    TAG_TYPE_END               :: 0;
+    TAG_TYPE_CMDLINE           :: 1;
+    TAG_TYPE_BOOT_LOADER_NAME  :: 2;
+    TAG_TYPE_MODULE            :: 3;
+    TAG_TYPE_BASIC_MEMINFO     :: 4;
+    TAG_TYPE_BOOTDEV           :: 5;
+    TAG_TYPE_MMAP              :: 6;
+    TAG_TYPE_VBE               :: 7;
+    TAG_TYPE_FRAMEBUFFER       :: 8;
+    TAG_TYPE_ELF_SECTIONS      :: 9;
+    TAG_TYPE_APM               :: 10;
+    TAG_TYPE_EFI32             :: 11;
+    TAG_TYPE_EFI64             :: 12;
+    TAG_TYPE_SMBIOS            :: 13;
+    TAG_TYPE_ACPI_OLD          :: 14;
+    TAG_TYPE_ACPI_NEW          :: 15;
+    TAG_TYPE_NETWORK           :: 16;
+    TAG_TYPE_EFI_MMAP          :: 17;
+    TAG_TYPE_EFI_BS            :: 18;
+    TAG_TYPE_EFI32_IH          :: 19;
+    TAG_TYPE_EFI64_IH          :: 20;
+    TAG_TYPE_LOAD_BASE_ADDR    :: 21;
 
-    Info := struct {
+    Info :: struct {
         size:      u32,
         _reserved: u32,
     }
 
-    Tag := struct {
+    Tag :: struct {
         ty:   u32,
         size: u32,
     }
 
-    enumerate_tags := proc() {
-        info: *Info = ~~multiboot_info_addr;
+    enumerate_tags :: proc() {
+        info: *Info = cast(*Info, multiboot_info_addr);
 
         kprint("======== MultiBoot2 ========\n");
         kprint("magic:   {X}\n", multiboot_magic);
@@ -46,12 +46,12 @@ MultiBoot2 := module {
 
         ptr := multiboot_info_addr + 8;
 
-        tag: *Tag = ~~ptr;
+        tag: *Tag = cast(*Tag, ptr);
         loop ; tag.ty != TAG_TYPE_END;  {
             kprint("    TAG @ {}: {}, size {}\n", cast(*u8, tag), tag.ty, tag.size);
             ptr += tag.size;
             loop ; cast(u64, ptr) & 0x7; { ptr += 4; }
-            tag = ~~ptr;
+            tag = cast(*Tag, ptr);
         }
         kprint("    TAG @ {}: {}, size {}\n", cast(*u8, tag), tag.ty, tag.size);
         kprint("Done.\n");
