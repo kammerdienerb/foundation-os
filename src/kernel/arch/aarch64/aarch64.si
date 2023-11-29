@@ -1,25 +1,28 @@
-; aarch64.si
+# aarch64.si
 
 #ASSERT CONFIG_ARCH == ARCH_AARCH64
 
-arch = module {
-    name = ARCH_AARCH64
+arch :: module {
+    # name := ARCH_AARCH64;
 
-    [[ extern ]] [[ no_mangle ]]
-    asm_enable_interrupts = proc () ; found in asm/enable_interrupts.S
+    # [[ extern ]] asm_enable_interrupts  := proc (); # found in asm/enable_interrupts.S
+    # [[ extern ]] asm_wait_for_interrupt := proc (); # found in asm/wfi.S
+    # [[ extern ]] asm_switch_to_umode    := proc (); # found in asm/switch.S
 
-    enable_interrupts = asm_enable_interrupts
+    # enable_interrupts  := asm_enable_interrupts;
+    # wait_for_interrupt := asm_wait_for_interrupt;
+    # switch_to_umode    := asm_switch_to_umode;
 
-    ; Some architectures will have clean wfi instructions that the compiler will
-    ; provide an intrinsic for.
-    ; If we have one built-in, let's use that.
-#IF_BUILTIN __INTRINSIC_wait_for_interrupt
-    wait_for_interrupt = __INTRINSIC_wait_for_interrupt
-#ELSE
+    # Some architectures will have clean wfi instructions that the compiler will
+    # provide an intrinsic for.
+    # If we have one built-in, let's use that.
+# \IF _builtin(__INTRINSIC_wait_for_interrupt) {
+    # wait_for_interrupt := __INTRINSIC_wait_for_interrupt;
+# } \ELSE {
 
-    [[ extern ]] [[ no_mangle ]]
-    asm_wait_for_interrupt = proc () ; found in asm/wait_for_interrupt.S
+    # [[ extern ]] [[ no_mangle ]]
+    # asm_wait_for_interrupt = proc (); # found in asm/wait_for_interrupt.S
 
-    wait_for_interrupt = asm_wait_for_interrupt
-#ENDIF
+    # wait_for_interrupt = asm_wait_for_interrupt;
+# }
 }

@@ -108,12 +108,14 @@ function build_kernel {
     else
         echo "Building kernel.."
     fi
+    echo ${SIMON} ${SI_FLAGS} ${SI_SRC}
     ${SIMON} ${SI_FLAGS} ${SI_SRC} || exit 1
 
+#                   -mno-red-zone -mcmodel=kernel              \
     COMMON_FLAGS="-O0 -g                                     \
                   -fno-builtin -nostdlib -ffreestanding      \
-                  -mno-red-zone -mcmodel=kernel              \
                   -fno-pie -fno-pic                          \
+                  -mno-red-zone                              \
                   -Wall -Wextra -Werror                      \
                   -Wno-unused-parameter -Wno-unused-variable \
                   -Wno-unused-but-set-variable               \

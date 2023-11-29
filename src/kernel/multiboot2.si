@@ -27,13 +27,13 @@ MultiBoot2 :: module {
     TAG_TYPE_LOAD_BASE_ADDR    :: 21;
 
     Info :: struct {
-        size:      u32,
-        _reserved: u32,
+        size:      u32;
+        _reserved: u32;
     }
 
     Tag :: struct {
-        ty:   u32,
-        size: u32,
+        ty:   u32;
+        size: u32;
     }
 
     enumerate_tags :: proc() {
