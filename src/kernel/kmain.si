@@ -6,7 +6,7 @@ panic :: proc() { loop ;; {} }
 kmain :: proc () {
     UART.init();
 
-    kprint("Booted Foundation on {}\n", CONFIG_ARCH);
+    printf("Booted Foundation on {}\n", CONFIG_ARCH);
 
     MultiBoot2.enumerate_tags();
 

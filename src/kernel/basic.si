@@ -2,6 +2,30 @@
 
 NULL :: cast(*u8, 0);
 
+memcpy :: proc(dst: *u8, src: *u8, nbytes: s64) {
+    ncopied := 0;
+    ldp     := cast(*u64, dst);
+    lsp     := cast(*u64, src);
+
+    loop ; nbytes - ncopied > sizeof u64; {
+        @ldp = @lsp;
+
+        ldp     += 1;
+        lsp     += 1;
+        ncopied += sizeof u64;
+    }
+
+    bdp := cast(*u8, ldp);
+    bsp := cast(*u8, lsp);
+
+    loop ; ncopied < nbytes; ncopied += 1 {
+        @bdp = @bsp;
+
+        bdp += 1;
+        bsp += 1;
+    }
+}
+
 SUCCESS       ::  0;
 ERR_TOO_SMALL :: -1;
 ERR_BAD_ALLOC :: -2;
@@ -33,6 +57,7 @@ Allocator :: module {
 }
 
 Heap_Allocator :: struct {}
+
 [[ specialization(Allocator.alloc) ]]
 heap_alloc :: proc(allocator: *Heap_Allocator, n_bytes: u64): *u8 { return NULL; }
 
@@ -87,7 +112,7 @@ singleton_allocator_new :: proc(buff: *u8, size: u64): Singleton_Allocator {
 singleton_alloc :: proc(allocator: *Singleton_Allocator, n_bytes: u64): *u8 {
     # @todo: alignment
 
-    if allocator.base + n_bytes >= allocator.end { return NULL; }
+    if allocator.base + n_bytes > allocator.end { return NULL; }
 
     return allocator.base;
 }
@@ -96,8 +121,8 @@ singleton_alloc :: proc(allocator: *Singleton_Allocator, n_bytes: u64): *u8 {
 singleton_realloc :: proc(allocator: *Singleton_Allocator, ptr: *u8, n_bytes: u64): *u8 {
     # @todo: alignment
 
-    if ptr != NULL and ptr != allocator.base     { return NULL; }
-    if allocator.base + n_bytes >= allocator.end { return NULL; }
+    if ptr != NULL and ptr != allocator.base    { return NULL; }
+    if allocator.base + n_bytes > allocator.end { return NULL; }
 
     return allocator.base;
 }
@@ -115,21 +140,24 @@ singleton_bundle :: proc(allocator: *Singleton_Allocator): Allocator.Bundle {
     return ret;
 }
 
-putc :: proc(c: u8) {
+
+
+write_char :: proc(c: u8) {
     UART.putc(c);
 }
-puts :: proc(s: [u8]) {
-    loop i: u64 = 0; i < lenof s; i += 1 { UART.putc(s[i]); }
+write_string :: proc(s: [u8]) {
+    loop i := 0; i < lenof s; i += 1 { write_char(s[i]); }
 }
+
 
 String_Builder :: struct {
     allocator:  Allocator.Bundle;
     data:      *u8;
     cursor:    *u8;
-    len:        u64;
+    len:        s64;
 }
 
-string_builder_reset :: proc(sb: *%sb_type) {
+string_builder_reset :: proc(sb: *String_Builder) {
     sb.data   = NULL;
     sb.cursor = NULL;
     sb.len    = 0;
@@ -142,7 +170,14 @@ string_builder_new :: proc(allocator: *%allocator_type): String_Builder {
     return ret;
 }
 
-string_builder_append :: proc(sb: *%sb_type, c: u8): s64 {
+string_builder_free :: proc(sb: *String_Builder) {
+    if sb.data != NULL {
+        Allocator.bundle_free(*sb.allocator, sb.data);
+    }
+    string_builder_reset(sb);
+}
+
+string_builder_append :: proc(sb: *String_Builder, c: u8): s64 {
     was_null := sb.data == NULL;
 
     sb.data = Allocator.bundle_realloc(*sb.allocator, sb.data, sb.len + 1);
@@ -163,9 +198,28 @@ string_builder_append :: proc(sb: *%sb_type, c: u8): s64 {
     return SUCCESS;
 }
 
-string_builder_get :: proc(sb: *%sb_type): [u8] {
+string_builder_get :: proc(sb: *String_Builder): [u8] {
     return _builtin_slice_from(sb.data, sb.len);
 }
+
+
+is_space :: proc(c: u8): s64 {
+    d := cast(u32, c) - 9;
+    return (0x80001F >> (d & 31)) & (1 >> (d >> 5));
+}
+
+is_digit :: proc(c: u8): s64 {
+    return ((('0' - 1 - c) & (c - ('9' + 1))) >> (4 * 8 - 1)) != 0;
+}
+
+is_alpha :: proc(c: u8): s64 {
+    return ((('a' - 1 - (c | 32)) & ((c | 32) - ('z' + 1))) >> (4 * 8 - 1)) != 0;
+}
+
+is_alnum :: proc(c: u8): s64 {
+    return is_alpha(c) or is_digit(c);
+}
+
 
 Format :: module {
     JUST_LEFT   :: 0;
@@ -178,11 +232,13 @@ Format :: module {
 
     [[ bitfield_struct(u64) ]]
     Format_Info :: struct {
-        [[ bitfield( 0, 31) ]] width:     u32;
-        [[ bitfield(32, 33) ]] just:      u8;
-        [[ bitfield(34, 35) ]] hex:       u8;
-        [[ bitfield(36, 49) ]] float_int: u32;
-        [[ bitfield(50, 63) ]] float_rat: u32;
+        [[ bitfield( 0,  2) ]] just:      u8;
+        [[ bitfield( 3,  4) ]] hex:       u8;
+        [[ bitfield( 5,  6) ]] ascii:     u8;
+        [[ bitfield( 7,  8) ]] zero_pad:  u8;
+        [[ bitfield( 9, 31) ]] width:     s64;
+        [[ bitfield(32, 47) ]] float_int: u32;
+        [[ bitfield(48, 63) ]] float_rat: u32;
     }
 
 
@@ -193,7 +249,7 @@ Format :: module {
     [[ specialization(to_formatted_str) ]]
     u64_to_formatted_str :: proc(sb: *String_Builder, arg: u64, f: Format.Format_Info): s64 {
         buff: [u8];
-        len: u64 = 1;
+        len := 1;
         save_arg := arg;
 
         if f.hex {
@@ -225,7 +281,7 @@ Format :: module {
             buff[idx] = '0' + (arg % 10);
         }
 
-        loop idx : u64 = 0; idx < len; idx += 1 {
+        loop idx := 0; idx < len; idx += 1 {
             err := string_builder_append(sb, buff[idx]);
             if err { return err; }
         }
@@ -243,14 +299,18 @@ Format :: module {
     }
     [[ specialization(to_formatted_str) ]]
     u8_to_formatted_str :: proc(sb: *String_Builder, arg: u8, f: Format.Format_Info): s64 {
-        return u64_to_formatted_str(sb, cast(u64, arg), f);
+        if f.ascii {
+            return string_builder_append(sb, arg);
+        } else {
+            return u64_to_formatted_str(sb, cast(u64, arg), f);
+        }
     }
 
     [[ specialization(to_formatted_str) ]]
     s64_to_formatted_str :: proc(sb: *String_Builder, arg: s64, f: Format.Format_Info): s64 {
         if f.hex { return u64_to_formatted_str(sb, cast(u64, arg), f); }
 
-        len  : u64 = 1;
+        len  := 1;
         neg  := 0;
 
         if arg < 0 {
@@ -318,7 +378,7 @@ Format :: module {
     str_to_formatted_str :: proc(sb: *String_Builder, arg: [u8], f: Format.Format_Info): s64 {
         arg_len := lenof arg;
 
-        loop i: u64 = 0; i < arg_len; i += 1 {
+        loop i := 0; i < arg_len; i += 1 {
             err := string_builder_append(sb, arg[i]);
             if err { return err; }
         }
@@ -331,42 +391,114 @@ Format :: module {
     #     return ERR_TOO_SMALL;
     # }
 
-    _fmt :: proc(allocator: *%allocator_type, fmt: [u8], args: %...): s64 {
-        sb        := string_builder_new(allocator);
+    _final_write :: proc(s: [u8], just: u8, width: s64, pad_c: u8) {
+        if width {
+            if just == JUST_RIGHT {
+                l := width - lenof s;
+                loop j := 0; j < l; j += 1 { write_char(pad_c); }
+            } else if just == JUST_CENTER {
+                l := (width - lenof s) >> 1;
+                loop j := 0; j < l; j += 1 { write_char(pad_c); }
+            }
+        }
+        write_string(s);
+        if width {
+            if just == JUST_LEFT {
+                l := width - lenof s;
+                loop j := 0; j < l; j += 1 { write_char(pad_c); }
+            } else if just == JUST_CENTER {
+                l := width - ((width - lenof s) >> 1) - lenof s;
+                loop j := 0; j < l; j += 1 { write_char(pad_c); }
+            }
+        }
+    }
+
+    _get_width_from_arg :: proc(arg: %T): s64 { return 0; }
+    [[ specialization(_get_width_from_arg) ]]
+    _get_width_from_s64 :: proc(arg: s64): s64 { return arg; }
+
+    _sbfmt :: proc(sb: *String_Builder, fmt: [u8], args: %...): s64 {
         fmt_len   := lenof fmt;
         which_arg := 0;
 
-#         defer { Allocator.free(allocator, buff); }
-
-        loop i: u64 = 0; i < fmt_len; i += 1 {
+        loop i := 0; i < fmt_len; i += 1 {
             if fmt[i] == '{' {
                 info: Format_Info = 0;
+                info.just = JUST_LEFT;
 
                 loop ; i < fmt_len and fmt[i] != '}'; i += 1 {
-                    if      fmt[i] == 'x' { info.hex = HEX_LOWER; }
-                    else if fmt[i] == 'X' { info.hex = HEX_UPPER; }
-                    # parse formatting stuff
+                    if      fmt[i] == 'x' { info.hex   = HEX_LOWER;   }
+                    else if fmt[i] == 'X' { info.hex   = HEX_UPPER;   }
+                    else if fmt[i] == 'a' { info.ascii = 1;           }
+                    else if fmt[i] == '-' { info.just  = JUST_LEFT;   }
+                    else if fmt[i] == '=' { info.just  = JUST_CENTER; }
+                    else if fmt[i] == '+' { info.just  = JUST_RIGHT;  }
+                    else if fmt[i] == '*' {
+                        a := 0;
+                        vargs![] {
+                            if a == which_arg {
+                                w := _get_width_from_arg(_builtin_varg());
+                                if w < 0 {
+                                    info.just = JUST_LEFT;
+                                    w = -w;
+                                }
+                                info.width = w;
+                            }
+                            a += 1;
+                        }
+                        which_arg += 1;
+                    } else if is_digit(fmt[i]) {
+                        loop ; i < fmt_len and fmt[i] == '0'; i += 1 {
+                            info.zero_pad = 1;
+                        }
+                        seen_dig := 0;
+                        loop ; i < fmt_len and is_digit(fmt[i]); i += 1 {
+                            info.width = info.width * 10 + (fmt[i] - '0');
+                            seen_dig   = 1;
+                        }
+                        if seen_dig {
+                            i -= 1;
+                        } else {
+                            if info.zero_pad { i -= 1; }
+                            info.zero_pad = 0;
+                            info.width    = 0;
+                        }
+                    }
                 }
 
                 a := 0;
                 vargs![] {
                     if a == which_arg {
-                        err := to_formatted_str(*sb, _builtin_varg(), info);
+                        err := to_formatted_str(sb, _builtin_varg(), info);
                         if err { return err; }
-
-                        puts(string_builder_get(*sb));
-                        string_builder_reset(*sb);
                     }
                     a += 1;
                 }
 
+
+                s := string_builder_get(sb);
+
+                if lenof s > info.width { info.width = 0; }
+                pad_c := ' ';
+                if info.zero_pad { pad_c = '0'; }
+                _final_write(s, info.just, info.width, pad_c);
+
+                string_builder_reset(sb);
+
                 which_arg += 1;
             } else {
-                puts(_builtin_slice_from(*fmt[i], 1));
+                write_string(_builtin_slice_from(*fmt[i], 1));
             }
         }
 
         return SUCCESS;
+    }
+
+    _fmt :: proc(allocator: *%allocator_type, fmt: [u8], args: %...): s64 {
+        sb := string_builder_new(allocator);
+        defer { string_builder_free(*sb); }
+
+        return _sbfmt(*sb, fmt, args);
     }
 }
 
@@ -374,7 +506,12 @@ aprintf :: proc(allocator: *%allocator_type, fmt: [u8], args: %...): s64 {
     return Format._fmt(allocator, fmt, args);
 }
 
-kprint :: proc(fmt: [u8], args: %...): s64 {
-    mem := singleton_allocator_new(_builtin_stack_alloc(512), 512);
+printf :: proc(fmt: [u8], args: %...): s64 {
+    N := 4096;
+    mem := singleton_allocator_new(_builtin_stack_alloc(N), N);
     return aprintf(*mem, fmt, args);
+}
+
+debug_print :: macro(expr) {
+    printf("{} = {}\n", code_to_string!($expr), $expr);
 }

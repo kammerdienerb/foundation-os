@@ -39,21 +39,21 @@ MultiBoot2 :: module {
     enumerate_tags :: proc() {
         info: *Info = cast(*Info, multiboot_info_addr);
 
-        kprint("======== MultiBoot2 ========\n");
-        kprint("magic:   {X}\n", multiboot_magic);
-        kprint("address: {}\n", multiboot_info_addr);
-        kprint("  size:  {}\n", info.size);
+        printf("======== MultiBoot2 ========\n");
+        printf("magic:   {X}\n", multiboot_magic);
+        printf("address: {}\n", multiboot_info_addr);
+        printf("  size:  {}\n", info.size);
 
         ptr := multiboot_info_addr + 8;
 
         tag: *Tag = cast(*Tag, ptr);
         loop ; tag.ty != TAG_TYPE_END;  {
-            kprint("    TAG @ {}: {}, size {}\n", cast(*u8, tag), tag.ty, tag.size);
+            printf("    TAG @ {}: {}, size {}\n", cast(*u8, tag), tag.ty, tag.size);
             ptr += tag.size;
             loop ; cast(u64, ptr) & 0x7; { ptr += 4; }
             tag = cast(*Tag, ptr);
         }
-        kprint("    TAG @ {}: {}, size {}\n", cast(*u8, tag), tag.ty, tag.size);
-        kprint("Done.\n");
+        printf("    TAG @ {}: {}, size {}\n", cast(*u8, tag), tag.ty, tag.size);
+        printf("Done.\n");
     }
 }

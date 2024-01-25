@@ -53,7 +53,6 @@ export ARCH=${!CONFIG_ARCH}
 SIMON=~/projects/simon/build/bin/simon
 SI_FLAGS=""
 SI_FLAGS+=" --c-source --output=build/kernel/src/foundation_kernel_${ARCH}.c"
-SI_FLAGS+=" -v"
 # SI_FLAGS+=" --dump-symbols"
 
 function clean {
@@ -108,7 +107,6 @@ function build_kernel {
     else
         echo "Building kernel.."
     fi
-    echo ${SIMON} ${SI_FLAGS} ${SI_SRC}
     ${SIMON} ${SI_FLAGS} ${SI_SRC} || exit 1
 
 #                   -mno-red-zone -mcmodel=kernel              \
@@ -119,6 +117,7 @@ function build_kernel {
                   -Wall -Wextra -Werror                      \
                   -Wno-unused-parameter -Wno-unused-variable \
                   -Wno-unused-but-set-variable               \
+                  -Wno-parentheses-equality                  \
                   -target ${ARCH}-unknown-elf"
     COMMON_C_FLAGS="${COMMON_FLAGS} -nostdinc"
     BOOT_C_FLAGS="-c ${COMMON_C_FLAGS} -Isrc/kernel/arch/${ARCH}"
