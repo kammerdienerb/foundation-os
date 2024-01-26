@@ -6,13 +6,31 @@
 UART :: module {
     BASE :: cast(*u8, 0x3f8);
 
-    init :: proc() {
-        _builtin_outb(BASE + 3, 3); # Word length select bits, we want 8 bits
-        _builtin_outb(BASE + 2, 1); # enable FIFO
+    init :: proc(): s64 {
+        _builtin_outb(BASE + 1, 0x00); # Disable interrupts
+        _builtin_outb(BASE + 3, 0x80); # Word length select bits, we want 8 bits
+        _builtin_outb(BASE + 0, 0x03); # Divisor low byte
+        _builtin_outb(BASE + 1, 0x00); # Divisor high byte
+        _builtin_outb(BASE + 3, 0x03); # Word length select bits, we want 8 bits
+        _builtin_outb(BASE + 2, 0xC7); # enable FIFO, 14-byte threshold
+        _builtin_outb(BASE + 4, 0x0B); # IRQs enabled, RTS/DSR set
+        _builtin_outb(BASE + 4, 0x1E); # Set in loopback mode to test
+        _builtin_outb(BASE + 0, 0xAE); # Test byte
+
+        # Check if we get the same byte back that we sent.
+        if (_builtin_inb(BASE + 0) != 0xAE) {
+            return 1;
+        }
+
+        # If the serial port is not faulty, set it to normal operation.
+        # (no loopback, IRQs on)
+        _builtin_outb(BASE + 4, 0x0F);
+
+        return 0;
     }
 
     putc :: proc(c: u8) {
-        loop ; not(_builtin_inb(BASE + 5) & (1 << 5)); {}
+#         loop ; not(_builtin_inb(BASE + 5) & (1 << 5)); {}
         _builtin_outb(BASE, c);
     }
 }

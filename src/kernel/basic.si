@@ -3,27 +3,30 @@
 NULL :: cast(*u8, 0);
 
 memcpy :: proc(dst: *u8, src: *u8, nbytes: s64) {
-    ncopied := 0;
-    ldp     := cast(*u64, dst);
-    lsp     := cast(*u64, src);
-
-    loop ; nbytes - ncopied > sizeof u64; {
-        @ldp = @lsp;
-
-        ldp     += 1;
-        lsp     += 1;
-        ncopied += sizeof u64;
+    loop i := 0; i < nbytes; i += 1 {
+        @(dst + i) = @(src + i);
     }
+#     ncopied := 0;
+#     ldp     := cast(*u64, dst);
+#     lsp     := cast(*u64, src);
 
-    bdp := cast(*u8, ldp);
-    bsp := cast(*u8, lsp);
+#     loop ; nbytes - ncopied > sizeof u64; {
+#         @ldp = @lsp;
 
-    loop ; ncopied < nbytes; ncopied += 1 {
-        @bdp = @bsp;
+#         ldp     += 1;
+#         lsp     += 1;
+#         ncopied += sizeof u64;
+#     }
 
-        bdp += 1;
-        bsp += 1;
-    }
+#     bdp := cast(*u8, ldp);
+#     bsp := cast(*u8, lsp);
+
+#     loop ; ncopied < nbytes; ncopied += 1 {
+#         @bdp = @bsp;
+
+#         bdp += 1;
+#         bsp += 1;
+#     }
 }
 
 SUCCESS       ::  0;
@@ -507,7 +510,7 @@ aprintf :: proc(allocator: *%allocator_type, fmt: [u8], args: %...): s64 {
 }
 
 printf :: proc(fmt: [u8], args: %...): s64 {
-    N := 4096;
+    N := 256;
     mem := singleton_allocator_new(_builtin_stack_alloc(N), N);
     return aprintf(*mem, fmt, args);
 }

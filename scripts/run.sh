@@ -33,10 +33,10 @@ else
     qemu-system-x86_64         \
         -no-reboot             \
         -no-shutdown           \
-        -serial stdio          \
         -cpu qemu64            \
         -smp 2                 \
         -pflash x86_64/OVMF.fd \
         -cdrom ${iso}          \
+        -serial stdio          \
         -net none
 fi

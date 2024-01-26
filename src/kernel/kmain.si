@@ -4,7 +4,9 @@ panic :: proc() { loop ;; {} }
 
 [[ program_entry ]]
 kmain :: proc () {
-    UART.init();
+    uart_success := UART.init();
+
+    write_string("test\n");
 
     printf("Booted Foundation on {}\n", CONFIG_ARCH);
 
